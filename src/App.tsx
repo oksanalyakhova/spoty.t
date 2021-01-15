@@ -10,17 +10,15 @@ function App() {
   return (
     <div className="App">
       <div className="App-header">
-
-      </div>
-      <div className="App-content">
-          <Artist/>
-          <CurrentTrack/>
-          <Navbar/>
-          <Sidebar/>
           <Topbar/>
       </div>
+      <div className="App-content">
+          <Navbar/>
+          <Artist/>
+          <Sidebar/>
+      </div>
       <div className="App-current-track">
-
+          <CurrentTrack/>
       </div>
     </div>
   );

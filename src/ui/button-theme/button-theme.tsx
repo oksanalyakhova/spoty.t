@@ -15,7 +15,7 @@ export default class ButtonTheme extends Component<Props, State> {
         const value = text || children
         return (
             <button
-                className={disable ? `disable ${className}` : className}
+                className={disable ? `${className} is-disabled` : className}
                 onClick={(e) => onClick(e)}>
                 {value}
             </button>
