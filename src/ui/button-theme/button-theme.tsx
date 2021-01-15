@@ -11,13 +11,14 @@ type Props = {
 
 export default class ButtonTheme extends Component<Props, State> {
     render() {
-        const { text, disable, className, onClick, children = 'Click' } = this.props
+        const { text, disable, onClick, children = 'Click' } = this.props
         const value = text || children
         return (
             <button
-                className={disable ? `${className} is-disabled` : className}
+                className={disable ? `button button-theme is-disabled` : `button button-theme`}
                 onClick={(e) => onClick(e)}>
-                {value}
+                <div className={'button__top button-theme__top'}>{value}</div>
+                <div className={'button__bottom button-theme__bottom'}>{value}</div>
             </button>
         )
     }

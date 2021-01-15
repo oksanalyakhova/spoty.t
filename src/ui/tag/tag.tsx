@@ -7,11 +7,9 @@ type Props = {
 
 export default class Tag extends Component<Props> {
     render() {
-        const { text, children = 'Click' } = this.props
-        const value = text || children
         return (
             <div className="tag">
-                {value}
+                {this.props.text}
             </div>
         )
     }
