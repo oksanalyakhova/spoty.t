@@ -17,7 +17,7 @@ const Actions: FunctionComponent<ActionsProps> = ({
     onClickForward,
 }): JSX.Element => {
     return (
-        <div className={className? `${className} actions`: `actions`}>
+        <div className={`${className ? className + " actions" : "actions"}`}>
             <button type="button" className="actions__backward backward"
                     onClick={(e) => onClickBackward(e)}>
                 <IoPlaySkipBackSharp />

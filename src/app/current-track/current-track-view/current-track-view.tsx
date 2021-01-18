@@ -12,7 +12,7 @@ const CurrentTrack: FunctionComponent<CurrentTrackProps> = ({
     className
 }): JSX.Element => {
     return (
-        <div className={className? `${className} current-track` : `current-track`}>
+        <div className={`${className ? className + " current-track" : "current-track"}`}>
             <Actions className="current-track__actions"
                      onClickBackward={() => {console.log('backward was clicked')}}
                      onClickPlay={() => {console.log('play was clicked')}}

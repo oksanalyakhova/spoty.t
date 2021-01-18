@@ -14,7 +14,7 @@ const Progress: FunctionComponent<ProgressProps> = ({
     className,
 }): JSX.Element => {
     return (
-        <div className={className? `${className} progress`: `progress`}>
+        <div className={`${className ? className + " progress" : "progress"}`}>
             <div className="progress__start">0:01</div>
             <div className="progress__slider progressbar">
                 <Slider min={0} max={100} step={0.01} />

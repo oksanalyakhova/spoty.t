@@ -23,7 +23,7 @@ const Inbox: FunctionComponent<InboxProps> = ({
     const resetInterval = () => setInbox(0);
 
     return (
-        <a href="/inbox/page" className={`${className} inbox`}>
+        <a href="/inbox/page" className={`${className ? className + " inbox" : "inbox"}`}>
             <FaInbox />
             {inbox > 0 &&
                 <span className="count">{inbox}</span>

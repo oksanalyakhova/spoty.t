@@ -5,21 +5,22 @@ import './button-play.sass';
 
 interface ButtonPlayProps {
     text?: string,
-    active?: boolean,
+    isActive?: boolean,
     className?: string,
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
     text,
-    active,
+    isActive,
     className,
     onClick,
 }): JSX.Element => {
     return (
         <button
             type="button"
-            className={active ? `${className} button button-play is-active` : `${className} button button-play`}
+            className={`${className? className + " button button-play" : "button button-play"} 
+        ${isActive ? "is-active" : ""}`}
             onClick={(e) => onClick(e)}>
             <IoPlaySharp />
             <div className="button__top button-play__top">

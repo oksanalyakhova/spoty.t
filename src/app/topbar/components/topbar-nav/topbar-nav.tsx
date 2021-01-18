@@ -19,12 +19,14 @@ const TopbarNav: FunctionComponent<TopbarNavProps> = ({
     onClickNext
 }): JSX.Element => {
     return (
-        <div className={className? `${className} page-flows`: `page-flows`}>
-            <div className={disabledPrev ? `page-flows__item page-flows__item_left is-disabled` : `page-flows__item page-flows__item_left`}
+        <div className={`${className ? className + " page-flows" : "page-flows"}`}>
+            <div className={disabledPrev ? `page-flows__item page-flows__item_left is-disabled` :
+                `page-flows__item page-flows__item_left`}
                  onClick={(e) => onClickPrev(e)}>
                 <IoChevronBackSharp />
             </div>
-            <div className={disabledNext ? `page-flows__item page-flows__item_right is-disabled` : `page-flows__item page-flows__item_right`}
+            <div className={disabledNext ? `page-flows__item page-flows__item_right is-disabled` :
+                `page-flows__item page-flows__item_right`}
                  onClick={(e) => onClickNext(e)}>
                 <IoChevronForwardSharp />
             </div>

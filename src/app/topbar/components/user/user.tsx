@@ -34,7 +34,7 @@ const User: FunctionComponent<UserProps> = ({
     className
 }): JSX.Element => {
     return (
-        <div className={className? `${className} user` : `user`}>
+        <div className={`${className ? className + " user" : "user"}`}>
             <Notifications className="user__notifications" />
             <Inbox className="user__inbox" />
             <div className="user__info info">

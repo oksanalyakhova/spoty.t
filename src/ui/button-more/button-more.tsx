@@ -4,20 +4,21 @@ import { IoEllipsisHorizontal } from 'react-icons/io5';
 import './button-more.sass';
 
 interface ButtonMoreProps {
-    active?: boolean,
+    isActive?: boolean,
     className?: string,
     onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 const ButtonMore: FunctionComponent<ButtonMoreProps> = ({
-    active,
+                                                            isActive,
     className,
     onClick,
 }): JSX.Element => {
     return (
         <button
             type='button'
-            className={active ? `${className} button button-more is-active` : `${className} button button-more`}
+            className={`${className? className + " button button-more" : "button button-more"} 
+        ${isActive ? "is-active" : ""}`}
             onClick={(e) => onClick(e)}>
                 <IoEllipsisHorizontal />
         </button>

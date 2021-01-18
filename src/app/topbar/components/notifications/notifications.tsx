@@ -11,7 +11,7 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
     className
 }): JSX.Element => {
     return (
-        <a href="/notifications/page" className={`${className} notifications`}>
+        <a href="/notifications/page" className={`${className ? className + " notifications" : "notifications"}`}>
             <IoNotifications />
             {/*<span className="count"></span>*/}
         </a>

@@ -27,7 +27,7 @@ const Search: FunctionComponent<SearchProps> = ({
                   handleSubmit,
                   isSubmitting,
               }) => (
-                <div className={className? `${className} search` : `search`}>
+                <div className={`${className ? className + " search" : "search"}`}>
                     <form className="search__form search-form" onSubmit={handleSubmit}>
                         <div className="search-form__input-wrap input-wrap">
                             <input

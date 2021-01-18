@@ -1,0 +1,25 @@
+@import "./assets/styles/setup"
+
+.app
+  &__content
+    display: flex
+    flex-flow: row wrap
+
+  &__navbar
+    width: 15%
+    +r(1400)
+      width: 20%
+    +r(768)
+      width: 100%
+
+  &__artist
+    width: 70%
+    +r(1400)
+      width: 80%
+    +r(768)
+      width: 100%
+
+  &__sidebar
+    width: 15%
+    +r(1400)
+      display: none

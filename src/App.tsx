@@ -12,9 +12,9 @@ const App = () => {
     <div className="app">
       <Topbar className="app__topbar" />
       <div className="app__content">
-          <Navbar />
-          <Artist />
-          <Sidebar />
+          <Navbar className="app__navbar" />
+          <Artist className="app__artist" isVerified={true} />
+          <Sidebar className="app__sidebar" />
       </div>
       <CurrentTrack className="app__current-track" />
     </div>
