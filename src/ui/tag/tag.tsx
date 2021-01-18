@@ -1,16 +1,18 @@
-import React, { Component } from 'react'
-import './tag.sass'
+import React, { FunctionComponent } from 'react';
+import './tag.sass';
 
-type Props = {
+interface TagProps {
     text?: string
 }
 
-export default class Tag extends Component<Props> {
-    render() {
-        return (
-            <div className="tag">
-                {this.props.text}
-            </div>
-        )
-    }
+const Tag: FunctionComponent<TagProps> = ({
+    text,
+}): JSX.Element => {
+    return (
+        <div className="tag">
+            {text}
+        </div>
+    )
 }
+
+export default Tag;

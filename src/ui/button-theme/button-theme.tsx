@@ -1,25 +1,33 @@
-import React, { Component } from 'react'
-import './button-theme.sass'
+import React, { FunctionComponent } from 'react';
 
-type State = {}
-type Props = {
+import './button-theme.sass';
+
+interface ButtonThemeProps {
     text?: string,
     disable?: boolean,
     className?: string,
-    onClick: Function
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export default class ButtonTheme extends Component<Props, State> {
-    render() {
-        const { text, disable, onClick, children = 'Click' } = this.props
-        const value = text || children
-        return (
-            <button
-                className={disable ? `button button-theme is-disabled` : `button button-theme`}
-                onClick={(e) => onClick(e)}>
-                <div className={'button__top button-theme__top'}>{value}</div>
-                <div className={'button__bottom button-theme__bottom'}>{value}</div>
-            </button>
-        )
-    }
+const ButtonTheme: FunctionComponent<ButtonThemeProps> = ({
+    text,
+    disable,
+    className,
+    onClick,
+}): JSX.Element => {
+    return (
+        <button
+            type="button"
+            className={disable ? `${className} button button-theme is-disabled` : `${className} button button-theme`}
+            onClick={(e) => onClick(e)}>
+            <div className="button__top button-theme__top">
+                {text}
+            </div>
+            <div className="button__bottom button-theme__bottom">
+                {text}
+            </div>
+        </button>
+    )
 }
+
+export default ButtonTheme;

@@ -1,24 +1,27 @@
-import React, { Component } from 'react'
-import './button-more.sass'
-import { IoEllipsisHorizontal } from 'react-icons/io5'
+import React, { FunctionComponent } from 'react';
+import { IoEllipsisHorizontal } from 'react-icons/io5';
 
-type State = {}
-type Props = {
+import './button-more.sass';
+
+interface ButtonMoreProps {
     active?: boolean,
     className?: string,
-    onClick: Function
+    onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export default class ButtonMore extends Component<Props, State> {
-    render() {
-        const { active, onClick, children = 'Click' } = this.props
-        const value = children
-        return (
-            <button
-                className={active ? `button button-more is-active` : `button button-more`}
-                onClick={(e) => onClick(e)}>
+const ButtonMore: FunctionComponent<ButtonMoreProps> = ({
+    active,
+    className,
+    onClick,
+}): JSX.Element => {
+    return (
+        <button
+            type='button'
+            className={active ? `${className} button button-more is-active` : `${className} button button-more`}
+            onClick={(e) => onClick(e)}>
                 <IoEllipsisHorizontal />
-            </button>
-        )
-    }
+        </button>
+    )
 }
+
+export default ButtonMore;

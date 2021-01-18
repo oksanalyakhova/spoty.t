@@ -1,29 +1,31 @@
-import React from 'react';
-import Tag from '../../../ui/tag/tag';
-import ButtonTheme from '../../../ui/button-theme/button-theme';
-import ButtonPlay from "../../../ui/button-play/button-play";
-import ButtonMore from "../../../ui/button-more/button-more";
+import React, { FunctionComponent } from 'react';
+import Search from '../components/search/search';
+import User from '../components/user/user';
+import TopbarNav from '../components/topbar-nav/topbar-nav';
 
-const Topbar = () => (
-    <div>
-        <Tag text={'Tag'} />
+import './topbar-view.sass';
 
-        <br/>
+interface TopbarProps {
+    className?: string
+}
 
-        <ButtonTheme
-            text={'button'}
-            disable={false}
-            onClick={() => {console.log('clicked')}} />
+const Topbar: FunctionComponent<TopbarProps> = ({
+    className
+}): JSX.Element => {
+    return (
+        <div className={className? `${className} topbar` : `topbar`}>
+            <TopbarNav className="topbar__page-flows"
+                       onClickPrev={() => {console.log('prev was clicked')}}
+                       onClickNext={() => {console.log('next was clicked')}}
+                       disabledNext={true}/>
+            <Search className="topbar__search" />
+            <User className="topbar__user" />
+        </div>
+    )
+};
 
-        <ButtonPlay
-            text={'button'}
-            active={false}
-            onClick={() => {console.log('clicked')}} />
-
-        <br/>
-
-        <ButtonMore onClick={() => {console.log('clicked')}} />
-    </div>
-);
+Topbar.defaultProps = {
+    className: ''
+}
 
 export default Topbar;
