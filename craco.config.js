@@ -3,7 +3,8 @@ module.exports = {
     webpack: {
         alias: {
             '@images': path.resolve(__dirname, './src/assets/img/'),
-            '@styles': path.resolve(__dirname, './src/assets/styles/setup.sass')
+            '@audio': path.resolve(__dirname, './src/assets/audio'),
+            '@styles': path.resolve(__dirname, './src/assets/styles/setup.sass'),
         }
     }
 }
