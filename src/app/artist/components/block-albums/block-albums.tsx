@@ -22,6 +22,7 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
 }): JSX.Element => {
     const listTracks = tracks.map((track, index) =>
         <CardAlbums
+            className="track_albums"
             key={track.id}
             track={track}
             index={index}
@@ -29,7 +30,7 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
     );
     return (
 
-        <div className="tracks">
+        <div className="tracks tracks_albums">
             {listTracks}
         </div>
     )

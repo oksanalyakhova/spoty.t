@@ -40,3 +40,39 @@
       color: $c-white
       +r(480)
         display: none
+
+  &.is-large
+    margin: 15px
+    width: calc((100% / 4) - 30px)
+    +r(1100)
+      width: calc((100% / 3) - 30px)
+    +r(768)
+      width: calc((100% / 2) - 30px)
+    +r(480)
+      margin: 15px 0
+      width: 100%
+
+    #{$this}__img
+      position: relative
+      height: 200px
+      display: flex
+      align-items: center
+
+      &:hover
+        svg
+          opacity: 1
+
+      svg
+        +center(both)
+        width: 62px
+        height: 62px
+        color: $c-white
+        filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))
+        opacity: 0
+        +trans(opacity, .5s, ease)
+
+    #{$this}__name
+      display: block
+      padding: 15px
+      color: $c-white
+      background-color: $c-light-black

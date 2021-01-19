@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { IoPlaySharp } from 'react-icons/io5';
 
 import './card-related-artists.sass';
 
@@ -21,6 +22,10 @@ const CardRelatedArtists: FunctionComponent<CardRelatedArtistsProps> = ({
            className={`${isSmall ? "related-artist is-small" : "related-artist is-large"}`}>
             <span className="related-artist__img">
                 <img src={artist.src} alt={artist.name} />
+                {!isSmall
+                    ? <IoPlaySharp />
+                    : null
+                }
             </span>
             <span className="related-artist__name">
                 {artist.name}

@@ -9,12 +9,11 @@
   +r(522)
     height: fit-content
 
+  &:last-child
+    border-bottom: 1px solid $c-light-black
+
   $this: &
   &_popular-songs
-
-    #{$this}:last-child
-      border-bottom: 1px solid $c-light-black
-
     #{$this}__art
       flex: none
       width: 42px

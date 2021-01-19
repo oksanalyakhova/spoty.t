@@ -5,6 +5,7 @@ import { IoCheckmarkSharp, IoAddSharp, IoTrendingDownSharp, IoTrendingUpSharp } 
 import './card-albums.sass';
 
 interface CardAlbumsProps {
+    className?: string,
     track: {
         id: string | number;
         title: string;
@@ -18,6 +19,7 @@ interface CardAlbumsProps {
 }
 
 const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
+    className,
     track,
     index
 }): JSX.Element => {
@@ -28,7 +30,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
     }, []);
 
     return (
-        <div className="track">
+        <div className={`${className ? className + " track" : "track"}`}>
             <div className="track__number">
                 {index + 1}
             </div>
@@ -38,7 +40,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
                     : <IoCheckmarkSharp />
                 }
             </div>
-            <div className="track__title">
+            <div className={`${track.featured ? "track__title featured" : "track__title"}`}>
                 <span className="title">{track.title}</span>
                 {track.featured
                     ? <span className="feature">{track.featured}</span>
@@ -52,12 +54,15 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
             <div className="track__length">
                 {track.length}
             </div>
-            <div className="track__popularity">
-                {!track.isTrend
-                    ? <IoTrendingDownSharp />
-                    : <IoTrendingUpSharp />
-                }
-            </div>
+            {width > breakpoint
+                ?   <div className="track__popularity">
+                        {!track.isTrend
+                            ? <IoTrendingDownSharp />
+                            : <IoTrendingUpSharp />
+                        }
+                    </div>
+                : null
+            }
         </div>
     )
 }
