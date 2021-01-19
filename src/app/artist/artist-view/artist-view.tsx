@@ -1,4 +1,5 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../AppContext';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
@@ -310,18 +311,11 @@ const albumTracks = [
 const Artist: FunctionComponent<ArtistProps> = ({
     className,
 }): JSX.Element => {
-    const [ww, setWW] = useState(window.innerWidth);
-    const [wh, setWH] = useState(window.innerHeight);
+    const myContext = useContext(AppContext);
     const breakpoint = 768;
-    const condition = ww > breakpoint && ww > wh;
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            setWW(window.innerWidth);
-            setWH(window.innerHeight);
-        });
-    }, []);
+    const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
     let artistHeight;
-    if (condition) artistHeight = wh - 126;
+    if (condition) artistHeight = myContext.windowHeight - 126;
 
     const navFriends = friends.map((friend) =>
         <a key={friend.id} href={friend.url} className="friends__item">

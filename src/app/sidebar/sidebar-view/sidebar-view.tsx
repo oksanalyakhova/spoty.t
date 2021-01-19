@@ -1,4 +1,5 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../AppContext';
 import BlockFriends from '../components/block-friends/block-friends';
 import ButtonTheme from '../../../ui/button-theme/button-theme';
 
@@ -53,18 +54,11 @@ const friends = [
 const Sidebar: FunctionComponent<SidebarProps> = ({
    className
 }): JSX.Element => {
-    const [ww, setWW] = useState(window.innerWidth);
-    const [wh, setWH] = useState(window.innerHeight);
+    const myContext = useContext(AppContext);
     const breakpoint = 768;
-    const condition = ww > breakpoint && ww > wh;
-    useEffect(() => {
-        window.addEventListener("resize", () => {
-            setWW(window.innerWidth);
-            setWH(window.innerHeight);
-        });
-    }, []);
+    const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
     let socialsHeight;
-    if (condition) socialsHeight = wh - 126;
+    if (condition) socialsHeight = myContext.windowHeight - 126;
 
     return (
         <div className={`${className ? className + " sidebar" : "sidebar"}`}
