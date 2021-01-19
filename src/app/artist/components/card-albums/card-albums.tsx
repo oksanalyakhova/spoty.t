@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useEffect } from 'react';
 import Tag from '../../../../ui/tag/tag';
 import { IoCheckmarkSharp, IoAddSharp, IoTrendingDownSharp, IoTrendingUpSharp } from 'react-icons/io5';
-// IoStopwatchOutline
+
 import './card-albums.sass';
 
 interface CardAlbumsProps {

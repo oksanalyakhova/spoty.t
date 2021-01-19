@@ -7,6 +7,20 @@ import BlockAlbums from '../block-albums/block-albums';
 
 import './tab-overview.sass';
 
+interface ReleaseProps {
+    id: string | number;
+    src: string;
+    year: string;
+    name: string;
+}
+
+interface AlbumsProps {
+    id: string | number;
+    src: string;
+    year: string;
+    name: string;
+}
+
 interface PopularSongProps {
     id: string | number;
     src: string;
@@ -34,9 +48,8 @@ interface AlbumSongProps {
 }
 
 interface OverviewProps {
-    releaseCover?: string
-    releaseName?: string,
-    releaseDate?: string,
+    release: ReleaseProps,
+    album: AlbumsProps,
     tracks: Array<PopularSongProps>,
     artists: Array<RelatedArtistProps>,
     isCardArtistsSmall: boolean,
@@ -45,9 +58,8 @@ interface OverviewProps {
 }
 
 const TabOverview: FunctionComponent<OverviewProps> = ({
-    releaseCover,
-    releaseName,
-    releaseDate,
+    release,
+    album,
     tracks,
     artists,
     isCardArtistsSmall,
@@ -61,9 +73,7 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
                     Latest Release
                 </div>
                 <LatestRelease
-                    releaseCover={releaseCover}
-                    releaseName={releaseName}
-                    releaseDate={releaseDate}
+                    release={release}
                 />
                 <div className="section-title">
                     Popular
@@ -72,7 +82,7 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
                     tracks={tracks}
                 />
                 <ButtonTheme
-                    text="show more"
+                    text="show 5 more"
                     isDisabled={false}
                     onClick={() => {
                         console.log("theme was clicked")}}
@@ -98,6 +108,7 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
 
                     </div>
                     <BlockAlbums
+                        album={album}
                         tracks={albumTracks}
                     />
                 </div>

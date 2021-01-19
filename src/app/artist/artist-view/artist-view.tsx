@@ -142,6 +142,20 @@ const artists = [
     }
 ]
 
+const oneRelease = {
+    id: 1,
+    src: `${releaseCover}`,
+    year: '4 December 2015',
+    name: 'Drifting (Track Commentary)',
+}
+
+const oneAlbum = {
+    id: 1,
+    src: `${releaseCover}`,
+    year: '2015',
+    name: 'When It\'s Dark Out',
+}
+
 const albumTracks = [
     {
         id: 1,
@@ -331,13 +345,12 @@ const Artist: FunctionComponent<ArtistProps> = ({
                     <TabPanels className="tabs__panels">
                         <TabPanel>
                             <TabOverview
-                                releaseCover={releaseCover}
-                                releaseName="Drifting (Track Commentary)"
-                                releaseDate="4 December 2015"
                                 tracks={tracks}
                                 artists={artists}
                                 isCardArtistsSmall={true}
                                 forArtistsBlock={true}
+                                release={oneRelease}
+                                album={oneAlbum}
                                 albumTracks={albumTracks}
                             />
                         </TabPanel>

@@ -1,0 +1,80 @@
+@import "../../../../assets/styles/setup"
+
+.album
+  $this: &
+  &__info
+    margin-bottom: 15px
+    display: flex
+    flex-flow: row wrap
+
+    &__art
+      width: 135px
+      height: 135px
+
+      img
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+    &__meta
+      margin-left: 15px
+      width: calc(100% - 150px)
+      display: flex
+      flex-flow: column wrap
+
+      #{$this}__year
+        letter-spacing: 1px
+        color: $c-grey
+
+      #{$this}__name
+        font-weight: 300
+        font-size: 30px
+        color: $c-white
+
+      #{$this}__actions
+        margin-top: auto
+        display: flex
+
+        & > * + *
+          margin: 0 0 0 10px
+
+        .button
+          &__top,
+          &__bottom
+            padding-left: 30px
+            padding-right: 30px
+
+  .tracks
+    &__heading
+      height: 42px
+      display: flex
+      flex-flow: row wrap
+      align-items: center
+      color: $c-grey
+
+      &__number
+        margin-left: 10px
+        font-style: italic
+
+      &__title
+        margin-left: 75px
+        width: 45%
+        letter-spacing: 1px
+        text-transform: uppercase
+
+      &__length
+        margin-left: auto
+        +r(1200)
+          margin-right: 5px
+
+        svg
+          width: 20.5px
+          height: 24px
+
+      &__popularity
+        margin-left: 50px
+        padding-right: 10px
+
+        svg
+          width: 17.5px
+          height: 24px
