@@ -1,21 +1,85 @@
-import React, {FunctionComponent} from 'react';
-import Tag from '../../../ui/tag/tag';
+import React, { FunctionComponent, useEffect, useState } from 'react';
+import BlockFriends from '../components/block-friends/block-friends';
+import ButtonTheme from '../../../ui/button-theme/button-theme';
+
+import friend1 from '@images/friend1.jpg';
+import friend2 from '@images/friend2.jpg';
+import friend3 from '@images/friend3.jpg';
+import friend4 from '@images/friend4.jpg';
+
+import './sidebar-view.sass';
 
 interface SidebarProps {
    className?: string
 }
 
+const friends = [
+    {
+        id: 1,
+        url: 'some/page',
+        name: 'Rachel Green'
+    },
+    {
+        id: 2,
+        url: 'some/page',
+        src: `${friend3}`,
+        name: 'Monica Geller'
+    },
+    {
+        id: 3,
+        url: 'some/page',
+        src: `${friend2}`,
+        name: 'Chandler Bing'
+    },
+    {
+        id: 4,
+        url: 'some/page',
+        src: `${friend1}`,
+        name: 'Joey Tribbiani'
+    },
+    {
+        id: 5,
+        url: 'some/page',
+        name: 'Ross Geller'
+    },
+    {
+        id: 6,
+        url: 'some/page',
+        src: `${friend4}`,
+        name: 'Phoebe Buffay'
+    }
+]
+
 const Sidebar: FunctionComponent<SidebarProps> = ({
    className
 }): JSX.Element => {
-   return (
-       <div className={`${className ? className + " sidebar" : "sidebar"}`}>
+    const [ww, setWW] = useState(window.innerWidth);
+    const [wh, setWH] = useState(window.innerHeight);
+    const breakpoint = 768;
+    const condition = ww > breakpoint && ww > wh;
+    useEffect(() => {
+        window.addEventListener("resize", () => {
+            setWW(window.innerWidth);
+            setWH(window.innerHeight);
+        });
+    }, []);
+    let socialsHeight;
+    if (condition) socialsHeight = wh - 126;
 
-           <Tag text={'Tag'}/>
-
-
-       </div>
-   )
+    return (
+        <div className={`${className ? className + " sidebar" : "sidebar"}`}
+             style={{height: socialsHeight}}>
+            <div className="socials">
+                <BlockFriends friends={friends} />
+                <ButtonTheme
+                    text="find friends"
+                    isDisabled={false}
+                    onClick={() => {
+                        console.log("theme was clicked")}}
+                />
+            </div>
+        </div>
+    )
 };
 
 export default Sidebar;

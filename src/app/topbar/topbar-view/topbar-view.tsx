@@ -13,7 +13,7 @@ const Topbar: FunctionComponent<TopbarProps> = ({
     className
 }): JSX.Element => {
     return (
-        <div className={`${className ? className + " topbar" : "topbar"}`}>
+        <div id="topbar" className={`${className ? className + " topbar" : "topbar"}`}>
             <TopbarNav className="topbar__page-flows"
                        onClickPrev={() => {console.log('prev was clicked')}}
                        onClickNext={() => {console.log('next was clicked')}}

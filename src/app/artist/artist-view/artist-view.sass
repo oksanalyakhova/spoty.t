@@ -3,9 +3,22 @@
 .artist
   display: grid
   grid-template-columns: 1fr
-  grid-template-rows: 1fr 60px auto
+  grid-template-rows: 260px 60px auto
+  overflow-y: auto
+  scrollbar-color: $c-light-black transparent // firefox
   +r(522)
     grid-template-rows: 1fr 114px auto
+
+  // webkit
+  &::-webkit-scrollbar
+    width: 6px
+
+  &::-webkit-scrollbar-track
+    box-shadow: inset 0 0 6px transparent
+
+  &::-webkit-scrollbar-thumb
+    background: $c-light-black
+    border-radius: 15px
 
   &__header
     grid-column: 1/2

@@ -6,13 +6,6 @@ import './block-albums.sass';
 import ButtonTheme from "../../../../ui/button-theme/button-theme";
 import ButtonMore from "../../../../ui/button-more/button-more";
 
-interface AlbumsProps {
-    id: string | number;
-    src: string;
-    year: string;
-    name: string;
-}
-
 interface CardAlbumsProps {
     id: string | number;
     title: string;
@@ -24,7 +17,12 @@ interface CardAlbumsProps {
 }
 
 interface BlockAlbumsProps {
-    album: AlbumsProps,
+    album: {
+        id: string | number;
+        src: string;
+        year: string;
+        name: string;
+    },
     tracks: Array<CardAlbumsProps>
 }
 
