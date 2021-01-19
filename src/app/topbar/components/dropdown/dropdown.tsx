@@ -3,16 +3,21 @@ import { IoChevronDownSharp } from 'react-icons/all';
 
 import './dropdown.sass';
 
+interface DropdownItemProps {
+    id: string | number;
+    url: string;
+    text: string;
+}
+
 interface DropdownProps {
-    items: any,
+    items: Array<DropdownItemProps>,
 }
 
 const Dropdown: FunctionComponent<DropdownProps> = ({
     items
 }): JSX.Element => {
-    const listItems = items.map((item: { url: string | undefined; text: React.ReactNode; },
-                                 index: string | number | null | undefined) =>
-        <li key={index} className="list__item">
+    const listItems = items.map((item) =>
+        <li key={item.id} className="list__item">
             <a href={item.url}>
                 {item.text}
             </a>

@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { IoPlaySharp } from 'react-icons/io5';
+import { IoPlaySharp, IoPauseSharp } from 'react-icons/io5';
 
 import './button-play.sass';
 
@@ -20,9 +20,12 @@ const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
         <button
             type="button"
             className={`${className? className + " button button-play" : "button button-play"} 
-        ${isActive ? "is-active" : ""}`}
+                ${isActive ? "is-active" : ""}`}
             onClick={(e) => onClick(e)}>
-            <IoPlaySharp />
+            {isActive === false
+                ? <IoPlaySharp />
+                : <IoPauseSharp />
+            }
             <div className="button__top button-play__top">
                 {text}
             </div>

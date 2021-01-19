@@ -1,0 +1,110 @@
+@import "../../../../assets/styles/setup"
+
+.artist
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+  &__header
+    position: relative
+    z-index: 1
+    height: 320px
+    display: flex
+    flex-flow: row wrap
+    justify-content: space-between
+    align-items: flex-end
+    border-bottom: 1px solid $c-light-black
+    overflow: hidden
+    +r(522)
+      height: auto
+      flex-flow: column wrap
+
+  &__bg
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    width: 100%
+    height: 100%
+    opacity: .15
+
+  .info
+    z-index: 1
+    margin-top: 78px
+    padding: 15px
+    width: 80%
+    display: flex
+    flex-flow: row wrap
+    align-items: flex-end
+    +r(522)
+      margin-top: 0
+      width: 100%
+      flex-flow: column wrap
+      align-items: center
+      text-align: center
+
+    &__img
+      position: relative
+      margin-right: 15px
+      width: 150px
+      height: 150px
+      +r(522)
+        margin-right: 0
+
+      img
+        border-radius: 50%
+
+      .icon-verified
+        position: absolute
+        bottom: 5px
+        right: 25px
+        z-index: 1
+        width: 20px
+        height: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        color: $c-white
+        background-color: $c-blue
+        border-radius: 50%
+        overflow: hidden
+
+    &__type
+      font-size: 11px
+      letter-spacing: 1px
+      text-transform: uppercase
+      color: $c-grey
+      +r(522)
+        margin-top: 10px
+
+    &__name
+      padding: 0 0 10px 0
+      font-weight: 100
+      font-size: 36px
+      color: $c-white
+
+    &__actions
+      display: flex
+      flex-flow: row wrap
+
+      & > *
+        margin-right: 10px
+
+  .listeners
+    z-index: 1
+    padding: 15px
+    width: 20%
+    font-weight: 300
+    font-size: 16px
+    letter-spacing: 1px
+    text-align: right
+    color: $c-grey
+    +r(522)
+      width: 100%
+      text-align: center
+
+    &__label
+      font-weight: 400
+      font-size: 12px
+      text-transform: uppercase

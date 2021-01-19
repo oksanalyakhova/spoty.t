@@ -13,18 +13,22 @@ interface UserProps {
 const userName = 'Adam Lowenthal';
 const dropdownItems = [
     {
+        id: 1,
         url: "#",
         text: "Private Session",
     },
     {
+        id: 2,
         url: "#",
         text: "Account",
     },
     {
+        id: 3,
         url: "#",
         text: "Settings",
     },
     {
+        id: 4,
         url: "#",
         text: "Log Out",
     },

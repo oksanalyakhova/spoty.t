@@ -1,0 +1,42 @@
+@import "../../../../assets/styles/setup"
+
+.related-artist
+  &__img
+    overflow: hidden
+
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  $this: &
+  &.is-small
+    margin-bottom: 2px
+    padding: 5px
+    display: flex
+    align-items: center
+    background-color: $c-light-black
+    +r(1024)
+      margin: 10px
+      width: calc((100% / 3) - 20px)
+    +r(768)
+      margin: 5px
+      width: calc((100% / 2) - 10px)
+    +r(480)
+      margin: 5px
+      width: 20%
+      background-color: transparent
+
+    span
+      display: block
+
+    #{$this}__img
+      width: 42px
+      height: 42px
+      border-radius: 50%
+
+    #{$this}__name
+      margin-left: 15px
+      color: $c-white
+      +r(480)
+        display: none

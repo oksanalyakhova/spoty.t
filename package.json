@@ -6,6 +6,7 @@
     "@babel/preset-react": "^7.12.10",
     "@craco/craco": "^6.0.0",
     "@reach/slider": "^0.12.1",
+    "@reach/tabs": "^0.12.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.6.0",

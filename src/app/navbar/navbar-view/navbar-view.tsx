@@ -11,7 +11,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
 }): JSX.Element => {
     return (
         <div className={className? `${className} navbar` : `navbar`}>
-
+            navbar
         </div>
     )
 };
