@@ -13,7 +13,7 @@ const Main: FunctionComponent<MainProps> = ({
     className
 }): JSX.Element => {
     return (
-        <div className={`${className ? className + " main" : "main"}`}>
+        <div className={`${className ? className + " main-nav" : "main"}`}>
             <Navbar className="app__navbar" />
             <Artist className="app__artist" />
             <Sidebar className="app__sidebar" />

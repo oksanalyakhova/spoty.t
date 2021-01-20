@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const YourMusic = () => (
-    <div>YourMusic</div>
-);
+import './your-music.sass';
+
+interface YourMusicProps {
+    className?: string
+}
+
+const YourMusic: FunctionComponent<YourMusicProps> = ({
+    className
+}): JSX.Element => {
+    return (
+        <div className={className? `${className} your-music` : `your-music`}>
+
+        </div>
+    )
+};
 
 export default YourMusic;

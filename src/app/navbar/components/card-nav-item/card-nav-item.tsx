@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const CardNavItem = () => (
-    <div>CardNavItem</div>
-);
+import './card-nav-item.sass';
+
+interface CardNavItemProps {
+    className?: string
+}
+
+const CardNavItem: FunctionComponent<CardNavItemProps> = ({
+    className
+}): JSX.Element => {
+    return (
+        <div className={className? `${className} card-nav` : `card-nav`}>
+
+        </div>
+    )
+};
 
 export default CardNavItem;

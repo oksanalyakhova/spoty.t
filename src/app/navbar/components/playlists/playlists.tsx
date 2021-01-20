@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
-const Playlist = () => (
-    <div>Playlist</div>
-);
+import './playlists.sass';
 
-export default Playlist;
+interface PlaylistsProps {
+    className?: string
+}
+
+const Playlists: FunctionComponent<PlaylistsProps> = ({
+    className
+}): JSX.Element => {
+    return (
+        <div className={className? `${className} playlists` : `playlists`}>
+
+        </div>
+    )
+};
+
+export default Playlists;

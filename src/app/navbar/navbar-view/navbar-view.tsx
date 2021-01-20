@@ -1,4 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import Accordion from '../components/accordion/accordion';
+import AddPlaylist from '../components/add-playlist/add-playlist';
+import Playing from '../components/playing/playing';
 
 import './navbar-view.sass';
 
@@ -11,7 +14,9 @@ const Navbar: FunctionComponent<NavbarProps> = ({
 }): JSX.Element => {
     return (
         <div className={className? `${className} navbar` : `navbar`}>
-            navbar
+            <Accordion />
+            <AddPlaylist />
+            <Playing />
         </div>
     )
 };
