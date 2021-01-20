@@ -1,13 +1,8 @@
 @import "../../../assets/styles/setup"
 
 .artist
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: 260px 60px auto
   overflow-y: auto
   scrollbar-color: $c-light-black transparent // firefox
-  +r(522)
-    grid-template-rows: 1fr 114px auto
 
   // webkit
   &::-webkit-scrollbar
@@ -19,6 +14,13 @@
   &::-webkit-scrollbar-thumb
     background: $c-light-black
     border-radius: 15px
+
+  &__wrapper
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: 260px 60px auto
+    +r(522)
+      grid-template-rows: 1fr 114px auto
 
   &__header
     grid-column: 1/2

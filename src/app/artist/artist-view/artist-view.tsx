@@ -327,50 +327,52 @@ const Artist: FunctionComponent<ArtistProps> = ({
         <div className={`${className? className + " artist" : "artist"} 
             ${isVerified ? "is-verified" : ""}`}
              style={{height: artistHeight}}>
-            <ArtistHeader
-                isVerified={isVerified}
-                artistBg={artistBg}
-                artistImg={artistImg}
-                artistType="Artist"
-                artistName="G-Eazy"
-                artistListenersCount="15,662,810"
-            />
-            <div className="artist__content">
-                <Tabs className="artist__tabs tabs">
-                    <div className="artist__navigation navigation">
-                        <TabList className="navigation__tabs-list tabs-list">
-                            <Tab className="tabs-list__item">
-                                <div className="label">Overview</div>
-                            </Tab>
-                            <Tab className="tabs-list__item">
-                                <div className="label">Related Artists</div>
-                            </Tab>
-                        </TabList>
-                        <div className="navigation__friends friends">
-                            {navFriends}
+            <div className="artist__wrapper">
+                <ArtistHeader
+                    isVerified={isVerified}
+                    artistBg={artistBg}
+                    artistImg={artistImg}
+                    artistType="Artist"
+                    artistName="G-Eazy"
+                    artistListenersCount="15,662,810"
+                />
+                <div className="artist__content">
+                    <Tabs className="artist__tabs tabs">
+                        <div className="artist__navigation navigation">
+                            <TabList className="navigation__tabs-list tabs-list">
+                                <Tab className="tabs-list__item">
+                                    <div className="label">Overview</div>
+                                </Tab>
+                                <Tab className="tabs-list__item">
+                                    <div className="label">Related Artists</div>
+                                </Tab>
+                            </TabList>
+                            <div className="navigation__friends friends">
+                                {navFriends}
+                            </div>
                         </div>
-                    </div>
-                    <TabPanels className="tabs__panels">
-                        <TabPanel>
-                            <TabOverview
-                                tracks={tracks}
-                                artists={artists}
-                                isCardArtistsSmall={true}
-                                forArtistsBlock={true}
-                                release={oneRelease}
-                                album={oneAlbum}
-                                albumTracks={albumTracks}
-                            />
-                        </TabPanel>
-                        <TabPanel>
-                            <TabRelatedArtists
-                                artists={artists}
-                                isCardArtistsSmall={false}
-                                forArtistsBlock={false}
-                            />
-                        </TabPanel>
-                    </TabPanels>
-                </Tabs>
+                        <TabPanels className="tabs__panels">
+                            <TabPanel>
+                                <TabOverview
+                                    tracks={tracks}
+                                    artists={artists}
+                                    isCardArtistsSmall={true}
+                                    forArtistsBlock={true}
+                                    release={oneRelease}
+                                    album={oneAlbum}
+                                    albumTracks={albumTracks}
+                                />
+                            </TabPanel>
+                            <TabPanel>
+                                <TabRelatedArtists
+                                    artists={artists}
+                                    isCardArtistsSmall={false}
+                                    forArtistsBlock={false}
+                                />
+                            </TabPanel>
+                        </TabPanels>
+                    </Tabs>
+                </div>
             </div>
         </div>
     )
