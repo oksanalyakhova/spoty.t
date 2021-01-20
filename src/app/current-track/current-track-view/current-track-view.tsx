@@ -1,6 +1,4 @@
 import React, { FunctionComponent } from 'react';
-// import Actions from '../components/actions/actions';
-// import Progress from '../components/progress/progress';
 import Player from '../components/player/player';
 
 import './current-track-view.sass';
@@ -15,13 +13,7 @@ const CurrentTrack: FunctionComponent<CurrentTrackProps> = ({
 
     return (
         <div className={`${className ? className + " current-track" : "current-track"}`}>
-            <Player />
-
-            {/*<Actions className="current-track__actions"*/}
-            {/*         onClickBackward={() => {console.log('backward was clicked')}}*/}
-            {/*         onClickPlay={() => {console.log('play was clicked')}}*/}
-            {/*         onClickForward={() => {console.log('forward was clicked')}} />*/}
-            {/*<Progress className="current-track__progress" />*/}
+            <Player className="current-track__player" />
         </div>
     )
 };
