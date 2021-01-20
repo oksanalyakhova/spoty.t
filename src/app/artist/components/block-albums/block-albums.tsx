@@ -1,10 +1,10 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import CardAlbums from '../card-albums/card-albums';
 import { IoStopwatchOutline, IoThumbsUpSharp } from 'react-icons/io5';
+import ButtonTheme from '../../../../ui/button-theme/button-theme';
+import ButtonMore from '../../../../ui/button-more/button-more';
 
 import './block-albums.sass';
-import ButtonTheme from "../../../../ui/button-theme/button-theme";
-import ButtonMore from "../../../../ui/button-more/button-more";
 
 interface CardAlbumsProps {
     id: string | number;
