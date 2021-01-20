@@ -3,8 +3,9 @@ import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import {
     BiRefresh,
     IoPlaySharp,
-    IoPlaySkipBackSharp,
-    IoPlaySkipForwardSharp,
+    IoPauseSharp,
+    BiSkipPrevious,
+    BiSkipNext,
     IoVolumeHighSharp,
     IoVolumeMuteSharp,
     IoMdMenu,
@@ -25,26 +26,26 @@ const Player: FunctionComponent<PlayerProps> = ({
     const lyrics =  <button
         type="button"
         className="button button-lyrics">
-        <span>Lyrics</span>
+        <span className="name">Lyrics</span>
     </button>
 
     const nav =  <button
         type="button"
         className="button button-playlist-nav">
-        <IoMdMenu />
+        <span className="icon"><IoMdMenu /></span>
     </button>
 
     const shuffle = <button
         type="button"
         className="button button-shuffle">
-        <TiArrowShuffle />
+        <span className="icon"><TiArrowShuffle /></span>
     </button>
 
     const devices = <button
         type="button"
         className="button button-shuffle">
-        <IoIosPhonePortrait />
-        <span>Devices Available</span>
+        <span className="icon"><IoIosPhonePortrait /></span>
+        <span className="name">Devices Available</span>
     </button>
 
     return (
@@ -56,12 +57,13 @@ const Player: FunctionComponent<PlayerProps> = ({
                 src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wwy.mp3"
                 onPlay={e => console.log("onPlay")}
                 customIcons={{
-                    play: <IoPlaySharp/>,
-                    next: <IoPlaySkipForwardSharp/>,
-                    previous: <IoPlaySkipBackSharp/>,
-                    loopOff: <BiRefresh/>,
-                    volume: <IoVolumeHighSharp/>,
-                    volumeMute: <IoVolumeMuteSharp/>
+                    play: <IoPlaySharp />,
+                    pause: <IoPauseSharp />,
+                    next: <BiSkipNext />,
+                    previous: <BiSkipPrevious />,
+                    loopOff: <BiRefresh />,
+                    volume: <IoVolumeHighSharp />,
+                    volumeMute: <IoVolumeMuteSharp />
                 }}
                 customAdditionalControls={[
                     lyrics,
