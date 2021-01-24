@@ -3,13 +3,15 @@ import { IoPlaySharp } from 'react-icons/io5';
 
 import './card-related-artists.sass';
 
+interface CardRelatedArtistsHelpsProps {
+  id: string | number;
+  url: string;
+  src: string;
+  name: string;
+}
+
 interface CardRelatedArtistsProps {
-    artist: {
-        id: string | number;
-        url: string;
-        src: string;
-        name: string;
-    },
+    artist: CardRelatedArtistsHelpsProps,
     isSmall: boolean;
 }
 

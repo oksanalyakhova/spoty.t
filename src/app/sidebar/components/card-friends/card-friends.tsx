@@ -3,13 +3,15 @@ import { MdPerson } from 'react-icons/md';
 
 import './card-friends.sass';
 
+interface CardFriendsHekpsProps {
+  id: string | number;
+  url: string;
+  src?: string;
+  name: string;
+}
+
 interface CardFriendsProps {
-    friend: {
-        id: string | number;
-        url: string;
-        src?: string;
-        name: string;
-    }
+    friend: CardFriendsHekpsProps
 }
 
 const CardFriends: FunctionComponent<CardFriendsProps> = ({

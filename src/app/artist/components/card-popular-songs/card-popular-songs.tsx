@@ -1,19 +1,22 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../../AppContext';
 import Tag from '../../../../ui/tag/tag';
 import { IoCheckmarkSharp, IoAddSharp } from 'react-icons/io5';
 
 import './card-popular-songs.sass';
 
+interface CardPopularSongsHelpsProps {
+  id?: string | number;
+  src?: string;
+  title?: string;
+  isAdded?: boolean;
+  explicit?: string;
+  plays?: string;
+}
+
 interface CardPopularSongsProps {
     className?: string,
-    track: {
-        id?: string | number;
-        src?: string;
-        title?: string;
-        isAdded?: boolean;
-        explicit?: string;
-        plays?: string;
-    },
+    track: CardPopularSongsHelpsProps,
     index: number
 }
 
@@ -22,11 +25,9 @@ const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
     track,
     index
 }): JSX.Element => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const myContext = useContext(AppContext);
     const breakpoint = 1200;
-    useEffect(() => {
-        window.addEventListener("resize", () => setWidth(window.innerWidth));
-    }, []);
+    const condition = myContext.windowWidth > breakpoint;
 
     return (
         <div className={`${className ? className + " track" : "track"}`}>
@@ -45,7 +46,7 @@ const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
             <div className="track__title">
                 {track.title}
             </div>
-            {width > breakpoint
+            {condition
                 ? <div className="track__explicit"><Tag text={track.explicit} /></div>
                 : null
             }

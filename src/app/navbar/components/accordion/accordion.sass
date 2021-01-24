@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/setup"
+
+.accordion
+	margin-bottom: 15px
+	display: flex
+	flex-flow: column wrap
+
+	+r(768)
+		margin-bottom: 0
+		width: calc( 100% / 3 )
+		text-align: center
+
+	&__header
+		margin-bottom: 5px
+		display: flex
+		align-items: center
+		font-size: 11px
+		letter-spacing: 1px
+		text-transform: uppercase
+		cursor: pointer
+
+		+r(768)
+			justify-content: center
+
+		&:hover
+			color: $c-white
+
+		&.is-active
+			.svg
+				transform: rotate(180deg)
+
+
+
+		svg
+			margin: 0 3px
+			width: 13px
+			height: 13px
+			color: $c-grey
+			+trans

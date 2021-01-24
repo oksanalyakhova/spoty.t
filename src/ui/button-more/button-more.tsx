@@ -10,14 +10,14 @@ interface ButtonMoreProps {
 }
 
 const ButtonMore: FunctionComponent<ButtonMoreProps> = ({
-                                                            isActive,
+    isActive,
     className,
     onClick,
 }): JSX.Element => {
     return (
         <button
             type='button'
-            className={`${className? className + " button button-more" : "button button-more"} 
+            className={`${className? className + " button button-more" : "button button-more"}
         ${isActive ? "is-active" : ""}`}
             onClick={(e) => onClick(e)}>
                 <IoEllipsisHorizontal />

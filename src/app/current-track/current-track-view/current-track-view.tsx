@@ -10,7 +10,6 @@ interface CurrentTrackProps {
 const CurrentTrack: FunctionComponent<CurrentTrackProps> = ({
     className,
 }): JSX.Element => {
-
     return (
         <div className={`${className ? className + " current-track" : "current-track"}`}>
             <Player className="current-track__player" />

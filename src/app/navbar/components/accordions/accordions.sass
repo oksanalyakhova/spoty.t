@@ -1,0 +1,24 @@
+@import "../../../../assets/styles/setup"
+
+.accordions
+	padding: 15px
+	overflow-y: auto
+	color: $c-grey
+	background-color: $c-light-black
+	scrollbar-color: $c-grey-tag transparent // firefox
+
+	// webkit
+	&::-webkit-scrollbar
+		width: 6px
+
+	&::-webkit-scrollbar-track
+		box-shadow: inset 0 0 6px transparent
+
+	&::-webkit-scrollbar-thumb
+		background: $c-grey-tag
+		border-radius: 15px
+
+	+r(768)
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-around

@@ -1,18 +1,45 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../../AppContext';
+import { IoMusicalNotesSharp } from 'react-icons/all';
 
 import './card-nav-item.sass';
 
+interface CardNavItemHelpsProps {
+  id: string | number;
+  url: string;
+  icon?: JSX.Element;
+  name: string;
+}
+
 interface CardNavItemProps {
-    className?: string
+    className?: string,
+    navItem: CardNavItemHelpsProps
 }
 
 const CardNavItem: FunctionComponent<CardNavItemProps> = ({
-    className
+    className,
+    navItem
 }): JSX.Element => {
-    return (
-        <div className={className? `${className} card-nav` : `card-nav`}>
+    const myContext = useContext(AppContext);
+    const breakpoint = 768;
+    const condition = myContext.windowWidth > breakpoint;
 
-        </div>
+    return (
+        <a href={navItem.url} className={className? `${className} card-nav` : `card-nav`}>
+          {condition
+            ? <span className="icon">
+              {
+                navItem.icon
+                  ? navItem.icon
+                  : <IoMusicalNotesSharp />
+              }
+            </span>
+            : null
+          }
+          <span className="name">
+            {navItem.name}
+          </span>
+        </a>
     )
 };
 

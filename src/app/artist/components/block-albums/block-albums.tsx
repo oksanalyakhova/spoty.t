@@ -1,4 +1,5 @@
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../../AppContext';
 import CardAlbums from '../card-albums/card-albums';
 import { IoStopwatchOutline, IoThumbsUpSharp } from 'react-icons/io5';
 import ButtonTheme from '../../../../ui/button-theme/button-theme';
@@ -16,13 +17,15 @@ interface CardAlbumsProps {
     isTrend: boolean;
 }
 
+interface BlockAlbumsHelpsProps {
+  id: string | number;
+  src: string;
+  year: string;
+  name: string;
+}
+
 interface BlockAlbumsProps {
-    album: {
-        id: string | number;
-        src: string;
-        year: string;
-        name: string;
-    },
+    album: BlockAlbumsHelpsProps,
     tracks: Array<CardAlbumsProps>
 }
 
@@ -39,11 +42,9 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
         />
     );
 
-    const [width, setWidth] = useState(window.innerWidth);
+    const myContext = useContext(AppContext);
     const breakpoint = 1200;
-    useEffect(() => {
-        window.addEventListener("resize", () => setWidth(window.innerWidth));
-    }, []);
+    const condition = myContext.windowWidth > breakpoint;
 
     return (
         <div className="album">
@@ -82,7 +83,7 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
                     <div className="tracks__heading__length">
                         <IoStopwatchOutline />
                     </div>
-                    {width > breakpoint
+                    {condition
                         ? <div className="tracks__heading__popularity">
                             <IoThumbsUpSharp />
                           </div>

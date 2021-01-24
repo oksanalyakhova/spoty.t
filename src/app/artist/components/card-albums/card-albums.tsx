@@ -1,20 +1,28 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent, useContext } from 'react';
+import AppContext from '../../../../AppContext';
 import Tag from '../../../../ui/tag/tag';
-import { IoCheckmarkSharp, IoAddSharp, IoTrendingDownSharp, IoTrendingUpSharp } from 'react-icons/io5';
+import {
+  IoCheckmarkSharp,
+  IoAddSharp,
+  IoTrendingDownSharp,
+  IoTrendingUpSharp
+} from 'react-icons/io5';
 
 import './card-albums.sass';
 
+interface CardAlbumsHelpsProps {
+  id: string | number;
+  title: string;
+  featured?: string;
+  isAdded: boolean;
+  explicit: string;
+  length: string;
+  isTrend: boolean;
+}
+
 interface CardAlbumsProps {
     className?: string,
-    track: {
-        id: string | number;
-        title: string;
-        featured?: string;
-        isAdded: boolean;
-        explicit: string;
-        length: string;
-        isTrend: boolean;
-    },
+    track: CardAlbumsHelpsProps,
     index: number
 }
 
@@ -23,11 +31,9 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
     track,
     index
 }): JSX.Element => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const myContext = useContext(AppContext);
     const breakpoint = 1200;
-    useEffect(() => {
-        window.addEventListener("resize", () => setWidth(window.innerWidth));
-    }, []);
+    const condition = myContext.windowWidth > breakpoint;
 
     return (
         <div className={`${className ? className + " track" : "track"}`}>
@@ -47,14 +53,14 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
                     : null
                 }
             </div>
-            {width > breakpoint
+            {condition
                 ? <div className="track__explicit"><Tag text={track.explicit} /></div>
                 : null
             }
             <div className="track__length">
                 {track.length}
             </div>
-            {width > breakpoint
+            {condition
                 ?   <div className="track__popularity">
                         {!track.isTrend
                             ? <IoTrendingDownSharp />

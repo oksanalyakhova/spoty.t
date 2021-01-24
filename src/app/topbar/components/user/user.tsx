@@ -2,40 +2,30 @@ import React, { FunctionComponent } from 'react';
 import Notifications from '../notifications/notifications';
 import Dropdown from '../dropdown/dropdown';
 import Inbox from '../inbox/inbox';
-import userImg from '@images/user.jpg';
 
 import './user.sass';
 
-interface UserProps {
-    className?: string
+interface UserHelpsProps {
+  name: string;
+  src: string;
 }
 
-const userName = 'Adam Lowenthal';
-const dropdownItems = [
-    {
-        id: 1,
-        url: "#",
-        text: "Private Session",
-    },
-    {
-        id: 2,
-        url: "#",
-        text: "Account",
-    },
-    {
-        id: 3,
-        url: "#",
-        text: "Settings",
-    },
-    {
-        id: 4,
-        url: "#",
-        text: "Log Out",
-    },
-];
+interface UserMenuProps {
+  id: string | number;
+  url: string;
+  text: string;
+}
+
+interface UserProps {
+    className?: string;
+    user: UserHelpsProps;
+    dropdownItems: Array<UserMenuProps>
+}
 
 const User: FunctionComponent<UserProps> = ({
-    className
+    className,
+    user,
+    dropdownItems
 }): JSX.Element => {
     return (
         <div className={`${className ? className + " user" : "user"}`}>
@@ -43,10 +33,10 @@ const User: FunctionComponent<UserProps> = ({
             <Inbox className="user__inbox" />
             <div className="user__info info">
                 <div className="info__img">
-                    <img src={userImg} alt={userName} />
+                    <img src={user.src} alt={user.name} />
                 </div>
                 <div className="info__name">
-                    {userName}
+                    {user.name}
                 </div>
             </div>
             <div className="user__actions">

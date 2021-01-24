@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93674ce9-81c4-43cc-ab49-b08906c1e74e" name="Default Changelist" comment="finished add playlist for desktop" />
+    <list default="true" id="93674ce9-81c4-43cc-ab49-b08906c1e74e" name="Default Changelist" comment="finished add playlist for desktop">
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/components/block-albums/block-albums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/block-albums/block-albums.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-related-artists/card-related-artists.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-related-artists/card-related-artists.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/current-track/current-track-view/current-track-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/current-track/current-track-view/current-track-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/accordion/accordion.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/accordion/accordion.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/accordion/accordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/accordion/accordion.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/add-playlist/add-playlist.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/add-playlist/add-playlist.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/main-nav/main-nav.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/accordions/accordions.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/main-nav/main-nav.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/playing/playing.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/playing/playing.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/playing/playing.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/playing/playing.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/playlists/playlists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/accordions/accordions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/playlists/playlists.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/your-music/your-music.sass" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/your-music/your-music.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/navbar-view/navbar-view.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/navbar-view/navbar-view.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/navbar/navbar-view/navbar-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/navbar-view/navbar-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sidebar/components/card-friends/card-friends.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/components/card-friends/card-friends.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sidebar/sidebar-view/sidebar-view.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/sidebar-view/sidebar-view.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/sidebar/sidebar-view/sidebar-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/sidebar/sidebar-view/sidebar-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/topbar/components/user/user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/topbar/components/user/user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/topbar/topbar-view/topbar-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/topbar/topbar-view/topbar-view.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ui/button-more/button-more.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-more/button-more.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +135,10 @@
       <workItem from="1610638495878" duration="1722000" />
       <workItem from="1610650922701" duration="45281000" />
       <workItem from="1610796914474" duration="87270000" />
-      <workItem from="1611083900797" duration="17813000" />
+      <workItem from="1611083900797" duration="18276000" />
+      <workItem from="1611143572346" duration="7000" />
+      <workItem from="1611174148610" duration="200000" />
+      <workItem from="1611394345608" duration="15258000" />
     </task>
     <task id="LOCAL-00001" summary="updated tsx files wth default code">
       <created>1610697677051</created>
