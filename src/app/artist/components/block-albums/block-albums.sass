@@ -1,80 +1,81 @@
 @import "../../../../assets/styles/setup"
 
 .album
-  $this: &
-  &__info
-    margin-bottom: 15px
-    display: flex
-    flex-flow: row wrap
+	$this: &
 
-    &__art
-      width: 135px
-      height: 135px
+	&__info
+		margin-bottom: 15px
+		display: flex
+		flex-flow: row wrap
 
-      img
-        width: 100%
-        height: 100%
-        object-fit: cover
+		&__art
+			width: 135px
+			height: 135px
 
-    &__meta
-      margin-left: 15px
-      width: calc(100% - 150px)
-      display: flex
-      flex-flow: column wrap
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
 
-      #{$this}__year
-        letter-spacing: 1px
-        color: $c-grey
+		&__meta
+			margin-left: 15px
+			width: calc(100% - 150px)
+			display: flex
+			flex-flow: column wrap
 
-      #{$this}__name
-        font-weight: 300
-        font-size: 30px
-        color: $c-white
+			#{$this}__year
+				letter-spacing: 1px
+				color: $c-grey
 
-      #{$this}__actions
-        margin-top: auto
-        display: flex
+			#{$this}__name
+				font-weight: 300
+				font-size: 30px
+				color: $c-white
 
-        & > * + *
-          margin: 0 0 0 10px
+			#{$this}__actions
+				margin-top: auto
+				display: flex
 
-        .button
-          &__top,
-          &__bottom
-            padding-left: 30px
-            padding-right: 30px
+				& > * + *
+					margin: 0 0 0 10px
 
-  .tracks
-    &__heading
-      height: 42px
-      display: flex
-      flex-flow: row wrap
-      align-items: center
-      color: $c-grey
+				.button
+					&__top,
+					&__bottom
+						padding-left: 30px
+						padding-right: 30px
 
-      &__number
-        margin-left: 10px
-        font-style: italic
+	.tracks
+		&__heading
+			height: 42px
+			display: flex
+			flex-flow: row wrap
+			align-items: center
+			color: $c-grey
 
-      &__title
-        margin-left: 75px
-        width: 45%
-        letter-spacing: 1px
-        text-transform: uppercase
+			&__number
+				margin-left: 10px
+				font-style: italic
 
-      &__length
-        margin-left: auto
-        +r(1200)
-          margin-right: 5px
+			&__title
+				margin-left: 75px
+				width: 45%
+				letter-spacing: 1px
+				text-transform: uppercase
 
-        svg
-          width: 20.5px
-          height: 24px
+			&__length
+				margin-left: auto
+				+r(1200)
+					margin-right: 5px
 
-      &__popularity
-        margin-left: 50px
-        padding-right: 10px
+				svg
+					width: 20.5px
+					height: 24px
 
-        svg
-          width: 17.5px
-          height: 24px
+			&__popularity
+				margin-left: 50px
+				padding-right: 10px
+
+				svg
+					width: 17.5px
+					height: 24px

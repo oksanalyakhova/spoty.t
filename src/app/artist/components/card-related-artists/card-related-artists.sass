@@ -1,78 +1,79 @@
 @import "../../../../assets/styles/setup"
 
 .related-artist
-  &__img
-    overflow: hidden
+	&__img
+		overflow: hidden
 
-    img
-      width: 100%
-      height: 100%
-      object-fit: cover
+		img
+			width: 100%
+			height: 100%
+			object-fit: cover
 
-  $this: &
-  &.is-small
-    margin-bottom: 2px
-    padding: 5px
-    display: flex
-    align-items: center
-    background-color: $c-light-black
-    +r(1024)
-      margin: 10px
-      width: calc((100% / 3) - 20px)
-    +r(768)
-      margin: 5px
-      width: calc((100% / 2) - 10px)
-    +r(480)
-      margin: 5px
-      width: 20%
-      background-color: transparent
+	$this: &
 
-    span
-      display: block
+	&.is-small
+		margin-bottom: 2px
+		padding: 5px
+		display: flex
+		align-items: center
+		background-color: $c-light-black
+		+r(1024)
+			margin: 10px
+			width: calc((100% / 3) - 20px)
+		+r(768)
+			margin: 5px
+			width: calc((100% / 2) - 10px)
+		+r(480)
+			margin: 5px
+			width: 20%
+			background-color: transparent
 
-    #{$this}__img
-      width: 42px
-      height: 42px
-      border-radius: 50%
+		span
+			display: block
 
-    #{$this}__name
-      margin-left: 15px
-      color: $c-white
-      +r(480)
-        display: none
+		#{$this}__img
+			width: 42px
+			height: 42px
+			border-radius: 50%
 
-  &.is-large
-    margin: 15px
-    width: calc((100% / 4) - 30px)
-    +r(1100)
-      width: calc((100% / 3) - 30px)
-    +r(768)
-      width: calc((100% / 2) - 30px)
-    +r(480)
-      margin: 15px 0
-      width: 100%
+		#{$this}__name
+			margin-left: 15px
+			color: $c-white
+			+r(480)
+				display: none
 
-    #{$this}__img
-      position: relative
-      height: 200px
-      display: flex
-      align-items: center
+	&.is-large
+		margin: 15px
+		width: calc((100% / 4) - 30px)
+		+r(1100)
+			width: calc((100% / 3) - 30px)
+		+r(768)
+			width: calc((100% / 2) - 30px)
+		+r(480)
+			margin: 15px 0
+			width: 100%
 
-      &:hover
-        svg
-          opacity: 1
+		#{$this}__img
+			position: relative
+			height: 200px
+			display: flex
+			align-items: center
 
-      svg
-        +center(both)
-        width: 62px
-        height: 62px
-        color: $c-white
-        filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))
-        opacity: 0
-        +trans(opacity, .5s, ease)
+			&:hover
+				svg
+					opacity: 1
 
-    #{$this}__name
-      display: block
-      padding: 15px
-      color: $c-white
-      background-color: $c-light-black
+			svg
+				+center(both)
+				width: 62px
+				height: 62px
+				color: $c-white
+				filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7))
+				opacity: 0
+				+trans(opacity, .5s, ease)
+
+		#{$this}__name
+			display: block
+			padding: 15px
+			color: $c-white
+			background-color: $c-light-black

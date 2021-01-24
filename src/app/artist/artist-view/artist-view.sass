@@ -1,88 +1,90 @@
 @import "../../../assets/styles/setup"
 
 .artist
-  overflow-y: auto
-  scrollbar-color: $c-grey-tag transparent // firefox
+	overflow-y: auto
+	scrollbar-color: $c-grey-tag transparent
+	// firefox
 
-  // webkit
-  &::-webkit-scrollbar
-    width: 6px
+	// webkit
+	&::-webkit-scrollbar
+		width: 6px
 
-  &::-webkit-scrollbar-track
-    box-shadow: inset 0 0 6px transparent
+	&::-webkit-scrollbar-track
+		box-shadow: inset 0 0 6px transparent
 
-  &::-webkit-scrollbar-thumb
-    background: $c-grey-tag
-    border-radius: 15px
+	&::-webkit-scrollbar-thumb
+		background: $c-grey-tag
+		border-radius: 15px
 
-  &__wrapper
-    display: grid
-    grid-template-columns: 1fr
-    grid-template-rows: 260px 60px auto
-    +r(522)
-      grid-template-rows: 1fr 114px auto
+	&__wrapper
+		display: grid
+		grid-template-columns: 1fr
+		grid-template-rows: 260px 60px auto
+		+r(522)
+			grid-template-rows: 1fr 114px auto
 
-  &__header
-    grid-column: 1/2
-    grid-row: 1/3
-    padding-bottom: 60px
-    +r(522)
-      padding-bottom: 114px
+	&__header
+		grid-column: 1/2
+		grid-row: 1/3
+		padding-bottom: 60px
+		+r(522)
+			padding-bottom: 114px
 
-  &__content
-    grid-column: 1/2
-    grid-row: 2/4
-    z-index: 2
+	&__content
+		grid-column: 1/2
+		grid-row: 2/4
+		z-index: 2
 
-  .navigation
-    width: 100%
-    z-index: 1
-    display: flex
-    flex-flow: row wrap
-    justify-content: space-between
-    align-items: center
-    background-color: rgba(24, 24, 24, 0.6)
-    +r(522)
-      height: 114px
+	.navigation
+		width: 100%
+		z-index: 1
+		display: flex
+		flex-flow: row wrap
+		justify-content: space-between
+		align-items: center
+		background-color: rgba(24, 24, 24, 0.6)
+		+r(522)
+			height: 114px
 
-    .tabs-list
-      &__item
-        padding: 0 15px
-        border-bottom: none
+		.tabs-list
+			&__item
+				padding: 0 15px
+				border-bottom: none
 
-        &[data-selected]
-          .label
-            color: $c-white
-            border-bottom: 4px solid $c-green
+				&[data-selected]
+					.label
+						color: $c-white
+						border-bottom: 4px solid $c-green
 
-        .label
-          padding: 15px 0
-          text-transform: uppercase
-          letter-spacing: 1px
-          color: $c-grey
-          border-bottom: 4px solid transparent
-          cursor: pointer
-          +trans(all, .4s, ease)
+				.label
+					padding: 15px 0
+					text-transform: uppercase
+					letter-spacing: 1px
+					color: $c-grey
+					border-bottom: 4px solid transparent
+					cursor: pointer
+					+trans(all, .4s, ease)
 
-    &__friends
-      margin-left: auto
-      max-width: 40%
-      padding: 15px
-      display: flex
-      justify-content: flex-end
-      +r(522)
-        margin-left: 0
-        justify-content: flex-start
+		&__friends
+			margin-left: auto
+			max-width: 40%
+			padding: 15px
+			display: flex
+			justify-content: flex-end
+			+r(522)
+				margin-left: 0
+				justify-content: flex-start
 
-      & > * + *
-        margin: 0 0 0 5px
-      a
-        position: relative
-        width: 30px
-        height: 30px
-        border-radius: 50%
-        overflow: hidden
+			& > * + *
+				margin: 0 0 0 5px
 
-  .tabs
-    &__panels
-      padding: 15px
+			a
+				position: relative
+				width: 30px
+				height: 30px
+				border-radius: 50%
+				overflow: hidden
+
+	.tabs
+		&__panels
+			padding: 15px

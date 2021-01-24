@@ -1,58 +1,59 @@
 @import "../../../../assets/styles/setup"
 
 .track
-  $this: &
-  &_albums
-    +r(1200)
-      height: auto
-      padding: 10px 0
+	$this: &
 
-    #{$this}__number
-      flex: none
-      margin-left: 10px
-      width: 12px
-      color: $c-grey
+	&_albums
+		+r(1200)
+			height: auto
+			padding: 10px 0
 
-    #{$this}__added
-      flex: none
-      margin-left: 30px
-      width: 14px
-      display: flex
-      justify-content: center
-      align-items: center
-      color: $c-sand
+		#{$this}__number
+			flex: none
+			margin-left: 10px
+			width: 12px
+			color: $c-grey
 
-    #{$this}__title
-      margin: 0 10px 0 30px
-      width: 70%
-      display: flex
-      flex-flow: row wrap
-      color: $c-white
-      +r(1200)
-        margin: 0 30px
-        width: auto
+		#{$this}__added
+			flex: none
+			margin-left: 30px
+			width: 14px
+			display: flex
+			justify-content: center
+			align-items: center
+			color: $c-sand
 
-      &.featured
-        .title
-          &::after
-            content: "-"
-            margin: 0 5px
+		#{$this}__title
+			margin: 0 10px 0 30px
+			width: 70%
+			display: flex
+			flex-flow: row wrap
+			color: $c-white
+			+r(1200)
+				margin: 0 30px
+				width: auto
 
-      .feature
-        color: $c-grey
+			&.featured
+				.title
+					&::after
+						content: "-"
+						margin: 0 5px
 
-    #{$this}__explicit
-      margin-right: 10px
+			.feature
+				color: $c-grey
 
-    #{$this}__length
-      margin-left: auto
-      color: $c-grey
+		#{$this}__explicit
+			margin-right: 10px
 
-    #{$this}__popularity
-      margin-left: 46px
-      padding-right: 10px
-      color: $c-grey
+		#{$this}__length
+			margin-left: auto
+			color: $c-grey
 
-      svg
-        width: 17.5px
-        height: 24px
+		#{$this}__popularity
+			margin-left: 46px
+			padding-right: 10px
+			color: $c-grey
+
+			svg
+				width: 17.5px
+				height: 24px

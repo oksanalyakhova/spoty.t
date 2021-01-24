@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useContext} from 'react';
-import Accordion from '../accordion/accordion';import {
+import Accordion from '../accordion/accordion';
+import {
   IoIosBrowsers,
   ImUsers,
   IoRadio,
@@ -16,8 +17,8 @@ interface AccordionsProps {
 }
 
 const Accordions: FunctionComponent<AccordionsProps> = ({
-  className
-}): JSX.Element => {
+                                                          className
+                                                        }): JSX.Element => {
   const nav = [
     {
       id: 1,
@@ -26,19 +27,19 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
         {
           id: 11,
           url: 'some/page',
-          icon: <IoIosBrowsers />,
+          icon: <IoIosBrowsers/>,
           name: 'Browse'
         },
         {
           id: 12,
           url: 'some/page',
-          icon: <ImUsers />,
+          icon: <ImUsers/>,
           name: 'Activity'
         },
         {
           id: 13,
           url: 'some/page',
-          icon: <IoRadio />,
+          icon: <IoRadio/>,
           name: 'Radio'
         }
       ]
@@ -50,7 +51,7 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
         {
           id: 21,
           url: 'some/page',
-          icon: <FaHeadphones />,
+          icon: <FaHeadphones/>,
           name: 'Songs'
         },
         {
@@ -61,13 +62,13 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
         {
           id: 23,
           url: 'some/page',
-          icon: <ImUser />,
+          icon: <ImUser/>,
           name: 'Artists'
         },
         {
           id: 24,
           url: 'some/page',
-          icon: <AiOutlineFile />,
+          icon: <AiOutlineFile/>,
           name: 'Local Files'
         }
       ]
@@ -155,7 +156,7 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
   );
 
   return (
-    <div className={className? `${className} accordions` : `accordions`}
+    <div className={className ? `${className} accordions` : `accordions`}
          style={{height: navHeight}}>
       {listsNav}
     </div>

@@ -8,43 +8,43 @@ import cputh from '@images/cputh.jpg';
 import './navbar-view.sass';
 
 interface NavbarProps {
-    className?: string
+  className?: string
 }
 
 const Navbar: FunctionComponent<NavbarProps> = ({
-    className
-}): JSX.Element => {
-    const playing = {
-      id: 1,
-      src: `${cputh}`,
-      title: {
-        name: 'Some Type of Love',
-        url: 'some/page'
-      },
-      artist: {
-        name: 'Charlie Puth',
-        url: 'some/page'
-      },
-      isAdded: true
-    }
+                                                  className
+                                                }): JSX.Element => {
+  const playing = {
+    id: 1,
+    src: `${cputh}`,
+    title: {
+      name: 'Some Type of Love',
+      url: 'some/page'
+    },
+    artist: {
+      name: 'Charlie Puth',
+      url: 'some/page'
+    },
+    isAdded: true
+  }
 
-    const myContext = useContext(AppContext);
-    const breakpoint = 768;
-    const condition = myContext.windowWidth > breakpoint;
-    let addPlaylist;
-    if (condition) addPlaylist = <AddPlaylist />;
+  const myContext = useContext(AppContext);
+  const breakpoint = 768;
+  const condition = myContext.windowWidth > breakpoint;
+  let addPlaylist;
+  if (condition) addPlaylist = <AddPlaylist/>;
 
-    return (
-        <div className={className? `${className} navbar` : `navbar`}>
-            <Accordions />
-            {addPlaylist}
-            <Playing playing={playing} />
-        </div>
-    )
+  return (
+    <div className={className ? `${className} navbar` : `navbar`}>
+      <Accordions/>
+      {addPlaylist}
+      <Playing playing={playing}/>
+    </div>
+  )
 };
 
 Navbar.defaultProps = {
-    className: ''
+  className: ''
 }
 
 export default Navbar;

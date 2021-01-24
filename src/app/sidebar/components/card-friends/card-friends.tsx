@@ -1,5 +1,5 @@
-import React, { FunctionComponent } from 'react';
-import { MdPerson } from 'react-icons/md';
+import React, {FunctionComponent} from 'react';
+import {MdPerson} from 'react-icons/md';
 
 import './card-friends.sass';
 
@@ -11,26 +11,26 @@ interface CardFriendsHekpsProps {
 }
 
 interface CardFriendsProps {
-    friend: CardFriendsHekpsProps
+  friend: CardFriendsHekpsProps
 }
 
 const CardFriends: FunctionComponent<CardFriendsProps> = ({
-    friend
-}): JSX.Element => {
-    return (
-        <a href={friend.url}
-           className="friend friend_sidebar">
+                                                            friend
+                                                          }): JSX.Element => {
+  return (
+    <a href={friend.url}
+       className="friend friend_sidebar">
             <span className="friend__img">
                 {friend.src
-                    ? <img src={friend.src} alt={friend.name} />
-                    : <MdPerson />
+                  ? <img src={friend.src} alt={friend.name}/>
+                  : <MdPerson/>
                 }
             </span>
-            <span className="friend__name">
+      <span className="friend__name">
                 {friend.name}
             </span>
-        </a>
-    )
+    </a>
+  )
 }
 
 export default CardFriends;
