@@ -26,7 +26,9 @@
 			color: $c-white
 
 		&.is-active
-			.svg
+			color: $c-white
+
+			svg
 				transform: rotate(180deg)
 
 
@@ -36,3 +38,7 @@
 			height: 13px
 			color: $c-grey
 			+trans
+
+	&__content
+		overflow: hidden
+		+trans

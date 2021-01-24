@@ -11,7 +11,6 @@ const Inbox: FunctionComponent<InboxProps> = ({
                                                 className
                                               }): JSX.Element => {
   const [inbox, setInbox] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setInbox(inbox => inbox + 1);

@@ -31,13 +31,15 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const myContext = useContext(AppContext);
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint;
-  let addPlaylist;
-  if (condition) addPlaylist = <AddPlaylist/>;
 
   return (
     <div className={className ? `${className} navbar` : `navbar`}>
       <Accordions/>
-      {addPlaylist}
+      {
+        condition
+        ? <AddPlaylist/>
+        : null
+      }
       <Playing playing={playing}/>
     </div>
   )

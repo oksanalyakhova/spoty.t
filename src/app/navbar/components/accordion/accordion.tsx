@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, {FunctionComponent, useState, useRef, useEffect} from 'react';
 import CardNavItem from '../card-nav-item/card-nav-item';
 import {IoChevronDownSharp} from 'react-icons/all';
 
@@ -28,14 +28,32 @@ const Accordion: FunctionComponent<AccordionProps> = ({
       navItem={item}
     />
   );
+
+  const [isActive, setActive] = useState(false);
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+
+  const [height, setHeight] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+  useEffect ( () => {
+    if(contentRef.current){
+      const contentHeight = contentRef.current.offsetHeight;
+      setHeight(contentHeight);
+    }
+  }, [contentRef]);
+
   return (
     <div className={className ? `${className} accordion` : `accordion`}>
-      <div className="accordion__header">
+      <div className={`${isActive ? 'accordion__header is-active' : 'accordion__header'}`}
+           onClick={handleToggle}>
         {name}
         <IoChevronDownSharp/>
       </div>
-      <div className="accordion__content">
-        {listNav}
+      <div className="accordion__content" style={isActive ? {height: 0} : {height: height}}>
+        <div className="nav-cards" ref={contentRef}>
+          {listNav}
+        </div>
       </div>
     </div>
   )
