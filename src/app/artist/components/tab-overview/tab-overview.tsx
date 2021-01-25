@@ -48,24 +48,24 @@ interface AlbumSongProps {
 }
 
 interface OverviewProps {
-  release: ReleaseProps,
-  album: AlbumsProps,
-  tracks: Array<PopularSongProps>,
-  artists: Array<RelatedArtistProps>,
-  isCardArtistsSmall: boolean,
-  forArtistsBlock: boolean,
-  albumTracks: Array<AlbumSongProps>
+  release: ReleaseProps;
+  album: AlbumsProps;
+  tracks: Array<PopularSongProps>;
+  artists: Array<RelatedArtistProps>;
+  isCardArtistsSmall: boolean;
+  forArtistsBlock: boolean;
+  albumTracks: Array<AlbumSongProps>;
 }
 
 const TabOverview: FunctionComponent<OverviewProps> = ({
-                                                         release,
-                                                         album,
-                                                         tracks,
-                                                         artists,
-                                                         isCardArtistsSmall,
-                                                         forArtistsBlock,
-                                                         albumTracks,
-                                                       }): JSX.Element => {
+  release,
+  album,
+  tracks,
+  artists,
+  isCardArtistsSmall,
+  forArtistsBlock,
+  albumTracks,
+}): JSX.Element => {
   return (
     <div className="tab-overview">
       <div className="tab-overview__artist">
@@ -104,9 +104,6 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
         <div className="tab-overview__albums__head">
           <div className="section-title">
             Albums
-          </div>
-          <div className="view-types">
-
           </div>
           <BlockAlbums
             album={album}

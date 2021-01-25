@@ -6,17 +6,19 @@ import Sidebar from '../../sidebar/sidebar-view/sidebar-view';
 import './main-view.sass';
 
 interface MainProps {
-  className?: string
+  topHeight?: number;
+  trackHeight?: number;
 }
 
 const Main: FunctionComponent<MainProps> = ({
-                                              className
-                                            }): JSX.Element => {
+  topHeight,
+  trackHeight
+}): JSX.Element => {
   return (
-    <div className={`${className ? className + " main-nav" : "main"}`}>
-      <Navbar className="app__navbar"/>
-      <Artist className="app__artist"/>
-      <Sidebar className="app__sidebar"/>
+    <div className="main">
+      <Navbar topHeight={topHeight} trackHeight={trackHeight}/>
+      <Artist topHeight={topHeight} trackHeight={trackHeight}/>
+      <Sidebar topHeight={topHeight} trackHeight={trackHeight}/>
     </div>
   );
 }

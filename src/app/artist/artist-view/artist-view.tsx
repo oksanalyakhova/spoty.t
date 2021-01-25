@@ -24,12 +24,14 @@ import '@reach/tabs/styles.css';
 import './artist-view.sass';
 
 interface ArtistProps {
-  className?: string,
+  topHeight?: any;
+  trackHeight?: any;
 }
 
 const Artist: FunctionComponent<ArtistProps> = ({
-                                                  className,
-                                                }): JSX.Element => {
+  topHeight,
+  trackHeight
+}): JSX.Element => {
   const isVerified = true;
   const friends = [
     {
@@ -310,7 +312,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
   let artistHeight;
-  if (condition) artistHeight = myContext.windowHeight - 126;
+  if (condition) artistHeight = myContext.windowHeight - topHeight - trackHeight;
 
   const navFriends = friends.map((friend) =>
     <a key={friend.id} href={friend.url} className="friends__item">
@@ -319,8 +321,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
   );
 
   return (
-    <div className={`${className ? className + " artist" : "artist"}
-            ${isVerified ? "is-verified" : ""}`}
+    <div className={`${isVerified ? "artist is-verified" : "artist"}`}
          style={{height: artistHeight}}>
       <div className="artist__wrapper">
         <ArtistHeader
@@ -372,9 +373,5 @@ const Artist: FunctionComponent<ArtistProps> = ({
     </div>
   )
 };
-
-Artist.defaultProps = {
-  className: ''
-}
 
 export default Artist;

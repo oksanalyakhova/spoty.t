@@ -3,18 +3,18 @@ import React, {FunctionComponent} from 'react';
 import './button-theme.sass';
 
 interface ButtonThemeProps {
-  text?: string,
-  isDisabled?: boolean,
-  className?: string,
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+  text?: string;
+  isDisabled?: boolean;
+  className?: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ButtonTheme: FunctionComponent<ButtonThemeProps> = ({
-                                                            text,
-                                                            isDisabled,
-                                                            className,
-                                                            onClick,
-                                                          }): JSX.Element => {
+  text,
+  isDisabled,
+  className,
+  onClick,
+}): JSX.Element => {
   return (
     <button
       type="button"

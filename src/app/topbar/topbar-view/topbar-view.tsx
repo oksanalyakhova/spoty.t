@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, {forwardRef} from 'react';
 import Search from '../components/search/search';
 import User from '../components/user/user';
 import TopbarNav from '../components/topbar-nav/topbar-nav';
@@ -6,13 +6,7 @@ import userImg from '@images/user.jpg';
 
 import './topbar-view.sass';
 
-interface TopbarProps {
-  className?: string
-}
-
-const Topbar: FunctionComponent<TopbarProps> = ({
-                                                  className
-                                                }): JSX.Element => {
+const Topbar = forwardRef<HTMLDivElement>((props, ref) => {
   const user = {
     name: 'Adam Lowenthal',
     src: `${userImg}`
@@ -41,7 +35,8 @@ const Topbar: FunctionComponent<TopbarProps> = ({
   ];
 
   return (
-    <div id="topbar" className={`${className ? className + " topbar" : "topbar"}`}>
+    <div className="topbar"
+         ref={ref}>
       <TopbarNav className="topbar__page-flows"
                  onClickPrev={() => {
                    console.log('prev was clicked')
@@ -56,11 +51,7 @@ const Topbar: FunctionComponent<TopbarProps> = ({
             dropdownItems={dropdownItems}
       />
     </div>
-  )
-};
-
-Topbar.defaultProps = {
-  className: ''
-}
+  );
+});
 
 export default Topbar;

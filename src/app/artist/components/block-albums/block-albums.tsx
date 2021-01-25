@@ -30,9 +30,9 @@ interface BlockAlbumsProps {
 }
 
 const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
-                                                            album,
-                                                            tracks,
-                                                          }): JSX.Element => {
+  album,
+  tracks,
+}): JSX.Element => {
   const listTracks = tracks.map((track, index) =>
     <CardAlbums
       className="track_albums"

@@ -2,12 +2,12 @@ import React, {FunctionComponent} from 'react';
 import './tag.sass';
 
 interface TagProps {
-  text?: string
+  text?: string;
 }
 
 const Tag: FunctionComponent<TagProps> = ({
-                                            text,
-                                          }): JSX.Element => {
+  text,
+}): JSX.Element => {
   return (
     <div className="tag">
       {text}

@@ -7,22 +7,22 @@ import {IoCheckmarkSharp} from 'react-icons/all';
 import './artist-header.sass';
 
 interface ArtistHeaderProps {
-  isVerified?: boolean,
-  artistBg?: string,
-  artistImg?: string,
-  artistType?: string,
-  artistName?: string,
-  artistListenersCount?: string
+  isVerified?: boolean;
+  artistBg?: string;
+  artistImg?: string;
+  artistType?: string;
+  artistName?: string;
+  artistListenersCount?: string;
 }
 
 const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
-                                                              isVerified,
-                                                              artistBg,
-                                                              artistImg,
-                                                              artistType,
-                                                              artistName,
-                                                              artistListenersCount,
-                                                            }): JSX.Element => {
+  isVerified,
+  artistBg,
+  artistImg,
+  artistType,
+  artistName,
+  artistListenersCount,
+}): JSX.Element => {
   const [isActive, setActive] = useState(false)
   const handleActive = () => {
     setActive(!isActive);

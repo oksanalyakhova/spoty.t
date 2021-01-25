@@ -19,14 +19,14 @@ interface UserMenuProps {
 interface UserProps {
   className?: string;
   user: UserHelpsProps;
-  dropdownItems: Array<UserMenuProps>
+  dropdownItems: Array<UserMenuProps>;
 }
 
 const User: FunctionComponent<UserProps> = ({
-                                              className,
-                                              user,
-                                              dropdownItems
-                                            }): JSX.Element => {
+  className,
+  user,
+  dropdownItems
+}): JSX.Element => {
   return (
     <div className={`${className ? className + " user" : "user"}`}>
       <Notifications className="user__notifications"/>
@@ -45,9 +45,5 @@ const User: FunctionComponent<UserProps> = ({
     </div>
   )
 };
-
-User.defaultProps = {
-  className: ''
-}
 
 export default User;

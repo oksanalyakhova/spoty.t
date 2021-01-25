@@ -13,12 +13,16 @@ import './accordions.sass';
 import AppContext from "../../../../AppContext";
 
 interface AccordionsProps {
-  className?: string
+  className?: string;
+  topHeight?: any;
+  trackHeight?: any;
 }
 
 const Accordions: FunctionComponent<AccordionsProps> = ({
-                                                          className
-                                                        }): JSX.Element => {
+  className,
+  topHeight,
+  trackHeight
+}): JSX.Element => {
   const nav = [
     {
       id: 1,
@@ -145,7 +149,7 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
   let navHeight;
-  if (condition) navHeight = myContext.windowHeight - 243;
+  if (condition) navHeight = myContext.windowHeight - topHeight - trackHeight - 117;
 
   const listsNav = nav.map((item, index) =>
     <Accordion

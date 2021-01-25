@@ -21,16 +21,16 @@ interface CardAlbumsHelpsProps {
 }
 
 interface CardAlbumsProps {
-  className?: string,
-  track: CardAlbumsHelpsProps,
-  index: number
+  className?: string;
+  track: CardAlbumsHelpsProps;
+  index: number;
 }
 
 const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
-                                                          className,
-                                                          track,
-                                                          index
-                                                        }): JSX.Element => {
+  className,
+  track,
+  index
+}): JSX.Element => {
   const myContext = useContext(AppContext);
   const breakpoint = 1200;
   const condition = myContext.windowWidth > breakpoint;

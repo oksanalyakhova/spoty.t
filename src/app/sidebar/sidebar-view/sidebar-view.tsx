@@ -11,12 +11,14 @@ import friend4 from '@images/friend4.jpg';
 import './sidebar-view.sass';
 
 interface SidebarProps {
-  className?: string
+  topHeight?: any;
+  trackHeight?: any;
 }
 
-const Sidebar: FunctionComponent<SidebarProps> = ({
-                                                    className
-                                                  }): JSX.Element => {
+const Sidebar : FunctionComponent<SidebarProps> = ({
+  topHeight,
+  trackHeight
+}): JSX.Element => {
   const friends = [
     {
       id: 1,
@@ -58,12 +60,12 @@ const Sidebar: FunctionComponent<SidebarProps> = ({
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
   let socialsHeight;
-  if (condition) socialsHeight = myContext.windowHeight - 126;
+  if (condition) socialsHeight = myContext.windowHeight - topHeight - trackHeight;
 
   return (
-    <div className={`${className ? className + " sidebar" : "sidebar"}`}
+    <div className="sidebar"
          style={{height: socialsHeight}}>
-      <div className="socials">
+      <div className="sidebar__socials socials">
         <BlockFriends friends={friends}/>
         <ButtonTheme
           text="find friends"

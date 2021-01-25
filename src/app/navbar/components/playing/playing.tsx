@@ -3,26 +3,29 @@ import {IoAddSharp, IoCheckmarkSharp} from 'react-icons/io5';
 
 import './playing.sass';
 
-interface PlayingHelpsProps {
+interface PlayingNamesProps {
   name?: string;
   url?: string;
 }
 
+interface PlayingHelpsProps {
+  className?: string;
+  id?: string | number;
+  src?: string;
+  title?: PlayingNamesProps;
+  artist?: PlayingNamesProps;
+  isAdded?: boolean;
+}
+
 interface PlayingProps {
-  className?: string,
-  playing: {
-    id?: string | number;
-    src?: string;
-    title?: PlayingHelpsProps;
-    artist?: PlayingHelpsProps;
-    isAdded?: boolean;
-  },
+  className?: string;
+  playing: PlayingHelpsProps;
 }
 
 const Playing: FunctionComponent<PlayingProps> = ({
-                                                    className,
-                                                    playing
-                                                  }): JSX.Element => {
+  className,
+  playing
+}): JSX.Element => {
   return (
     <div className={className ? `${className} playing` : `playing`}>
       <div className="playing__art">

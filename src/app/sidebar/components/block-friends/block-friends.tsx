@@ -11,12 +11,12 @@ interface CardFriendsProps {
 }
 
 interface BlockFriendsProps {
-  friends: Array<CardFriendsProps>
+  friends: Array<CardFriendsProps>;
 }
 
 const BlockFriends: FunctionComponent<BlockFriendsProps> = ({
-                                                              friends,
-                                                            }): JSX.Element => {
+  friends,
+}): JSX.Element => {
   const listTracks = friends.map((friend, index) =>
     <CardFriends
       key={friend.id}

@@ -4,12 +4,12 @@ import {IoAddCircleOutline} from "react-icons/all";
 import './add-playlist.sass';
 
 interface AddPlaylistProps {
-  className?: string
+  className?: string;
 }
 
 const AddPlaylist: FunctionComponent<AddPlaylistProps> = ({
-                                                            className
-                                                          }): JSX.Element => {
+  className
+}): JSX.Element => {
   return (
     <div className={className ? `${className} add-playlist` : `add-playlist`}>
       <a href="some/page" className="add-playlist__link">

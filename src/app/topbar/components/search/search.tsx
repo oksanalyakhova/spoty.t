@@ -5,12 +5,12 @@ import {Formik} from 'formik';
 import './search.sass';
 
 interface SearchProps {
-  className?: string,
+  className?: string;
 }
 
 const Search: FunctionComponent<SearchProps> = ({
-                                                  className,
-                                                }): JSX.Element => {
+  className,
+}): JSX.Element => {
   return (
     <Formik
       initialValues={{search: ''}}
@@ -49,9 +49,5 @@ const Search: FunctionComponent<SearchProps> = ({
     </Formik>
   )
 };
-
-Search.defaultProps = {
-  className: ''
-}
 
 export default Search;

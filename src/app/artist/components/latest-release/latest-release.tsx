@@ -9,12 +9,12 @@ interface ReleaseProps {
 }
 
 interface LatestReleaseProps {
-  release: ReleaseProps
+  release: ReleaseProps;
 }
 
 const LatestRelease: FunctionComponent<LatestReleaseProps> = ({
-                                                                release
-                                                              }): JSX.Element => {
+  release
+}): JSX.Element => {
   return (
     <div className="latest-release">
       <div className="latest-release__art">

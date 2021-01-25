@@ -11,16 +11,16 @@ interface RelatedArtistProps {
 }
 
 interface RelatedArtistsProps {
-  artists: Array<RelatedArtistProps>,
-  isCardArtistsSmall: boolean,
-  forArtistsBlock: boolean
+  artists: Array<RelatedArtistProps>;
+  isCardArtistsSmall: boolean;
+  forArtistsBlock: boolean;
 }
 
 const TabRelatedArtists: FunctionComponent<RelatedArtistsProps> = ({
-                                                                     artists,
-                                                                     isCardArtistsSmall,
-                                                                     forArtistsBlock,
-                                                                   }): JSX.Element => {
+  artists,
+  isCardArtistsSmall,
+  forArtistsBlock,
+}): JSX.Element => {
   return (
     <div className="tab-related-artists">
       <BlockRelatedArtists

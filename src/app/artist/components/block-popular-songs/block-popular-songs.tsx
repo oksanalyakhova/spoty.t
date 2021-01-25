@@ -17,8 +17,8 @@ interface BlockPopularSongsProps {
 }
 
 const BlockPopularSongs: FunctionComponent<BlockPopularSongsProps> = ({
-                                                                        tracks,
-                                                                      }): JSX.Element => {
+  tracks,
+}): JSX.Element => {
   const listTracks = tracks.map((track, index) =>
     <CardPopularSongs
       className="track_popular-songs"

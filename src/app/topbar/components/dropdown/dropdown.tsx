@@ -10,12 +10,12 @@ interface DropdownItemProps {
 }
 
 interface DropdownProps {
-  items: Array<DropdownItemProps>,
+  items: Array<DropdownItemProps>;
 }
 
 const Dropdown: FunctionComponent<DropdownProps> = ({
-                                                      items
-                                                    }): JSX.Element => {
+  items
+}): JSX.Element => {
   const listItems = items.map((item) =>
     <li key={item.id} className="list__item">
       <a href={item.url}>
@@ -41,10 +41,6 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
       </ul>
     </div>
   )
-};
-
-Dropdown.defaultProps = {
-  items: []
 };
 
 export default Dropdown;

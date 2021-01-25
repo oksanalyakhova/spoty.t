@@ -12,14 +12,14 @@ interface CardNavItemHelpsProps {
 }
 
 interface CardNavItemProps {
-  className?: string,
-  navItem: CardNavItemHelpsProps
+  className?: string;
+  navItem: CardNavItemHelpsProps;
 }
 
 const CardNavItem: FunctionComponent<CardNavItemProps> = ({
-                                                            className,
-                                                            navItem
-                                                          }): JSX.Element => {
+  className,
+  navItem
+}): JSX.Element => {
   const myContext = useContext(AppContext);
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint;
@@ -28,17 +28,17 @@ const CardNavItem: FunctionComponent<CardNavItemProps> = ({
     <a href={navItem.url} className={className ? `${className} card-nav` : `card-nav`}>
       {condition
         ? <span className="icon">
-              {
-                navItem.icon
-                  ? navItem.icon
-                  : <IoMusicalNotesSharp/>
-              }
-            </span>
+          {
+            navItem.icon
+              ? navItem.icon
+              : <IoMusicalNotesSharp/>
+          }
+        </span>
         : null
       }
       <span className="name">
-            {navItem.name}
-          </span>
+        {navItem.name}
+      </span>
     </a>
   )
 };

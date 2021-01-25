@@ -15,16 +15,16 @@ interface CardPopularSongsHelpsProps {
 }
 
 interface CardPopularSongsProps {
-  className?: string,
-  track: CardPopularSongsHelpsProps,
-  index: number
+  className?: string;
+  track: CardPopularSongsHelpsProps;
+  index: number;
 }
 
 const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
-                                                                      className,
-                                                                      track,
-                                                                      index
-                                                                    }): JSX.Element => {
+  className,
+  track,
+  index
+}): JSX.Element => {
   const myContext = useContext(AppContext);
   const breakpoint = 1200;
   const condition = myContext.windowWidth > breakpoint;

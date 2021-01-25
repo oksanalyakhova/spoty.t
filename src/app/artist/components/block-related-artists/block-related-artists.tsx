@@ -11,18 +11,18 @@ interface RelatedArtistProps {
 }
 
 interface BlockRelatedArtistsProps {
-  artists: Array<RelatedArtistProps>,
-  isCardSmall: boolean
-  forBlock?: boolean,
-  total?: number,
+  artists: Array<RelatedArtistProps>;
+  isCardSmall: boolean;
+  forBlock?: boolean;
+  total?: number;
 }
 
 const BlockRelatedArtists: FunctionComponent<BlockRelatedArtistsProps> = ({
-                                                                            artists,
-                                                                            isCardSmall,
-                                                                            forBlock,
-                                                                            total,
-                                                                          }): JSX.Element => {
+  artists,
+  isCardSmall,
+  forBlock,
+  total,
+}): JSX.Element => {
   const listArtists = artists.map((artist) =>
     <CardRelatedArtists
       key={artist.id}

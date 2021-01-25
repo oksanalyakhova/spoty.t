@@ -4,18 +4,18 @@ import {IoPlaySharp, IoPauseSharp} from 'react-icons/io5';
 import './button-play.sass';
 
 interface ButtonPlayProps {
-  text?: string,
-  isActive?: boolean,
-  className?: string,
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+  text?: string;
+  isActive?: boolean;
+  className?: string;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
-                                                          text,
-                                                          isActive,
-                                                          className,
-                                                          onClick,
-                                                        }): JSX.Element => {
+  text,
+  isActive,
+  className,
+  onClick,
+}): JSX.Element => {
   return (
     <button
       type="button"

@@ -11,27 +11,27 @@ interface CardRelatedArtistsHelpsProps {
 }
 
 interface CardRelatedArtistsProps {
-  artist: CardRelatedArtistsHelpsProps,
+  artist: CardRelatedArtistsHelpsProps;
   isSmall: boolean;
 }
 
 const CardRelatedArtists: FunctionComponent<CardRelatedArtistsProps> = ({
-                                                                          artist,
-                                                                          isSmall,
-                                                                        }): JSX.Element => {
+  artist,
+  isSmall,
+}): JSX.Element => {
   return (
     <a href={artist.url}
        className={`${isSmall ? "related-artist is-small" : "related-artist is-large"}`}>
-            <span className="related-artist__img">
-                <img src={artist.src} alt={artist.name}/>
-              {!isSmall
-                ? <IoPlaySharp/>
-                : null
-              }
-            </span>
+      <span className="related-artist__img">
+        <img src={artist.src} alt={artist.name}/>
+        {!isSmall
+          ? <IoPlaySharp/>
+          : null
+        }
+      </span>
       <span className="related-artist__name">
-                {artist.name}
-            </span>
+        {artist.name}
+      </span>
     </a>
   )
 }

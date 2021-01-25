@@ -12,16 +12,16 @@ interface NavProps {
 }
 
 interface AccordionProps {
-  className?: string,
-  name: string,
-  nav: Array<NavProps>
+  className?: string;
+  name: string;
+  nav: Array<NavProps>;
 }
 
 const Accordion: FunctionComponent<AccordionProps> = ({
-                                                        className,
-                                                        name,
-                                                        nav
-                                                      }): JSX.Element => {
+  className,
+  name,
+  nav
+}): JSX.Element => {
   const listNav = nav.map((item, index) =>
     <CardNavItem
       key={item.id}
@@ -34,8 +34,8 @@ const Accordion: FunctionComponent<AccordionProps> = ({
     setActive(!isActive);
   };
 
-  const [height, setHeight] = useState(0);
   const contentRef = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(0);
   useEffect ( () => {
     if(contentRef.current){
       const contentHeight = contentRef.current.offsetHeight;

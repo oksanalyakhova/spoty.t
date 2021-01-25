@@ -8,12 +8,14 @@ import cputh from '@images/cputh.jpg';
 import './navbar-view.sass';
 
 interface NavbarProps {
-  className?: string
+  topHeight?: any;
+  trackHeight?: any;
 }
 
 const Navbar: FunctionComponent<NavbarProps> = ({
-                                                  className
-                                                }): JSX.Element => {
+  topHeight,
+  trackHeight
+}): JSX.Element => {
   const playing = {
     id: 1,
     src: `${cputh}`,
@@ -33,20 +35,16 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const condition = myContext.windowWidth > breakpoint;
 
   return (
-    <div className={className ? `${className} navbar` : `navbar`}>
-      <Accordions/>
+    <div className="navbar">
+      <Accordions className="navbar__accordions" topHeight={topHeight} trackHeight={trackHeight}/>
       {
         condition
-        ? <AddPlaylist/>
+        ? <AddPlaylist className="navbar__add-playlist"/>
         : null
       }
-      <Playing playing={playing}/>
+      <Playing className="navbar__playing" playing={playing}/>
     </div>
   )
 };
-
-Navbar.defaultProps = {
-  className: ''
-}
 
 export default Navbar;

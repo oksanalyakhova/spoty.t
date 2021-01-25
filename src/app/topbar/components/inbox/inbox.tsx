@@ -4,12 +4,12 @@ import {FaInbox} from 'react-icons/all';
 import './inbox.sass';
 
 interface InboxProps {
-  className?: string
+  className?: string;
 }
 
 const Inbox: FunctionComponent<InboxProps> = ({
-                                                className
-                                              }): JSX.Element => {
+  className
+}): JSX.Element => {
   const [inbox, setInbox] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {

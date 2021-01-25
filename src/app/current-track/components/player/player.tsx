@@ -17,12 +17,12 @@ import 'react-h5-audio-player/lib/styles.css';
 import './player.sass';
 
 interface PlayerProps {
-  className?: string,
+  className?: string;
 }
 
 const Player: FunctionComponent<PlayerProps> = ({
-                                                  className,
-                                                }): JSX.Element => {
+  className,
+}): JSX.Element => {
   const lyrics = <button
     type="button"
     className="button button-lyrics">

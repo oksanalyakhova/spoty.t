@@ -4,20 +4,20 @@ import {IoChevronBackSharp, IoChevronForwardSharp} from 'react-icons/io5';
 import './topbar-nav.sass';
 
 interface TopbarNavProps {
-  className: string,
-  disabledPrev?: boolean,
-  disabledNext?: boolean,
-  onClickPrev: (e: React.MouseEvent<HTMLDivElement>) => void,
-  onClickNext: (e: React.MouseEvent<HTMLDivElement>) => void
+  className: string;
+  disabledPrev?: boolean;
+  disabledNext?: boolean;
+  onClickPrev: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onClickNext: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 const TopbarNav: FunctionComponent<TopbarNavProps> = ({
-                                                        className,
-                                                        disabledPrev,
-                                                        disabledNext,
-                                                        onClickPrev,
-                                                        onClickNext
-                                                      }): JSX.Element => {
+  className,
+  disabledPrev,
+  disabledNext,
+  onClickPrev,
+  onClickNext
+}): JSX.Element => {
   return (
     <div className={`${className ? className + " page-flows" : "page-flows"}`}>
       <div className={`${disabledPrev ? "page-flows__item page-flows__item_left is-disabled" :
@@ -32,10 +32,6 @@ const TopbarNav: FunctionComponent<TopbarNavProps> = ({
       </div>
     </div>
   )
-}
-
-TopbarNav.defaultProps = {
-  className: ''
 }
 
 export default TopbarNav;

@@ -18,23 +18,21 @@
 
 	&:hover
 		#{$this}__top
-			transform: translateX(-100%)
-			transition-delay: .25s
+			transform: translateY(-100%)
+			transition-delay: .35s
 
 		#{$this}__bottom
-			opacity: 1
-			transform: translateX(0)
-			+trans(all, .35s, ease)
+			transform: translateY(0)
+			+trans(all, .45s, ease)
 			transition-delay: .15s
 
 	&__top
 		position: absolute
 		width: 100%
 		height: 100%
-		transform: translateX(0)
-		+trans(transform, .35s, ease)
+		transform: translateY(0)
+		+trans(transform, .45s, ease)
 
 	&__bottom
-		opacity: 0
-		transform: translateX(-100%)
-		transition: transform .25s ease, opacity .25s ease .15s
+		transform: translateY(100%)
+		+trans(transform, .35s, ease)

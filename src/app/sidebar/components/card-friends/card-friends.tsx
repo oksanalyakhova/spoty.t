@@ -11,24 +11,24 @@ interface CardFriendsHekpsProps {
 }
 
 interface CardFriendsProps {
-  friend: CardFriendsHekpsProps
+  friend: CardFriendsHekpsProps;
 }
 
 const CardFriends: FunctionComponent<CardFriendsProps> = ({
-                                                            friend
-                                                          }): JSX.Element => {
+  friend
+}): JSX.Element => {
   return (
     <a href={friend.url}
        className="friend friend_sidebar">
-            <span className="friend__img">
-                {friend.src
-                  ? <img src={friend.src} alt={friend.name}/>
-                  : <MdPerson/>
-                }
-            </span>
+      <span className="friend__img">
+        {friend.src
+          ? <img src={friend.src} alt={friend.name}/>
+          : <MdPerson/>
+        }
+      </span>
       <span className="friend__name">
-                {friend.name}
-            </span>
+        {friend.name}
+      </span>
     </a>
   )
 }
