@@ -1,5 +1,6 @@
-import React, {FunctionComponent, useState} from 'react';
+import React, {FunctionComponent, useState, useRef} from 'react';
 import {IoChevronDownSharp} from 'react-icons/all';
+import useOutsideClick from '../../../../useOutsideClick';
 
 import './dropdown.sass';
 
@@ -29,8 +30,15 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     setActive(!isActive);
   };
 
+  const dropRef = useRef<HTMLDivElement>(null);
+
+  useOutsideClick(dropRef, () => {
+    if (isActive) setActive(!isActive)
+  });
+
   return (
-    <div className="dropdown">
+    <div className="dropdown"
+         ref={dropRef}>
       <button type="button"
               className={`${isActive ? 'dropdown__button button button-dropdown is-active' : 'dropdown__button button button-dropdown'}`}
               onClick={handleToggle}>

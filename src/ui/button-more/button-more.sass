@@ -7,12 +7,19 @@
 	justify-content: center
 	align-items: center
 	background-color: transparent
-	color: $c-sand
 	border: 1px solid $c-sand
 
 	&:hover
+		border-color: transparent
+
+		&::before
+			transform: scale(1)
+			transform-origin: bottom center
+
 		svg
-			fill: $c-green
+			fill: $c-light-black
 
 	svg
-		+trans(fill, .65s, ease)
+		z-index: 2
+		fill: $c-sand
+		+trans(fill, .4s, cubic-bezier(.075,.82,.165,1))

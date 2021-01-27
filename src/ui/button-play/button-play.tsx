@@ -22,16 +22,13 @@ const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
       className={`${className ? className + " button button-play" : "button button-play"}
                 ${isActive ? "is-active" : ""}`}
       onClick={(e) => onClick(e)}>
+      <span>
       {isActive === false
         ? <IoPlaySharp/>
         : <IoPauseSharp/>
       }
-      <div className="button__top button-play__top">
         {text}
-      </div>
-      <div className="button__bottom button-play__bottom">
-        {text}
-      </div>
+      </span>
     </button>
   )
 }

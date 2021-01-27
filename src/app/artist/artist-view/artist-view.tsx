@@ -148,6 +148,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
   const oneRelease = {
     id: 1,
     src: `${releaseCover}`,
+    url: 'some/page',
     year: '4 December 2015',
     name: 'Drifting (Track Commentary)',
   }

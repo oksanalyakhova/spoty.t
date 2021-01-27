@@ -1,11 +1,11 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, {FunctionComponent, useContext, useState} from 'react';
 import AppContext from '../../../../AppContext';
 import Tag from '../../../../ui/tag/tag';
 import {
   IoCheckmarkSharp,
   IoAddSharp,
   IoTrendingDownSharp,
-  IoTrendingUpSharp
+  IoTrendingUpSharp, IoPlaySharp
 } from 'react-icons/io5';
 
 import './card-albums.sass';
@@ -35,17 +35,32 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
   const breakpoint = 1200;
   const condition = myContext.windowWidth > breakpoint;
 
+  const [isHover, setHover] = useState(false);
+
+  const [isAdded, setAdded] = useState(track.isAdded)
+  const handleAdded = () => {
+    setAdded(!isAdded);
+  };
+
   return (
-    <div className={`${className ? className + " track" : "track"}`}>
+    <div className={`${className ? className + " track" : "track"}`}
+         onMouseEnter={() => setHover(true)}
+         onMouseLeave={() => setHover(false)}>
       <div className="track__number">
-        {index + 1}
+        {!isHover
+          ? index + 1
+          : <button className="track__play button-play-one"><IoPlaySharp/></button>
+        }
       </div>
-      <div className="track__added">
-        {!track.isAdded
+      <button className={`${isAdded ?
+        'track__added track__added_active button-add-track' :
+        'track__added button-add-track'}`}
+              onClick={handleAdded}>
+        {!isAdded
           ? <IoAddSharp/>
           : <IoCheckmarkSharp/>
         }
-      </div>
+      </button>
       <div className={`${track.featured ? "track__title featured" : "track__title"}`}>
         <span className="title">{track.title}</span>
         {track.featured

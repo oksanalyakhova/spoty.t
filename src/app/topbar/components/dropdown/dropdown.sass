@@ -47,18 +47,28 @@
 					transition-delay: .35s
 
 		li
+			+pseudo
 			padding: 10px
 			margin: 0
 			overflow: hidden
-			+trans
 
 			&:hover
-				background-color: $c-grey
+				&::before
+					transform: scaleY(1)
+					transform-origin: bottom center
 
 				a
-					color: $c-sand
-					+trans(color, .35s, ease)
+					color: $c-light-black
+					transition-delay: 0s
 
+			&::before
+				z-index: -1
+				width: 100%
+				height: 100%
+				background-color: $c-grey
+				transform: scaleY(0)
+				transform-origin: top center
+				+trans
 			a
 				padding: 3px 20px
 				clear: both

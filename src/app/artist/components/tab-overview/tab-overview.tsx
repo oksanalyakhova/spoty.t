@@ -10,6 +10,7 @@ import './tab-overview.sass';
 interface ReleaseProps {
   id: string | number;
   src: string;
+  url: string;
   year: string;
   name: string;
 }

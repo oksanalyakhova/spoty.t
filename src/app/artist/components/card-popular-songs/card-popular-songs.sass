@@ -1,16 +1,27 @@
 @import "../../../../assets/styles/setup"
 
+@keyframes glow
+	to
+		box-shadow: 0 0 5px 5px $c-green
+		background-color: $c-green
+
 .track
+	+pseudo
 	height: 42px
 	display: flex
 	flex-flow: row nowrap
 	align-items: center
-	border-top: 1px solid $c-light-black
+	border-bottom: 1px solid $c-light-black
+	transform: translateZ(0)
+	+trans(all, .45s, cubic-bezier(.165,.84,.44,1))
 	+r(522)
 		height: fit-content
 
-	&:last-child
-		border-bottom: 1px solid $c-light-black
+	&:first-child
+		border-top: 1px solid $c-light-black
+
+	&:hover
+		transform: translate3d(0,13%,0)
 
 	$this: &
 
@@ -30,7 +41,28 @@
 			flex: none
 			margin-left: 10px
 			width: 12px
+			display: flex
+			align-items: center
 			color: $c-grey
+
+			#{$this}__play
+				&:hover
+					svg
+						filter: drop-shadow(3px 3px 2px $c-green)
+
+			svg
+				width: 16px
+				height: 16px
+				color: $c-sand
+				+trans
+
+			#{$this}__play
+				margin: 0 -5px
+				height: 42px
+				display: flex
+				justify-content: center
+				align-items: center
+				width: calc(100% + 10px)
 
 		#{$this}__added
 			flex: none
@@ -40,6 +72,26 @@
 			justify-content: center
 			align-items: center
 			color: $c-sand
+
+			&:hover
+				svg
+					filter: drop-shadow(3px 3px 2px $c-green)
+
+			&_active
+				+pseudo
+				&::before
+					animation: glow .25s
+
+			&::before
+				+center(both)
+				z-index: -1
+				width: 30%
+				height: 30%
+				border-radius: 10px
+
+			svg
+				color: $c-grey
+				+trans
 
 		#{$this}__title
 			margin: 0 10px 0 30px

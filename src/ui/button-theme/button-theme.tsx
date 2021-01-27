@@ -21,12 +21,7 @@ const ButtonTheme: FunctionComponent<ButtonThemeProps> = ({
       className={`${className ? className + " button button-theme" : "button button-theme"}
         ${isDisabled ? "is-disabled" : ""}`}
       onClick={(e) => onClick(e)}>
-      <div className="button__top button-theme__top">
-        {text}
-      </div>
-      <div className="button__bottom button-theme__bottom">
-        {text}
-      </div>
+        <span>{text}</span>
     </button>
   )
 }

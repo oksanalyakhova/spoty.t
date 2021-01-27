@@ -1,17 +1,33 @@
 @import "../../assets/styles/setup"
 
 .button-play
+	padding: 7px 15px 7px 0
+	width: fit-content
+	display: flex
+	flex-flow: row nowrap
+	justify-content: center
+	align-items: center
+	+f(11px, 1, 1px, uppercase)
 	background-color: $c-green
 	border: 1px solid $c-green
+	white-space: nowrap
+
+	&:hover
+		background-color: transparent
+		border-color: transparent
+
+		&::before
+			transform: scale(1)
+			transform-origin: bottom center
+		span
+			color: $c-light-black
 
 	svg
 		+center(v)
 		left: 15px
 		width: 14px
 		height: 14px
-		fill: $c-white
 
-	&__top,
-	&__bottom
+	span
 		padding-left: 34px
 		color: $c-white

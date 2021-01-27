@@ -1,9 +1,27 @@
 @import "../../assets/styles/setup"
 
 .button-theme
+	padding: 7px 15px
+	width: fit-content
+	display: flex
+	flex-flow: row nowrap
+	justify-content: center
+	align-items: center
+	+f(11px, 1, 1px, uppercase)
 	background-color: transparent
 	border: 1px solid $c-sand
+	white-space: nowrap
+	+trans(border-color, .4s, cubic-bezier(.075,.82,.165,1))
 
-	&__top,
-	&__bottom
+	&:hover
+		border-color: transparent
+
+		&::before
+			transform: scale(1)
+			transform-origin: bottom center
+		span
+			color: $c-light-black
+
+	span
 		color: $c-sand
+		+trans(color, .4s, cubic-bezier(.075,.82,.165,1))

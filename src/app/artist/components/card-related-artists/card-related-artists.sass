@@ -28,6 +28,16 @@
 			width: 20%
 			background-color: transparent
 
+		&:hover
+			#{$this}__img
+				transform: scale(.75)
+
+				img
+					transform: scale(1.5)
+
+			#{$this}__name
+				color: $c-sand
+
 		span
 			display: block
 
@@ -35,10 +45,17 @@
 			width: 42px
 			height: 42px
 			border-radius: 50%
+			transform: scale(1)
+			+trans
+
+			img
+				transform: scale(1)
+				+trans
 
 		#{$this}__name
 			margin-left: 15px
 			color: $c-white
+			+trans
 			+r(480)
 				display: none
 
@@ -60,8 +77,15 @@
 			align-items: center
 
 			&:hover
+				img
+					transform: scale(1.15)
+
 				svg
 					opacity: 1
+
+			img
+				transform: scale(1)
+				+trans
 
 			svg
 				+center(both)

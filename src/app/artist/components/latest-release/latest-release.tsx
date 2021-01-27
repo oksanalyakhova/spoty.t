@@ -1,9 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import './latest-release.sass';
+import {IoPlaySharp} from 'react-icons/io5';
 
 interface ReleaseProps {
   id: string | number;
   src: string;
+  url: string;
   year: string;
   name: string;
 }
@@ -17,11 +19,12 @@ const LatestRelease: FunctionComponent<LatestReleaseProps> = ({
 }): JSX.Element => {
   return (
     <div className="latest-release">
-      <div className="latest-release__art">
+      <a className="latest-release__art" href={release.url}>
         <img src={release.src} alt={release.name}/>
-      </div>
+        <IoPlaySharp/>
+      </a>
       <div className="latest-release__song song">
-        <div className="song__title">{release.name}</div>
+        <a className="song__title" href={release.url}>{release.name}</a>
         <div className="song__date">{release.year}</div>
       </div>
     </div>
