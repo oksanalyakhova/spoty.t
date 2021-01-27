@@ -1,30 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="93674ce9-81c4-43cc-ab49-b08906c1e74e" name="Default Changelist" comment="rct fixes">
-      <change afterPath="$PROJECT_DIR$/src/useOutsideClick.tsx" afterDir="false" />
+    <list default="true" id="93674ce9-81c4-43cc-ab49-b08906c1e74e" name="Default Changelist" comment="fixed interactions, added useOutsideClick">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/artist-view/artist-view.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/block-albums/block-albums.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/block-albums/block-albums.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-albums/card-albums.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-popular-songs/card-popular-songs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/card-related-artists/card-related-artists.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/card-related-artists/card-related-artists.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/latest-release/latest-release.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/latest-release/latest-release.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/latest-release/latest-release.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/latest-release/latest-release.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/artist/components/tab-overview/tab-overview.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/artist/components/tab-overview/tab-overview.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/navbar/components/card-nav-item/card-nav-item.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/topbar/components/dropdown/dropdown.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/topbar/components/dropdown/dropdown.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/topbar/components/dropdown/dropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/topbar/components/dropdown/dropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/components/_buttons.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/components/_buttons.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button-more/button-more.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-more/button-more.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button-play/button-play.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-play/button-play.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button-play/button-play.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-play/button-play.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button-theme/button-theme.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-theme/button-theme.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ui/button-theme/button-theme.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/button-theme/button-theme.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/current-track/components/player/player.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/current-track/components/player/player.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +79,17 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -111,6 +102,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -137,7 +129,7 @@
       <workItem from="1611567231421" duration="11204000" />
       <workItem from="1611582860883" duration="4576000" />
       <workItem from="1611603365915" duration="2950000" />
-      <workItem from="1611671197935" duration="13210000" />
+      <workItem from="1611671197935" duration="13875000" />
     </task>
     <task id="LOCAL-00001" summary="updated tsx files wth default code">
       <created>1610697677051</created>
@@ -293,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611606211533</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed interactions, added useOutsideClick">
+      <created>1611738209634</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1611738209634</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +333,8 @@
     <MESSAGE value="reformatted code" />
     <MESSAGE value="finished accordions actions" />
     <MESSAGE value="rct fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="rct fixes" />
+    <MESSAGE value="fixed interactions, added useOutsideClick" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed interactions, added useOutsideClick" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
