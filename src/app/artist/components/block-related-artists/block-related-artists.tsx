@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import CardRelatedArtists from '../card-related-artists/card-related-artists';
+import classNames from 'classnames';
 
 import './block-related-artists.sass';
 
@@ -30,8 +31,14 @@ const BlockRelatedArtists: FunctionComponent<BlockRelatedArtistsProps> = ({
       isSmall={isCardSmall}
     />
   );
+
+  const classes = classNames('related-artists', {
+    'for-block': forBlock,
+    'for-tab': !forBlock
+  })
+
   return (
-    <div className={`${forBlock ? "related-artists for-block" : "related-artists for-tab"}`}>
+    <div className={classes}>
       {listArtists.splice(0, total)}
     </div>
   )

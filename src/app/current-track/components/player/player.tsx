@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import AudioPlayer, {RHAP_UI} from 'react-h5-audio-player';
+import classNames from 'classnames';
 import {
   BiRefresh,
   IoPlaySharp,
@@ -48,8 +49,10 @@ const Player: FunctionComponent<PlayerProps> = ({
     <span className="name">Devices Available</span>
   </button>
 
+  const classes = classNames(className, 'player')
+
   return (
-    <div className={`${className ? className + " player" : "player"}`}>
+    <div className={classes}>
       <AudioPlayer
         showSkipControls={true}
         showJumpControls={false}

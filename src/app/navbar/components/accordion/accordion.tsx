@@ -2,6 +2,7 @@ import React, {FunctionComponent, useState, useRef, useEffect, useContext} from 
 import AppContext from '../../../../AppContext';
 import CardNavItem from '../card-nav-item/card-nav-item';
 import {IoChevronDownSharp} from 'react-icons/all';
+import classNames from 'classnames';
 
 import './accordion.sass';
 
@@ -49,21 +50,28 @@ const Accordion: FunctionComponent<AccordionProps> = ({
     setActive(!isActive);
   };
 
+  const classesAccordion = classNames(className, 'accordion');
+  const classesAccordionHeader = classNames('accordion__header', {
+    'is-active': isActive,
+  })
+
   return (
-    <div className={`${className ? `${className} accordion` : "accordion"}`}>
-      <div className={`${isActive ? "accordion__header is-active" : "accordion__header"}`}
+    <div className={classesAccordion}>
+      <div className={classesAccordionHeader}
            onClick={handleToggle}
            ref={buttonRef}>
         {name}
         <IoChevronDownSharp/>
       </div>
       {condition
-        ? <div className="accordion__content" style={isActive ? {height: height} : {height: 0}}>
+        ? <div className="accordion__content"
+               style={isActive ? {height: height} : {height: 0}}>
             <div className="nav-cards" ref={contentRef}>
               {listNav}
             </div>
           </div>
-        : <div className="accordion__content" style={isActive ? {height: 0} : {height: height}}>
+        : <div className="accordion__content"
+               style={isActive ? {height: 0} : {height: height}}>
           <div className="nav-cards" ref={contentRef}>
             {listNav}
           </div>

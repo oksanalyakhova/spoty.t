@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {IoPlaySharp} from 'react-icons/io5';
+import classNames from 'classnames';
 
 import './card-related-artists.sass';
 
@@ -19,9 +20,14 @@ const CardRelatedArtists: FunctionComponent<CardRelatedArtistsProps> = ({
   artist,
   isSmall,
 }): JSX.Element => {
+  const classes = classNames('related-artist', {
+    'is-small': isSmall,
+    'is-large': !isSmall,
+  })
+
   return (
     <a href={artist.url}
-       className={`${isSmall ? "related-artist is-small" : "related-artist is-large"}`}>
+       className={classes}>
       <span className="related-artist__img">
         <img src={artist.src} alt={artist.name}/>
         {!isSmall

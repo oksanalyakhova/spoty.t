@@ -1,25 +1,27 @@
 import React, {FunctionComponent} from 'react';
+import classNames from 'classnames';
 
 import './button-theme.sass';
 
 interface ButtonThemeProps {
   text?: string;
   isDisabled?: boolean;
-  className?: string;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 const ButtonTheme: FunctionComponent<ButtonThemeProps> = ({
   text,
   isDisabled,
-  className,
   onClick,
 }): JSX.Element => {
+  const classes = classNames('button button-theme', {
+    'is-disabled': isDisabled,
+  })
+
   return (
     <button
       type="button"
-      className={`${className ? className + " button button-theme" : "button button-theme"}
-        ${isDisabled ? "is-disabled" : ""}`}
+      className={classes}
       onClick={(e) => onClick(e)}>
         <span>{text}</span>
     </button>

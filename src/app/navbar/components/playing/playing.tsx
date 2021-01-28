@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {IoAddSharp, IoCheckmarkSharp} from 'react-icons/io5';
+import classNames from 'classnames';
 
 import './playing.sass';
 
@@ -26,8 +27,10 @@ const Playing: FunctionComponent<PlayingProps> = ({
   className,
   playing
 }): JSX.Element => {
+  const classes = classNames(className, 'playing')
+
   return (
-    <div className={className ? `${className} playing` : `playing`}>
+    <div className={classes}>
       <div className="playing__art">
         <img src={playing.src} alt={playing.title?.name}/>
       </div>

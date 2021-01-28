@@ -2,6 +2,7 @@ import React, {FunctionComponent, useContext, useState} from 'react';
 import AppContext from '../../../../AppContext';
 import Tag from '../../../../ui/tag/tag';
 import {IoCheckmarkSharp, IoAddSharp, IoPlaySharp} from 'react-icons/io5';
+import classNames from 'classnames';
 
 import './card-popular-songs.sass';
 
@@ -36,8 +37,13 @@ const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
     setAdded(!isAdded);
   };
 
+  const classes = classNames(className, 'track');
+  const classesCardAdded = classNames('track__added button-add-track', {
+    'track__added_active': isAdded
+  })
+
   return (
-    <div className={`${className ? className + " track" : "track"}`}
+    <div className={classes}
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}>
       <div className="track__art">
@@ -49,9 +55,7 @@ const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
           : <button type="button" className="track__play button-play-one"><IoPlaySharp/></button>
         }
       </div>
-      <button type="button" className={`${isAdded ?
-        'track__added track__added_active button-add-track' :
-        'track__added button-add-track'}`}
+      <button type="button" className={classesCardAdded}
               onClick={handleAdded}>
         {!isAdded
           ? <IoAddSharp/>

@@ -3,6 +3,7 @@ import AppContext from '../../../AppContext';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
+import classNames from 'classnames';
 
 import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
 
@@ -333,8 +334,12 @@ const Artist: FunctionComponent<ArtistProps> = ({
     </a>
   );
 
+  const classes = classNames('artist', {
+    'is-verified': isVerified,
+  })
+
   return (
-    <div className={`${isVerified ? "artist is-verified" : "artist"}`}
+    <div className={classes}
          style={{height: artistHeight}}>
       <div className="artist__wrapper">
         <ArtistHeader

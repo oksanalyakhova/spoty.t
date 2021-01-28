@@ -2,6 +2,7 @@ import React, {FunctionComponent} from 'react';
 import Notifications from '../notifications/notifications';
 import Dropdown from '../dropdown/dropdown';
 import Inbox from '../inbox/inbox';
+import classNames from 'classnames';
 
 import './user.sass';
 
@@ -27,8 +28,10 @@ const User: FunctionComponent<UserProps> = ({
   user,
   dropdownItems
 }): JSX.Element => {
+  const classes = classNames(className, 'user')
+
   return (
-    <div className={`${className ? className + " user" : "user"}`}>
+    <div className={classes}>
       <Notifications className="user__notifications"/>
       <Inbox className="user__inbox"/>
       <div className="user__info info">

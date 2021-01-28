@@ -23,9 +23,14 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
   artistName,
   artistListenersCount,
 }): JSX.Element => {
-  const [isActive, setActive] = useState(false)
-  const handleActive = () => {
-    setActive(!isActive);
+  const [isPlayActive, setPlayActive] = useState(false)
+  const handlePlayActive = () => {
+    setPlayActive(!isPlayActive);
+  };
+
+  const [isMoreActive, setMoreActive] = useState(false)
+  const handleMoreActive = () => {
+    setMoreActive(!isMoreActive);
   };
 
   let verifiedIcon;
@@ -53,8 +58,8 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
           <div className="info__actions">
             <ButtonPlay
               text="play"
-              isActive={isActive}
-              onClick={handleActive}
+              isActive={isPlayActive}
+              onClick={handlePlayActive}
             />
             <ButtonTheme
               text="follow"
@@ -63,9 +68,9 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
                 console.log("theme was clicked")
               }}
             />
-            <ButtonMore onClick={() => {
-              console.log("more was clicked")
-            }}
+            <ButtonMore
+              isActive={isMoreActive}
+              onClick={handleMoreActive}
             />
           </div>
         </div>

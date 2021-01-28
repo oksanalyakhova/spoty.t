@@ -1,5 +1,6 @@
 import React, {FunctionComponent} from 'react';
 import {IoChevronBackSharp, IoChevronForwardSharp} from 'react-icons/io5';
+import classNames from 'classnames';
 
 import './topbar-nav.sass';
 
@@ -18,15 +19,21 @@ const TopbarNav: FunctionComponent<TopbarNavProps> = ({
   onClickPrev,
   onClickNext
 }): JSX.Element => {
+  const classesFlows = classNames(className, 'page-flows');
+  const classesPrev = classNames('page-flows__item page-flows__item_left', {
+    'is-disabled': disabledPrev
+  });
+  const classesNext = classNames('page-flows__item page-flows__item_right', {
+    'is-disabled': disabledNext
+  })
+
   return (
-    <div className={`${className ? className + " page-flows" : "page-flows"}`}>
-      <div className={`${disabledPrev ? "page-flows__item page-flows__item_left is-disabled" :
-        "page-flows__item page-flows__item_left"}`}
+    <div className={classesFlows}>
+      <div className={classesPrev}
            onClick={(e) => onClickPrev(e)}>
         <IoChevronBackSharp/>
       </div>
-      <div className={`${disabledNext ? "page-flows__item page-flows__item_right is-disabled" :
-        "page-flows__item page-flows__item_right"}`}
+      <div className={classesNext}
            onClick={(e) => onClickNext(e)}>
         <IoChevronForwardSharp/>
       </div>

@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useState, useRef} from 'react';
 import {IoChevronDownSharp} from 'react-icons/all';
+import classNames from 'classnames';
 import useOutsideClick from '../../../../useOutsideClick';
 
 import './dropdown.sass';
@@ -36,15 +37,23 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     if (isActive) setActive(!isActive)
   });
 
+  const classesDropdownButton = classNames('dropdown__button button button-dropdown', {
+    'is-active': isActive,
+  });
+  const classesDropdownList = classNames('dropdown__list list', {
+    'is-visible': isActive,
+    'is-hidden': !isActive
+  })
+
   return (
     <div className="dropdown"
          ref={dropRef}>
       <button type="button"
-              className={`${isActive ? "dropdown__button button button-dropdown is-active" : "dropdown__button button button-dropdown"}`}
+              className={classesDropdownButton}
               onClick={handleToggle}>
         <IoChevronDownSharp/>
       </button>
-      <ul className={`${isActive ? "is-visible" : "is-hidden"} dropdown__list list`}>
+      <ul className={classesDropdownList}>
         {listItems}
       </ul>
     </div>

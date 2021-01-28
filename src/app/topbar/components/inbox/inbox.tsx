@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useEffect, useState} from 'react';
 import {FaInbox} from 'react-icons/all';
+import classNames from 'classnames';
 
 import './inbox.sass';
 
@@ -21,8 +22,10 @@ const Inbox: FunctionComponent<InboxProps> = ({
 
   const resetInterval = () => setInbox(0);
 
+  const classes = classNames(className, 'inbox')
+
   return (
-    <a href="/inbox/page" className={`${className ? className + " inbox" : "inbox"}`}>
+    <a href="/inbox/page" className={classes}>
       <FaInbox/>
       {inbox > 0 &&
       <span className="count">{inbox}</span>

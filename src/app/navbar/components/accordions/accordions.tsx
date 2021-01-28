@@ -1,5 +1,6 @@
 import React, {FunctionComponent, useContext} from 'react';
 import Accordion from '../accordion/accordion';
+import classNames from 'classnames';
 import {
   IoIosBrowsers,
   ImUsers,
@@ -159,8 +160,10 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
     />
   );
 
+  const classes = classNames(className, 'accordions')
+
   return (
-    <div className={className ? `${className} accordions` : `accordions`}
+    <div className={classes}
          style={{height: navHeight}}>
       {listsNav}
     </div>

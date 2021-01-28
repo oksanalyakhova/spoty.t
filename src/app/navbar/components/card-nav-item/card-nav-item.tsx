@@ -1,6 +1,7 @@
 import React, {FunctionComponent, useContext} from 'react';
 import AppContext from '../../../../AppContext';
 import {IoMusicalNotesSharp} from 'react-icons/all';
+import classNames from 'classnames';
 
 import './card-nav-item.sass';
 
@@ -24,8 +25,10 @@ const CardNavItem: FunctionComponent<CardNavItemProps> = ({
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint;
 
+  const classes = classNames(className, 'card-nav')
+
   return (
-    <a href={navItem.url} className={className ? `${className} card-nav` : `card-nav`}>
+    <a href={navItem.url} className={classes}>
       {condition
         ? <span className="icon">
           {
