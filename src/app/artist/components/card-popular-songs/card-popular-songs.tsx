@@ -46,10 +46,10 @@ const CardPopularSongs: FunctionComponent<CardPopularSongsProps> = ({
       <div className="track__number">
         {!isHover
           ? index + 1
-          : <button className="track__play button-play-one"><IoPlaySharp/></button>
+          : <button type="button" className="track__play button-play-one"><IoPlaySharp/></button>
         }
       </div>
-      <button className={`${isAdded ?
+      <button type="button" className={`${isAdded ?
         'track__added track__added_active button-add-track' :
         'track__added button-add-track'}`}
               onClick={handleAdded}>

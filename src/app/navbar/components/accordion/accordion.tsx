@@ -1,4 +1,5 @@
-import React, {FunctionComponent, useState, useRef, useEffect} from 'react';
+import React, {FunctionComponent, useState, useRef, useEffect, useContext} from 'react';
+import AppContext from '../../../../AppContext';
 import CardNavItem from '../card-nav-item/card-nav-item';
 import {IoChevronDownSharp} from 'react-icons/all';
 
@@ -29,11 +30,7 @@ const Accordion: FunctionComponent<AccordionProps> = ({
     />
   );
 
-  const [isActive, setActive] = useState(false);
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
-
+  const buttonRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
   useEffect ( () => {
@@ -43,18 +40,36 @@ const Accordion: FunctionComponent<AccordionProps> = ({
     }
   }, [contentRef]);
 
+  const myContext = useContext(AppContext);
+  const breakpoint = 769;
+  const condition = myContext.windowWidth < breakpoint;
+
+  const [isActive, setActive] = useState(false);
+  const handleToggle = () => {
+    setActive(!isActive);
+  };
+
   return (
-    <div className={className ? `${className} accordion` : `accordion`}>
-      <div className={`${isActive ? 'accordion__header is-active' : 'accordion__header'}`}
-           onClick={handleToggle}>
+    <div className={`${className ? `${className} accordion` : "accordion"}`}>
+      <div className={`${isActive ? "accordion__header is-active" : "accordion__header"}`}
+           onClick={handleToggle}
+           ref={buttonRef}>
         {name}
         <IoChevronDownSharp/>
       </div>
-      <div className="accordion__content" style={isActive ? {height: 0} : {height: height}}>
-        <div className="nav-cards" ref={contentRef}>
-          {listNav}
+      {condition
+        ? <div className="accordion__content" style={isActive ? {height: height} : {height: 0}}>
+            <div className="nav-cards" ref={contentRef}>
+              {listNav}
+            </div>
+          </div>
+        : <div className="accordion__content" style={isActive ? {height: 0} : {height: height}}>
+          <div className="nav-cards" ref={contentRef}>
+            {listNav}
+          </div>
         </div>
-      </div>
+      }
+
     </div>
   )
 };

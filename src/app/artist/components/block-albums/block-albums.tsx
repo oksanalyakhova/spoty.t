@@ -11,6 +11,7 @@ interface CardAlbumsProps {
   id: string | number;
   title: string;
   featured?: string;
+  featuredUrl?: string;
   isAdded: boolean;
   explicit: string;
   length: string;

@@ -18,4 +18,5 @@ const useOutsideClick = (ref: any, callback: () => void) => {
 
 export default useOutsideClick;
 
+// used
 // https://gist.github.com/kevinfelisilda/30d215d0cd4743d5b7949c0a287d62f5#file-useoutsideclick-js

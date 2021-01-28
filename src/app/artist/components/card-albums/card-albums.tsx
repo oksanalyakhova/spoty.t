@@ -14,6 +14,7 @@ interface CardAlbumsHelpsProps {
   id: string | number;
   title: string;
   featured?: string;
+  featuredUrl?: string;
   isAdded: boolean;
   explicit: string;
   length: string;
@@ -49,10 +50,10 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
       <div className="track__number">
         {!isHover
           ? index + 1
-          : <button className="track__play button-play-one"><IoPlaySharp/></button>
+          : <button type="button" className="track__play button-play-one"><IoPlaySharp/></button>
         }
       </div>
-      <button className={`${isAdded ?
+      <button type="button" className={`${isAdded ?
         'track__added track__added_active button-add-track' :
         'track__added button-add-track'}`}
               onClick={handleAdded}>
@@ -64,7 +65,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
       <div className={`${track.featured ? "track__title featured" : "track__title"}`}>
         <span className="title">{track.title}</span>
         {track.featured
-          ? <span className="feature">{track.featured}</span>
+          ? <a href={track.featuredUrl} className="feature">{track.featured}</a>
           : null
         }
       </div>

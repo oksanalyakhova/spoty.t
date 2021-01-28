@@ -8,8 +8,8 @@ import cputh from '@images/cputh.jpg';
 import './navbar-view.sass';
 
 interface NavbarProps {
-  topHeight?: any;
-  trackHeight?: any;
+  topHeight: number;
+  trackHeight: number;
 }
 
 const Navbar: FunctionComponent<NavbarProps> = ({

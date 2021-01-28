@@ -14,8 +14,8 @@ import AppContext from "../../../../AppContext";
 
 interface AccordionsProps {
   className?: string;
-  topHeight?: any;
-  trackHeight?: any;
+  topHeight: number;
+  trackHeight: number;
 }
 
 const Accordions: FunctionComponent<AccordionsProps> = ({

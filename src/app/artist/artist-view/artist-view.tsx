@@ -24,8 +24,8 @@ import '@reach/tabs/styles.css';
 import './artist-view.sass';
 
 interface ArtistProps {
-  topHeight?: any;
-  trackHeight?: any;
+  topHeight: number;
+  trackHeight: number;
 }
 
 const Artist: FunctionComponent<ArtistProps> = ({
@@ -179,6 +179,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 3,
       title: 'Me, Myself & I',
       featured: 'Bebe Rexha',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '4:11',
@@ -188,6 +189,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 4,
       title: 'One Of Them',
       featured: 'Big Sean',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '3:20',
@@ -197,6 +199,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 5,
       title: 'Drifting',
       featured: 'Chris Brown, Tory Lanez',
+      featuredUrl: 'some/page',
       isAdded: false,
       explicit: 'explicit',
       length: '4:33',
@@ -206,6 +209,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 6,
       title: 'Of All Things',
       featured: 'Too $hort',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '3:34',
@@ -215,6 +219,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 7,
       title: 'Order More',
       featured: 'Starrah',
+      featuredUrl: 'some/page',
       isAdded: false,
       explicit: 'explicit',
       length: '3:29',
@@ -232,6 +237,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 9,
       title: 'Don\'t Let Me Go',
       featured: 'Grace',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '3:11',
@@ -249,6 +255,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 11,
       title: 'What If',
       featured: 'Gizzle',
+      featuredUrl: 'some/page',
       isAdded: false,
       explicit: 'explicit',
       length: '4:13',
@@ -266,6 +273,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 13,
       title: 'Some Kind Of Drug',
       featured: 'Marc E. Bassy',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '3:42',
@@ -275,6 +283,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 14,
       title: 'Think About You',
       featured: 'Quin',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '2:59',
@@ -284,6 +293,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 15,
       title: 'Everything Will Be OK',
       featured: 'Kehlani',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '5:11',
@@ -293,6 +303,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 16,
       title: 'For This',
       featured: 'Iamnobodi',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '4:11',
@@ -302,6 +313,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
       id: 17,
       title: 'Nothing to Me',
       featured: 'Keyshia Cole, E-40',
+      featuredUrl: 'some/page',
       isAdded: true,
       explicit: 'explicit',
       length: '5:30',

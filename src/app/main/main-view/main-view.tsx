@@ -6,8 +6,8 @@ import Sidebar from '../../sidebar/sidebar-view/sidebar-view';
 import './main-view.sass';
 
 interface MainProps {
-  topHeight?: number;
-  trackHeight?: number;
+  topHeight: number;
+  trackHeight: number;
 }
 
 const Main: FunctionComponent<MainProps> = ({

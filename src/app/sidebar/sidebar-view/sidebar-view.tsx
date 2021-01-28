@@ -11,8 +11,8 @@ import friend4 from '@images/friend4.jpg';
 import './sidebar-view.sass';
 
 interface SidebarProps {
-  topHeight?: any;
-  trackHeight?: any;
+  topHeight: number;
+  trackHeight: number;
 }
 
 const Sidebar : FunctionComponent<SidebarProps> = ({

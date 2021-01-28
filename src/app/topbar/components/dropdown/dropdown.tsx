@@ -40,11 +40,11 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     <div className="dropdown"
          ref={dropRef}>
       <button type="button"
-              className={`${isActive ? 'dropdown__button button button-dropdown is-active' : 'dropdown__button button button-dropdown'}`}
+              className={`${isActive ? "dropdown__button button button-dropdown is-active" : "dropdown__button button button-dropdown"}`}
               onClick={handleToggle}>
         <IoChevronDownSharp/>
       </button>
-      <ul className={`${isActive ? 'is-visible' : 'is-hidden'} dropdown__list list`}>
+      <ul className={`${isActive ? "is-visible" : "is-hidden"} dropdown__list list`}>
         {listItems}
       </ul>
     </div>
