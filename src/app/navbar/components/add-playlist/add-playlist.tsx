@@ -1,5 +1,5 @@
 import React, {FunctionComponent} from 'react';
-import {IoAddCircleOutline} from "react-icons/all";
+import {IoAddCircleOutline} from 'react-icons/all';
 import classNames from 'classnames';
 
 import './add-playlist.sass';

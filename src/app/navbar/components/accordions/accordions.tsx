@@ -1,4 +1,5 @@
 import React, {FunctionComponent, useContext} from 'react';
+import AppContext from '../../../../AppContext';
 import Accordion from '../accordion/accordion';
 import classNames from 'classnames';
 import {
@@ -11,7 +12,6 @@ import {
 } from 'react-icons/all';
 
 import './accordions.sass';
-import AppContext from "../../../../AppContext";
 
 interface AccordionsProps {
   className?: string;

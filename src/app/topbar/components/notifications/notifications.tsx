@@ -16,7 +16,6 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
   return (
     <a href="/notifications/page" className={classes}>
       <IoNotifications/>
-      {/*<span className="count"></span>*/}
     </a>
   )
 };
