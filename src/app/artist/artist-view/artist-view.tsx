@@ -338,6 +338,16 @@ const Artist: FunctionComponent<ArtistProps> = ({
     'is-verified': isVerified,
   })
 
+  const proxyurl = "https://cors-anywhere.herokuapp.com/";
+  const url = 'https://github.com/oksanalyakhova/spoty.t/blob/main/db.json'; // site that doesn’t send Access-Control-*
+  fetch(proxyurl + url).then((resp) => resp.json())
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
   return (
     <div className={classes}
          style={{height: artistHeight}}>
