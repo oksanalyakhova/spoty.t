@@ -1,10 +1,11 @@
 {
   "artist": {
-    "isVerified": true,
+    "verified": true,
     "bg": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/spotify_img_bground.png",
     "img": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g_eazy_propic.jpg",
-    "name": "G-Eazy",
-    "listenersCount": "15,662,810"
+    "type": "Artist",
+    "name": "G Eazy",
+    "listeners": "15,662,810"
   },
   "friends": [
     {
@@ -31,7 +32,7 @@
       "id": 1,
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
       "title": "Me, Myself & I",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "plays": "147,544,165"
     },
@@ -39,7 +40,7 @@
       "id": 2,
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g_eazy_propic.jpg",
       "title": "I Mean It",
-      "isAdded": false,
+      "added": false,
       "explicit": "explicit",
       "plays": "74,568,782"
     },
@@ -47,7 +48,7 @@
       "id": 3,
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
       "title": "Calm Down",
-      "isAdded": false,
+      "added": false,
       "explicit": "explicit",
       "plays": "13,737,506"
     },
@@ -55,7 +56,7 @@
       "id": 4,
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g_eazy_propic.jpg",
       "title": "Some Kind Of Drug",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "plays": "12,234,881"
     },
@@ -63,7 +64,7 @@
       "id": 5,
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
       "title": "Let\"s Get Lost",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "plays": "40,882,954"
     }
@@ -135,162 +136,162 @@
     {
       "id": 1,
       "title": "Intro",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "1:11",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 2,
       "title": "Random",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:00",
-      "isTrend": false
+      "trend": false
     },
     {
       "id": 3,
       "title": "Me, Myself & I",
       "featured": "Bebe Rexha",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "4:11",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 4,
       "title": "One Of Them",
       "featured": "Big Sean",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:20",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 5,
       "title": "Drifting",
       "featured": "Chris Brown, Tory Lanez",
       "featuredUrl": "some/page",
-      "isAdded": false,
+      "added": false,
       "explicit": "explicit",
       "length": "4:33",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 6,
       "title": "Of All Things",
       "featured": "Too $hort",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:34",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 7,
       "title": "Order More",
       "featured": "Starrah",
       "featuredUrl": "some/page",
-      "isAdded": false,
+      "added": false,
       "explicit": "explicit",
       "length": "3:29",
-      "isTrend": false
+      "trend": false
     },
     {
       "id": 8,
       "title": "Calm Down",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "2:07",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 9,
       "title": "Don\"t Let Me Go",
       "featured": "Grace",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:11",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 10,
       "title": "You Got Me",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:28",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 11,
       "title": "What If",
       "featured": "Gizzle",
       "featuredUrl": "some/page",
-      "isAdded": false,
+      "added": false,
       "explicit": "explicit",
       "length": "4:13",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 12,
       "title": "Sad Boy",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:23",
-      "isTrend": false
+      "trend": false
     },
     {
       "id": 13,
       "title": "Some Kind Of Drug",
       "featured": "Marc E. Bassy",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "3:42",
-      "isTrend": false
+      "trend": false
     },
     {
       "id": 14,
       "title": "Think About You",
       "featured": "Quin",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "2:59",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 15,
       "title": "Everything Will Be OK",
       "featured": "Kehlani",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "5:11",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 16,
       "title": "For This",
       "featured": "Iamnobodi",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "4:11",
-      "isTrend": true
+      "trend": true
     },
     {
       "id": 17,
       "title": "Nothing to Me",
       "featured": "Keyshia Cole, E-40",
       "featuredUrl": "some/page",
-      "isAdded": true,
+      "added": true,
       "explicit": "explicit",
       "length": "5:30",
-      "isTrend": true
+      "trend": true
     }
   ]
 }
