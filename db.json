@@ -1,12 +1,4 @@
 {
-  "artist": {
-    "verified": true,
-    "bg": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/spotify_img_bground.png",
-    "img": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g_eazy_propic.jpg",
-    "type": "Artist",
-    "name": "G-Eazy",
-    "listeners": "15,662,810"
-  },
   "friends": [
     {
       "id": 1,
@@ -119,19 +111,6 @@
       "name": "Hoodie Allen"
     }
   ],
-  "oneRelease": {
-    "id": 1,
-    "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
-    "url": "some/page",
-    "year": "4 December 2015",
-    "name": "Drifting (Track Commentary)"
-  },
-  "oneAlbum": {
-    "id": 1,
-    "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
-    "year": "2015",
-    "name": "When It\"s Dark Out"
-  },
   "albumTracks": [
     {
       "id": 1,
@@ -293,5 +272,26 @@
       "length": "5:30",
       "trend": true
     }
-  ]
+  ],
+  "artist": {
+    "verified": true,
+    "bg": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/spotify_img_bground.png",
+    "img": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/g_eazy_propic.jpg",
+    "type": "Artist",
+    "name": "G-Eazy",
+    "listeners": "15,662,810"
+  },
+  "oneRelease": {
+    "id": 1,
+    "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
+    "url": "some/page",
+    "year": "4 December 2015",
+    "name": "Drifting (Track Commentary)"
+  },
+  "oneAlbum": {
+    "id": 1,
+    "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
+    "year": "2015",
+    "name": "When It\"s Dark Out"
+  }
 }
