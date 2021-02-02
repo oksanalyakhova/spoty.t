@@ -12,10 +12,10 @@ interface CardAlbumsProps {
   title: string;
   featured?: string;
   featuredUrl?: string;
-  isAdded: boolean;
+  added: boolean;
   explicit: string;
   length: string;
-  isTrend: boolean;
+  trend: boolean;
 }
 
 interface BlockAlbumsHelpsProps {

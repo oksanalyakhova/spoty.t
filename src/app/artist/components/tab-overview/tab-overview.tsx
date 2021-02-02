@@ -26,7 +26,7 @@ interface PopularSongProps {
   id: string | number;
   src: string;
   title: string;
-  isAdded: boolean;
+  added: boolean;
   explicit: string;
   plays: string;
 }
@@ -43,10 +43,10 @@ interface AlbumSongProps {
   title: string;
   featured?: string;
   featuredUrl?: string;
-  isAdded: boolean;
+  added: boolean;
   explicit: string;
   length: string;
-  isTrend: boolean;
+  trend: boolean;
 }
 
 interface OverviewProps {

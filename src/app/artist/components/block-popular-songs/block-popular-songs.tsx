@@ -7,7 +7,7 @@ interface PopularSongProps {
   id: string | number;
   src: string;
   title: string;
-  isAdded: boolean;
+  added: boolean;
   explicit: string;
   plays: string;
 }

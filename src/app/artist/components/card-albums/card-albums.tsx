@@ -16,10 +16,10 @@ interface CardAlbumsHelpsProps {
   title: string;
   featured?: string;
   featuredUrl?: string;
-  isAdded: boolean;
+  added: boolean;
   explicit: string;
   length: string;
-  isTrend: boolean;
+  trend: boolean;
 }
 
 interface CardAlbumsProps {
@@ -39,7 +39,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
 
   const [isHover, setHover] = useState(false);
 
-  const [isAdded, setAdded] = useState(track.isAdded)
+  const [isAdded, setAdded] = useState(track.added)
   const handleAdded = () => {
     setAdded(!isAdded);
   };
@@ -85,7 +85,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
       </div>
       {condition
         ? <div className="track__popularity">
-          {!track.isTrend
+          {!track.trend
             ? <IoTrendingDownSharp/>
             : <IoTrendingUpSharp/>
           }
