@@ -1,35 +1,11 @@
-export interface IMainArtist {
-  verified: boolean;
-  bg: string;
-  img: string;
-  type: string;
-  name: string;
-  listeners: string;
-}
-
-export interface IOneRelease {
-  id: string | number;
-  src: string;
-  url: string;
-  year: string;
-  name: string;
-}
-
-export interface IOneAlbum {
-  id: string | number;
-  src: string;
-  year: string;
-  name: string;
-}
-
-export interface IFriend {
+interface IFriend {
   id: string | number;
   url: string;
   src: string;
   name: string;
 }
 
-export interface ITrack {
+interface ITrack {
   id: string | number;
   src: string;
   title: string;
@@ -38,14 +14,14 @@ export interface ITrack {
   plays: string;
 }
 
-export interface IArtist {
+interface IArtist {
   id: string | number;
   url: string;
   src: string;
   name: string;
 }
 
-export interface IAlbumTrack {
+interface IAlbumTrack {
   id: string | number;
   title: string;
   featured?: string;
@@ -54,4 +30,38 @@ export interface IAlbumTrack {
   explicit: string;
   length: string;
   isTrend: boolean;
+}
+
+interface IMainArtist {
+  verified: boolean;
+  bg: string;
+  img: string;
+  type: string;
+  name: string;
+  listeners: string;
+}
+
+interface IOneRelease {
+  id: string | number;
+  src: string;
+  url: string;
+  year: string;
+  name: string;
+}
+
+interface IOneAlbum {
+  id: string | number;
+  src: string;
+  year: string;
+  name: string;
+}
+
+export interface ISiteTypes {
+  friends: Array<IFriend>;
+  tracks: Array<ITrack>;
+  artists: Array<IArtist>;
+  albumTracks: Array<IAlbumTrack>;
+  artist: IMainArtist;
+  oneRelease: IOneRelease;
+  oneAlbum: IOneAlbum;
 }

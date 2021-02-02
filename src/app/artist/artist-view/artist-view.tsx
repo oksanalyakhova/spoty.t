@@ -9,10 +9,9 @@ import classNames from 'classnames';
 
 import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
 
-import {IMainArtist} from '../../../types/siteTypes';
+import {ISiteTypes} from '../../../types/siteTypes';
 
 import artistImg from '@images/artist.jpg';
-import usersImg from '@images/users.png';
 import releaseCover from '@images/whenDarkOut.jpg';
 import album from '@images/whenDarkOut.jpg';
 import artist1 from '@images/hoodie.jpg';
@@ -36,26 +35,6 @@ const Artist: FunctionComponent<ArtistProps> = ({
   topHeight,
   trackHeight
 }): JSX.Element => {
-  const friends = [
-    {
-      id: 1,
-      url: 'some/page',
-      src: `${usersImg}`,
-      name: 'Some Name 1'
-    },
-    {
-      id: 2,
-      url: 'some/page',
-      src: `${usersImg}`,
-      name: 'Some Name 2'
-    },
-    {
-      id: 3,
-      url: 'some/page',
-      src: `${usersImg}`,
-      name: 'Some Name 3'
-    }
-  ]
   const tracks = [
     {
       id: 1,
@@ -324,8 +303,9 @@ const Artist: FunctionComponent<ArtistProps> = ({
     }
   ]
 
-  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t.datas/main/main-artist.json`;
-  const {data} = useFetch<IMainArtist>(url);
+  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t/main/db.json`;
+  const {data} = useFetch<ISiteTypes>(url);
+  const artist = data?.artist;
 
   const myContext = useContext(AppContext);
   const breakpoint = 768;
@@ -333,10 +313,8 @@ const Artist: FunctionComponent<ArtistProps> = ({
   let artistHeight;
   if (condition) artistHeight = myContext.windowHeight - topHeight - trackHeight;
 
-
-
   const classes = classNames('artist', {
-    'is-verified': data?.verified,
+    'is-verified': artist?.verified,
   })
 
   return (
@@ -344,12 +322,12 @@ const Artist: FunctionComponent<ArtistProps> = ({
          style={{height: artistHeight}}>
       <div className="artist__wrapper">
         <ArtistHeader
-          isVerified={data?.verified}
-          artistBg={data?.bg}
-          artistImg={data?.img}
-          artistType={data?.type}
-          artistName={data?.name}
-          artistListenersCount={data?.listeners}
+          isVerified={artist?.verified}
+          artistBg={artist?.bg}
+          artistImg={artist?.img}
+          artistType={artist?.type}
+          artistName={artist?.name}
+          artistListenersCount={artist?.listeners}
         />
         <div className="artist__content">
           <Tabs className="artist__tabs tabs">
@@ -363,7 +341,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
                 </Tab>
               </TabList>
               <div className="navigation__friends">
-                <Friends />
+                {/*<Friends friends={friends} />*/}
               </div>
             </div>
             <TabPanels className="tabs__panels">
