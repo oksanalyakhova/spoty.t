@@ -25,7 +25,7 @@ const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
       className={classes}
       onClick={(e) => onClick(e)}>
       <span>
-      {isActive === false
+      {!isActive
         ? <IoPlaySharp/>
         : <IoPauseSharp/>
       }

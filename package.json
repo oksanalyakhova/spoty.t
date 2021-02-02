@@ -16,6 +16,7 @@
     "@types/react": "^16.14.2",
     "@types/react-dom": "^16.9.10",
     "@types/react-native-vector-icons": "^6.4.6",
+    "axios": "^0.21.1",
     "formik": "^2.2.6",
     "music-metadata": "^7.6.6",
     "node-sass": "^4.14.1",

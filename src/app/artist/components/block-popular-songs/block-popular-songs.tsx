@@ -27,6 +27,7 @@ const BlockPopularSongs: FunctionComponent<BlockPopularSongsProps> = ({
       index={index}
     />
   );
+
   return (
     <div className="tracks tracks_popular-songs">
       {listTracks}

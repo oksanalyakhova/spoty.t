@@ -1,13 +1,16 @@
 import React, {FunctionComponent, useContext} from 'react';
 import AppContext from '../../../AppContext';
+import useFetch from '../../../useFetch';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
+import Friends from '../components/friends/friends';
 import classNames from 'classnames';
 
 import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
 
-import artistBg from '@images/g-eazy.png';
+import {IMainArtist} from '../../../types/siteTypes';
+
 import artistImg from '@images/artist.jpg';
 import usersImg from '@images/users.png';
 import releaseCover from '@images/whenDarkOut.jpg';
@@ -33,7 +36,6 @@ const Artist: FunctionComponent<ArtistProps> = ({
   topHeight,
   trackHeight
 }): JSX.Element => {
-  const isVerified = true;
   const friends = [
     {
       id: 1,
@@ -322,43 +324,32 @@ const Artist: FunctionComponent<ArtistProps> = ({
     }
   ]
 
+  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t.datas/main/main-artist.json`;
+  const {data} = useFetch<IMainArtist>(url);
+
   const myContext = useContext(AppContext);
   const breakpoint = 768;
   const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
   let artistHeight;
   if (condition) artistHeight = myContext.windowHeight - topHeight - trackHeight;
 
-  const navFriends = friends.map((friend) =>
-    <a key={friend.id} href={friend.url} className="friends__item">
-      <img src={friend.src} alt={friend.name}/>
-    </a>
-  );
+
 
   const classes = classNames('artist', {
-    'is-verified': isVerified,
+    'is-verified': data?.verified,
   })
-
-  const proxyurl = "https://cors-anywhere.herokuapp.com/";
-  const url = 'https://github.com/oksanalyakhova/spoty.t/blob/main/db.json'; // site that doesn’t send Access-Control-*
-  fetch(proxyurl + url).then((resp) => resp.json())
-    .then(function(data) {
-      console.log(data);
-    })
-    .catch(function(error) {
-      console.log(error);
-    });
 
   return (
     <div className={classes}
          style={{height: artistHeight}}>
       <div className="artist__wrapper">
         <ArtistHeader
-          isVerified={isVerified}
-          artistBg={artistBg}
-          artistImg={artistImg}
-          artistType="Artist"
-          artistName="G-Eazy"
-          artistListenersCount="15,662,810"
+          isVerified={data?.verified}
+          artistBg={data?.bg}
+          artistImg={data?.img}
+          artistType={data?.type}
+          artistName={data?.name}
+          artistListenersCount={data?.listeners}
         />
         <div className="artist__content">
           <Tabs className="artist__tabs tabs">
@@ -371,8 +362,8 @@ const Artist: FunctionComponent<ArtistProps> = ({
                   <div className="label">Related Artists</div>
                 </Tab>
               </TabList>
-              <div className="navigation__friends friends">
-                {navFriends}
+              <div className="navigation__friends">
+                <Friends />
               </div>
             </div>
             <TabPanels className="tabs__panels">
