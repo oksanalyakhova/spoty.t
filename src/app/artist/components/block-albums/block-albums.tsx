@@ -44,8 +44,7 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
   );
 
   const myContext = useContext(AppContext);
-  const breakpoint = 1200;
-  const condition = myContext.windowWidth > breakpoint;
+  const breakpoint = myContext.windowWidth > 1200;
 
   return (
     <div className="album">
@@ -86,11 +85,10 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
           <div className="tracks__heading__length">
             <IoStopwatchOutline/>
           </div>
-          {condition
-            ? <div className="tracks__heading__popularity">
+          {breakpoint &&
+            <div className="tracks__heading__popularity">
               <IoThumbsUpSharp/>
             </div>
-            : null
           }
         </div>
         <div className="tracks tracks_albums">

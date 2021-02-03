@@ -147,10 +147,9 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
   trackHeight
 }): JSX.Element => {
   const myContext = useContext(AppContext);
-  const breakpoint = 768;
-  const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
+  const breakpoint = myContext.windowWidth > 768 && myContext.windowWidth > myContext.windowHeight;
   let navHeight;
-  if (condition) navHeight = myContext.windowHeight - topHeight - trackHeight - 117;
+  if (breakpoint) navHeight = myContext.windowHeight - topHeight - trackHeight - 117;
 
   const listsNav = nav.map((item, index) =>
     <Accordion

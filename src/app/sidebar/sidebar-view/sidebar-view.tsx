@@ -18,10 +18,9 @@ const Sidebar : FunctionComponent<SidebarProps> = ({
   const friends = local.findFriends;
 
   const myContext = useContext(AppContext);
-  const breakpoint = 768;
-  const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
+  const breakpoint = myContext.windowWidth > 768 && myContext.windowWidth > myContext.windowHeight;
   let socialsHeight;
-  if (condition) socialsHeight = myContext.windowHeight - topHeight - trackHeight;
+  if (breakpoint) socialsHeight = myContext.windowHeight - topHeight - trackHeight;
 
   return (
     <div className="sidebar"

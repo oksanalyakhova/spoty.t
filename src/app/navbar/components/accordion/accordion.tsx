@@ -42,8 +42,7 @@ const Accordion: FunctionComponent<AccordionProps> = ({
   }, [contentRef]);
 
   const myContext = useContext(AppContext);
-  const breakpoint = 769;
-  const condition = myContext.windowWidth < breakpoint;
+  const breakpoint = myContext.windowWidth < 769;
 
   const [isActive, setActive] = useState(false);
   const handleToggle = () => {
@@ -63,7 +62,7 @@ const Accordion: FunctionComponent<AccordionProps> = ({
         {name}
         <IoChevronDownSharp/>
       </div>
-      {condition
+      {breakpoint
         ? <div className="accordion__content"
                style={isActive ? {height: height} : {height: 0}}>
             <div className="nav-cards" ref={contentRef}>
@@ -77,7 +76,6 @@ const Accordion: FunctionComponent<AccordionProps> = ({
           </div>
         </div>
       }
-
     </div>
   )
 };

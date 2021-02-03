@@ -19,16 +19,14 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   const playing = local.currentTrack.meta;
 
   const myContext = useContext(AppContext);
-  const breakpoint = 768;
-  const condition = myContext.windowWidth > breakpoint;
+  const breakpoint = myContext.windowWidth > 768;
 
   return (
     <div className="navbar">
       <Accordions className="navbar__accordions" topHeight={topHeight} trackHeight={trackHeight}/>
       {
-        condition
-        ? <AddPlaylist className="navbar__add-playlist"/>
-        : null
+        breakpoint &&
+        <AddPlaylist className="navbar__add-playlist"/>
       }
       <Playing className="navbar__playing" playing={playing}/>
     </div>

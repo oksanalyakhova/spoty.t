@@ -36,10 +36,9 @@ const Artist: FunctionComponent<ArtistProps> = ({
   const albumTracks = local.albumTracks;
 
   const myContext = useContext(AppContext);
-  const breakpoint = 768;
-  const condition = myContext.windowWidth > breakpoint && myContext.windowWidth > myContext.windowHeight;
+  const breakpoint = myContext.windowWidth > 768 && myContext.windowWidth > myContext.windowHeight;
   let artistHeight;
-  if (condition) artistHeight = myContext.windowHeight - topHeight - trackHeight;
+  if (breakpoint) artistHeight = myContext.windowHeight - topHeight - trackHeight;
 
   const classes = classNames('artist', {
     'is-verified': artist?.verified,

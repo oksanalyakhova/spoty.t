@@ -30,9 +30,8 @@ const CardRelatedArtists: FunctionComponent<CardRelatedArtistsProps> = ({
        className={classes}>
       <span className="related-artist__img">
         <img src={artist.src} alt={artist.name}/>
-        {!isSmall
-          ? <IoPlaySharp/>
-          : null
+        {!isSmall &&
+          <IoPlaySharp/>
         }
       </span>
       <span className="related-artist__name">

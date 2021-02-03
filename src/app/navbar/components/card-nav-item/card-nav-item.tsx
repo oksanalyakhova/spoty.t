@@ -22,22 +22,20 @@ const CardNavItem: FunctionComponent<CardNavItemProps> = ({
   navItem
 }): JSX.Element => {
   const myContext = useContext(AppContext);
-  const breakpoint = 768;
-  const condition = myContext.windowWidth > breakpoint;
+  const breakpoint = myContext.windowWidth > 768;
 
   const classes = classNames(className, 'card-nav')
 
   return (
     <a href={navItem.url} className={classes}>
-      {condition
-        ? <span className="icon">
+      {breakpoint &&
+        <span className="icon">
           {
             navItem.icon
               ? navItem.icon
               : <IoMusicalNotesSharp/>
           }
         </span>
-        : null
       }
       <span className="name">
         {navItem.name}
