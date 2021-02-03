@@ -23,7 +23,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
   trackHeight
 }): JSX.Element => {
   // fetch data example
-  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t/main/src/db.json`;
+  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t/main/src/local.json`;
   const {data} = useFetch<ISiteTypes>(url);
   const artist = data?.artist;
 
