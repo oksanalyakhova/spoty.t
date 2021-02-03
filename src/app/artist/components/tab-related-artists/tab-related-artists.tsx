@@ -27,7 +27,7 @@ const TabRelatedArtists: FunctionComponent<RelatedArtistsProps> = ({
         artists={artists}
         isCardSmall={isCardArtistsSmall}
         forBlock={forArtistsBlock}
-        total={8}
+        total={artists.length}
       />
     </div>
   )

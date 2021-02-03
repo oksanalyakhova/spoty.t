@@ -13,11 +13,13 @@ interface CardPopularSongsProps {
 }
 
 interface BlockPopularSongsProps {
-  tracks: Array<CardPopularSongsProps>
+  tracks: Array<CardPopularSongsProps>;
+  total?: number;
 }
 
 const BlockPopularSongs: FunctionComponent<BlockPopularSongsProps> = ({
   tracks,
+  total,
 }): JSX.Element => {
   const listTracks = tracks.map((track, index) =>
     <CardTrack
@@ -30,7 +32,7 @@ const BlockPopularSongs: FunctionComponent<BlockPopularSongsProps> = ({
 
   return (
     <div className="tracks tracks_popular-songs">
-      {listTracks}
+      {listTracks.splice(0, total)}
     </div>
   )
 }
