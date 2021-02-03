@@ -1,0 +1,23 @@
+@import "../../../../assets/styles/setup"
+
+.page-flows
+	&__item
+		display: flex
+		justify-content: center
+		align-items: center
+		color: $c-grey
+		cursor: pointer
+
+		&:first-child
+			margin-right: 8px
+
+		&:hover
+			color: $c-white
+
+		&.is-disabled
+			color: #5e5e5e
+			pointer-events: none
+
+		svg
+			width: 26px
+			height: 26px

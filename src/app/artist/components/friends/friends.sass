@@ -8,12 +8,12 @@
 		margin-left: 0
 		justify-content: flex-start
 
-	& > * + *
-		margin: 0 0 0 5px
-
 	&__item
 		position: relative
 		width: 30px
 		height: 30px
 		border-radius: 50%
 		overflow: hidden
+
+		&:not(:last-child)
+			margin-right: 5px

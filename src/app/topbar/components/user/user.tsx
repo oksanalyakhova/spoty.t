@@ -32,9 +32,9 @@ const User: FunctionComponent<UserProps> = ({
 
   return (
     <div className={classes}>
-      <Notifications className="user__notifications"/>
-      <Inbox className="user__inbox"/>
-      <div className="user__info info">
+      <Notifications className="user__item user__notifications"/>
+      <Inbox className="user__item user__inbox"/>
+      <div className="user__item user__info info">
         <div className="info__img">
           <img src={user.src} alt={user.name}/>
         </div>
@@ -42,7 +42,7 @@ const User: FunctionComponent<UserProps> = ({
           {user.name}
         </div>
       </div>
-      <div className="user__actions">
+      <div className="user__item user__actions">
         <Dropdown items={dropdownItems}/>
       </div>
     </div>
