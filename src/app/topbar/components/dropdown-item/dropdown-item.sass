@@ -1,0 +1,34 @@
+@import "../../../../assets/styles/setup"
+
+.list-item
+	+pseudo
+	padding: 10px
+	margin: 0
+	overflow: hidden
+
+	&:hover
+		&::before
+			transform: scaleY(1)
+			transform-origin: bottom center
+
+		a
+			color: $c-light-black
+			transition-delay: 0s
+
+	&::before
+		z-index: -1
+		width: 100%
+		height: 100%
+		background-color: $c-grey
+		transform: scaleY(0)
+		transform-origin: top center
+		+trans
+	a
+		padding: 3px 20px
+		clear: both
+		font-weight: 500
+		white-space: nowrap
+		color: $c-grey
+		opacity: 0
+		+trans
+		transition-delay: 0s

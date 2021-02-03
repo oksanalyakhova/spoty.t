@@ -1,6 +1,7 @@
 import React, {FunctionComponent, useState, useRef} from 'react';
 import {IoChevronDownSharp} from 'react-icons/all';
 import classNames from 'classnames';
+import DropdownItem from '../dropdown-item/dropdown-item';
 import useOutsideClick from '../../../../useOutsideClick';
 
 import './dropdown.sass';
@@ -19,11 +20,11 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   items
 }): JSX.Element => {
   const listItems = items.map((item) =>
-    <li key={item.id} className="list__item">
-      <a href={item.url}>
-        {item.text}
-      </a>
-    </li>
+    <DropdownItem
+      className="dropdown__list__item"
+      key={item.id}
+      url={item.url}
+      text={item.text}/>
   );
 
   const [isActive, setActive] = useState(false)
@@ -49,7 +50,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
               onClick={handleToggle}>
         <IoChevronDownSharp/>
       </button>
-      <ul className="dropdown__list list">
+      <ul className="dropdown__list">
         {listItems}
       </ul>
     </div>
