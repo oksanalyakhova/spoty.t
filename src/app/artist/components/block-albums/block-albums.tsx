@@ -1,33 +1,33 @@
 import React, {FunctionComponent, useContext} from 'react';
 import AppContext from '../../../../AppContext';
-import CardAlbums from '../card-albums/card-albums';
+import CardTrack from '../card-track/card-track';
 import {IoStopwatchOutline, IoThumbsUpSharp} from 'react-icons/io5';
 import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import ButtonMore from '../../../../ui/button-more/button-more';
 
 import './block-albums.sass';
 
-interface CardAlbumsProps {
-  id: string | number;
-  title: string;
+interface CardSongsProps {
+  id?: string | number;
+  title?: string;
   featured?: string;
   featuredUrl?: string;
-  added: boolean;
-  explicit: string;
-  length: string;
-  trend: boolean;
+  added?: boolean;
+  explicit?: string;
+  length?: string;
+  trend?: boolean;
 }
 
 interface BlockAlbumsHelpsProps {
-  id: string | number;
-  src: string;
-  year: string;
-  name: string;
+  id?: string | number;
+  src?: string;
+  year?: string;
+  name?: string;
 }
 
 interface BlockAlbumsProps {
   album: BlockAlbumsHelpsProps,
-  tracks: Array<CardAlbumsProps>
+  tracks: Array<CardSongsProps>
 }
 
 const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
@@ -35,7 +35,7 @@ const BlockAlbums: FunctionComponent<BlockAlbumsProps> = ({
   tracks,
 }): JSX.Element => {
   const listTracks = tracks.map((track, index) =>
-    <CardAlbums
+    <CardTrack
       className="track_albums"
       key={track.id}
       track={track}

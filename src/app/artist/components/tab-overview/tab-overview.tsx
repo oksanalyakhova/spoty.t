@@ -23,13 +23,13 @@ interface AlbumsProps {
   name: string;
 }
 
-interface PopularSongProps {
-  id: string | number;
-  src: string;
-  title: string;
-  added: boolean;
-  explicit: string;
-  plays: string;
+interface CardPopularSongsProps {
+  id?: string | number;
+  src?: string;
+  title?: string;
+  added?: boolean;
+  explicit?: string;
+  plays?: string;
 }
 
 interface RelatedArtistProps {
@@ -39,25 +39,25 @@ interface RelatedArtistProps {
   name: string;
 }
 
-interface AlbumSongProps {
-  id: string | number;
-  title: string;
+interface CardSongsProps {
+  id?: string | number;
+  title?: string;
   featured?: string;
   featuredUrl?: string;
-  added: boolean;
-  explicit: string;
-  length: string;
-  trend: boolean;
+  added?: boolean;
+  explicit?: string;
+  length?: string;
+  trend?: boolean;
 }
 
 interface OverviewProps {
   release: ReleaseProps;
   album: AlbumsProps;
-  tracks: Array<PopularSongProps>;
+  tracks: Array<CardPopularSongsProps>;
   artists: Array<RelatedArtistProps>;
   isCardArtistsSmall: boolean;
   forArtistsBlock: boolean;
-  albumTracks: Array<AlbumSongProps>;
+  albumTracks: Array<CardSongsProps>;
 }
 
 const TabOverview: FunctionComponent<OverviewProps> = ({

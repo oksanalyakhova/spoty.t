@@ -1,26 +1,26 @@
 import React, {FunctionComponent} from 'react';
-import CardPopularSongs from '../card-popular-songs/card-popular-songs';
+import CardTrack from '../card-track/card-track';
 
 import './block-popular-songs.sass';
 
-interface PopularSongProps {
-  id: string | number;
-  src: string;
-  title: string;
-  added: boolean;
-  explicit: string;
-  plays: string;
+interface CardPopularSongsProps {
+  id?: string | number;
+  src?: string;
+  title?: string;
+  added?: boolean;
+  explicit?: string;
+  plays?: string;
 }
 
 interface BlockPopularSongsProps {
-  tracks: Array<PopularSongProps>
+  tracks: Array<CardPopularSongsProps>
 }
 
 const BlockPopularSongs: FunctionComponent<BlockPopularSongsProps> = ({
   tracks,
 }): JSX.Element => {
   const listTracks = tracks.map((track, index) =>
-    <CardPopularSongs
+    <CardTrack
       className="track_popular-songs"
       key={track.id}
       track={track}

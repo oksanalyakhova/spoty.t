@@ -1,41 +1,37 @@
 import React, {FunctionComponent, useContext, useState} from 'react';
 import AppContext from '../../../../AppContext';
 import Tag from '../../../../ui/tag/tag';
+import {IoCheckmarkSharp, IoAddSharp, IoPlaySharp, IoTrendingDownSharp, IoTrendingUpSharp} from 'react-icons/io5';
 import classNames from 'classnames';
-import {
-  IoCheckmarkSharp,
-  IoAddSharp,
-  IoTrendingDownSharp,
-  IoTrendingUpSharp, IoPlaySharp
-} from 'react-icons/io5';
 
-import './card-albums.sass';
+import './card-track.sass';
 
-interface CardAlbumsHelpsProps {
-  id: string | number;
-  title: string;
+interface CardTrackHelpsProps {
+  id?: string | number;
+  src?: string;
+  title?: string;
+  added?: boolean;
   featured?: string;
   featuredUrl?: string;
-  added: boolean;
-  explicit: string;
-  length: string;
-  trend: boolean;
+  explicit?: string;
+  plays?: string;
+  length?: string;
+  trend?: boolean;
 }
 
-interface CardAlbumsProps {
+interface CardTrackProps {
   className?: string;
-  track: CardAlbumsHelpsProps;
+  track: CardTrackHelpsProps;
   index: number;
 }
 
-const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
+const CardTrack: FunctionComponent<CardTrackProps> = ({
   className,
   track,
   index
 }): JSX.Element => {
   const myContext = useContext(AppContext);
-  const breakpoint = 1200;
-  const condition = myContext.windowWidth > breakpoint;
+  const breakpoint = myContext.windowWidth > 1200;
 
   const [isHover, setHover] = useState(false);
 
@@ -44,7 +40,7 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
     setAdded(!isAdded);
   };
 
-  const classesCard = classNames(className, 'track');
+  const classes = classNames(className, 'track');
   const classesCardAdded = classNames('track__added', {
     'is-active': isAdded
   })
@@ -53,9 +49,14 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
   })
 
   return (
-    <div className={classesCard}
+    <div className={classes}
          onMouseEnter={() => setHover(true)}
          onMouseLeave={() => setHover(false)}>
+      {track.src &&
+        <div className="track__art">
+          <img src={track.src} alt={track.title}/>
+        </div>
+      }
       <div className="track__number">
         {!isHover
           ? index + 1
@@ -71,30 +72,34 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
       </button>
       <div className={classesCardTitle}>
         <span className="title">{track.title}</span>
-        {track.featured
-          ? <a href={track.featuredUrl} className="feature">{track.featured}</a>
-          : null
+        {track.featured &&
+          <a href={track.featuredUrl} className="feature">{track.featured}</a>
         }
       </div>
-      {condition
-        ? <div className="track__explicit"><Tag text={track.explicit}/></div>
-        : null
+      {breakpoint &&
+        <div className="track__explicit"><Tag text={track.explicit}/></div>
       }
-      <div className="track__length">
-        {track.length}
-      </div>
-      {condition
-        ? <div className="track__popularity">
+      {track.length &&
+        <div className="track__length">
+          {track.length}
+        </div>
+      }
+      {breakpoint && !track.src &&
+        <div className="track__popularity">
           {!track.trend
             ? <IoTrendingDownSharp/>
             : <IoTrendingUpSharp/>
           }
         </div>
-        : null
+      }
+      {track.src &&
+        <div className="track__plays">
+          {track.plays}
+        </div>
       }
     </div>
   )
 }
 
-export default CardAlbums;
+export default CardTrack;
 
