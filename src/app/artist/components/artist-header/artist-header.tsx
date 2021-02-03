@@ -33,11 +33,6 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
     setMoreActive(!isMoreActive);
   };
 
-  let verifiedIcon;
-  if (isVerified === true) {
-    verifiedIcon = <div className="icon-verified"><IoCheckmarkSharp/></div>
-  }
-
   return (
     <div className="artist__header">
       <div className="artist__bg">
@@ -46,7 +41,7 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
       <div className="artist__info info">
         <div className="info__img">
           <img src={artistImg} alt={artistName}/>
-          {verifiedIcon}
+          {isVerified && <div className="icon-verified"><IoCheckmarkSharp/></div>}
         </div>
         <div className="info__meta">
           <div className="info__type">
