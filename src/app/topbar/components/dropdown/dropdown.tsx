@@ -37,7 +37,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     if (isActive) setActive(!isActive)
   });
 
-  const classesDropdownButton = classNames('dropdown__button button button-dropdown', {
+  const classesDropdownButton = classNames('dropdown__button button', {
     'is-active': isActive,
   });
   const classesDropdownList = classNames('dropdown__list list', {
