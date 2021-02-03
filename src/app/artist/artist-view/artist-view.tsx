@@ -3,12 +3,12 @@ import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
 import classNames from 'classnames';
 import AppContext from '../../../AppContext';
 import useFetch from '../../../useFetch';
+import {ISiteTypes} from '../../../types/siteTypes';
+import local from '../../../local.json';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
 import Friends from '../components/friends/friends';
-import {ISiteTypes} from '../../../types/siteTypes';
-import local from '../../../db.json';
 
 import '@reach/tabs/styles.css';
 import './artist-view.sass';

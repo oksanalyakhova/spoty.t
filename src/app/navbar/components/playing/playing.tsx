@@ -10,12 +10,11 @@ interface PlayingNamesProps {
 }
 
 interface PlayingHelpsProps {
-  className?: string;
   id?: string | number;
-  src?: string;
+  img?: string;
   title?: PlayingNamesProps;
   artist?: PlayingNamesProps;
-  isAdded?: boolean;
+  added?: boolean;
 }
 
 interface PlayingProps {
@@ -32,7 +31,7 @@ const Playing: FunctionComponent<PlayingProps> = ({
   return (
     <div className={classes}>
       <div className="playing__art">
-        <img src={playing.src} alt={playing.title?.name}/>
+        <img src={playing.img} alt={playing.title?.name}/>
       </div>
       <div className="playing__song">
         <a href={playing.title?.url} className="playing__title">
@@ -43,7 +42,7 @@ const Playing: FunctionComponent<PlayingProps> = ({
         </a>
       </div>
       <div className="playing__add">
-        {!playing.isAdded
+        {!playing.added
           ? <button type="button" className="button button-add-song"><IoAddSharp/></button>
           : <IoCheckmarkSharp/>
         }

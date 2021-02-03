@@ -17,7 +17,7 @@ interface BlockFriendsProps {
 const BlockFriends: FunctionComponent<BlockFriendsProps> = ({
   friends,
 }): JSX.Element => {
-  const listTracks = friends.map((friend, index) =>
+  const listFriends = friends.map((friend, index) =>
     <CardFriends
       key={friend.id}
       friend={friend}
@@ -26,7 +26,7 @@ const BlockFriends: FunctionComponent<BlockFriendsProps> = ({
 
   return (
     <div className="friends friends_sidebar">
-      {listTracks}
+      {listFriends}
     </div>
   )
 }

@@ -19,10 +19,12 @@ import './player.sass';
 
 interface PlayerProps {
   className?: string;
+  src?: string;
 }
 
 const Player: FunctionComponent<PlayerProps> = ({
   className,
+  src
 }): JSX.Element => {
   const lyrics = <button
     type="button"
@@ -57,7 +59,7 @@ const Player: FunctionComponent<PlayerProps> = ({
         showSkipControls={true}
         showJumpControls={false}
         autoPlay={false}
-        src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/wwy.mp3"
+        src={src}
         onPlay={e => console.log("onPlay")}
         customIcons={{
           play: <IoPlaySharp/>,

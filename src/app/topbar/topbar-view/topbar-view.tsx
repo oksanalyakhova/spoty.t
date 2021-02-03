@@ -2,37 +2,13 @@ import React, {forwardRef} from 'react';
 import Search from '../components/search/search';
 import User from '../components/user/user';
 import TopbarNav from '../components/topbar-nav/topbar-nav';
-import userImg from '@images/user.jpg';
+import local from '../../../local.json';
 
 import './topbar-view.sass';
 
 const Topbar = forwardRef<HTMLDivElement>((props, ref) => {
-  const user = {
-    name: 'Adam Lowenthal',
-    src: `${userImg}`
-  };
-  const dropdownItems = [
-    {
-      id: 1,
-      url: "#",
-      text: "Private Session",
-    },
-    {
-      id: 2,
-      url: "#",
-      text: "Account",
-    },
-    {
-      id: 3,
-      url: "#",
-      text: "Settings",
-    },
-    {
-      id: 4,
-      url: "#",
-      text: "Log Out",
-    },
-  ];
+  const user = local.user;
+  const dropdownItems = local.accountMenu;
 
   return (
     <div className="topbar"

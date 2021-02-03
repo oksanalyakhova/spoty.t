@@ -72,43 +72,43 @@
       "id": 2,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/mikestud_large.jpg",
-      "name": "Hoodie Allen"
+      "name": "Mike Stud"
     },
     {
       "id": 3,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/drake_large.jpg",
-      "name": "Hoodie Allen"
+      "name": "Drake"
     },
     {
       "id": 4,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/jcole_large.jpg",
-      "name": "Hoodie Allen"
+      "name": "J. Cole"
     },
     {
       "id": 5,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/bigSean_large.jpg",
-      "name": "Hoodie Allen"
+      "name": "Big Sean"
     },
     {
       "id": 6,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/wiz.jpeg",
-      "name": "Hoodie Allen"
+      "name": "Wiz Khalifa"
     },
     {
       "id": 7,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/yonas.jpg",
-      "name": "Hoodie Allen"
+      "name": "Yonas"
     },
     {
       "id": 8,
       "url": "some/page",
       "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/childish.jpg",
-      "name": "Hoodie Allen"
+      "name": "Childish Gambino"
     }
   ],
   "albumTracks": [
@@ -293,5 +293,83 @@
     "src": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/7022/whenDarkOut.jpg",
     "year": "2015",
     "name": "When It\"s Dark Out"
-  }
+  },
+  "currentTrack": {
+    "src": "https://cdn1.boomze.cc/uploads/files/2019-11/1574543761520_1574543761.mp3",
+    "meta": {
+      "id": "someId",
+      "img": "https://i1.sndcdn.com/artworks-000676324123-cgmk31-t500x500.jpg",
+      "title": {
+        "name": "Odyssey",
+        "url": "some/page"
+      },
+      "artist": {
+        "name": "Latexfauna",
+        "url": "some/page"
+      },
+      "added": true
+    }
+  },
+  "findFriends": [
+    {
+      "id": 1,
+      "url": "some/page",
+      "name": "Rachel Green"
+    },
+    {
+      "id": 2,
+      "url": "some/page",
+      "src": "https://i.pinimg.com/564x/62/a3/c1/62a3c1a110bbff7fb63bb70192c21a94.jpg",
+      "name": "Monica Geller"
+    },
+    {
+      "id": 3,
+      "url": "some/page",
+      "src": "https://pyxis.nymag.com/v1/imgs/079/792/3ed0d94be0a9bd3d023f00532889bab152-30-chandler-bing.rsquare.w330.jpg",
+      "name": "Chandler Bing"
+    },
+    {
+      "id": 4,
+      "url": "some/page",
+      "src": "https://c.ndtvimg.com/2020-08/8uffq8ko_mumbai-police_625x300_18_August_20.jpg",
+      "name": "Joey Tribbiani"
+    },
+    {
+      "id": 5,
+      "url": "some/page",
+      "name": "Ross Geller"
+    },
+    {
+      "id": 6,
+      "url": "some/page",
+      "src": "https://i.insider.com/55df18389dd7cc0f008b64cc?width=1100&format=jpeg&auto=webp",
+      "name": "Phoebe Buffay"
+    }
+  ],
+  "user": {
+    "name": "Adam Lowenthal",
+    "src": "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+  },
+  "accountMenu": [
+    {
+      "id": 1,
+      "url": "#",
+      "text": "Private Session"
+    },
+    {
+      "id": 2,
+      "url": "#",
+      "text": "Account"
+    },
+    {
+      "id": 3,
+      "url": "#",
+      "text": "Settings"
+    },
+    {
+      "id": 4,
+      "url": "#",
+      "text": "Log Out"
+    }
+  ]
 }
