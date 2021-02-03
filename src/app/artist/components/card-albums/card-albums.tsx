@@ -45,8 +45,8 @@ const CardAlbums: FunctionComponent<CardAlbumsProps> = ({
   };
 
   const classesCard = classNames(className, 'track');
-  const classesCardAdded = classNames('track__added button-add-track', {
-    'track__added_active': isAdded
+  const classesCardAdded = classNames('track__added', {
+    'is-active': isAdded
   })
   const classesCardTitle = classNames('track__title', {
     'featured': track.featured

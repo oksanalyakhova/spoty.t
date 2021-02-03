@@ -4,6 +4,7 @@ import BlockPopularSongs from '../block-popular-songs/block-popular-songs';
 import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import BlockRelatedArtists from '../block-related-artists/block-related-artists';
 import BlockAlbums from '../block-albums/block-albums';
+import OverviewBox from '../overview-box/overview-box';
 
 import './tab-overview.sass';
 
@@ -71,47 +72,41 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
   return (
     <div className="tab-overview">
       <div className="tab-overview__artist">
-        <div className="section-title">
-          Latest Release
-        </div>
-        <LatestRelease
-          release={release}
-        />
-        <div className="section-title">
-          Popular
-        </div>
-        <BlockPopularSongs
-          tracks={tracks}
-        />
+        <OverviewBox title="Latest Release"
+          children={
+            <LatestRelease release={release} />
+          }/>
+        <OverviewBox title="Popular"
+          children={
+            <BlockPopularSongs tracks={tracks} />
+          }/>
         <ButtonTheme
           text="show 5 more"
           isDisabled={false}
           onClick={() => {
-            console.log("theme was clicked")
+            console.log('theme was clicked')
           }}
         />
       </div>
       <div className="tab-overview__related">
-        <div className="section-title">
-          Related Artists
-        </div>
-        <BlockRelatedArtists
-          artists={artists}
-          isCardSmall={isCardArtistsSmall}
-          forBlock={forArtistsBlock}
-          total={7}
-        />
+        <OverviewBox title="Related Artists"
+          children={
+            <BlockRelatedArtists
+              artists={artists}
+              isCardSmall={isCardArtistsSmall}
+              forBlock={forArtistsBlock}
+              total={7}
+            />
+          }/>
       </div>
       <div className="tab-overview__albums">
-        <div className="tab-overview__albums__head">
-          <div className="section-title">
-            Albums
-          </div>
-          <BlockAlbums
-            album={album}
-            tracks={albumTracks}
-          />
-        </div>
+        <OverviewBox title="Albums"
+          children={
+            <BlockAlbums
+              album={album}
+              tracks={albumTracks}
+            />
+          } />
       </div>
     </div>
   )

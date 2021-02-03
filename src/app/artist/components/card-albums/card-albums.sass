@@ -33,6 +33,7 @@
 				width: calc(100% + 10px)
 
 		#{$this}__added
+			+pseudo
 			flex: none
 			margin-left: 30px
 			width: 14px
@@ -45,8 +46,7 @@
 				svg
 					filter: drop-shadow(3px 3px 2px $c-green)
 
-			&_active
-				+pseudo
+			&.is-active
 				&::before
 					animation: glow .25s
 
