@@ -37,23 +37,19 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     if (isActive) setActive(!isActive)
   });
 
-  const classesDropdownButton = classNames('dropdown__button button', {
-    'is-active': isActive,
+  const classes = classNames('dropdown', {
+    'is-active': isActive
   });
-  const classesDropdownList = classNames('dropdown__list list', {
-    'is-visible': isActive,
-    'is-hidden': !isActive
-  })
 
   return (
-    <div className="dropdown"
+    <div className={classes}
          ref={dropRef}>
       <button type="button"
-              className={classesDropdownButton}
+              className="dropdown__button button"
               onClick={handleToggle}>
         <IoChevronDownSharp/>
       </button>
-      <ul className={classesDropdownList}>
+      <ul className="dropdown__list list">
         {listItems}
       </ul>
     </div>

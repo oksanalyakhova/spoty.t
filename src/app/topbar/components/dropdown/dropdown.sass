@@ -3,6 +3,20 @@
 .dropdown
 	position: relative
 
+	$this: &
+	&.is-active
+		#{$this}__button
+			transform: rotate(180deg)
+
+		#{$this}__list
+			transform: scaleY(1)
+			transition-delay: 0s
+
+			li
+				a
+					opacity: 1
+					transition-delay: .35s
+
 	&__button
 		padding: 5px
 		display: flex
@@ -14,9 +28,6 @@
 
 		&:hover
 			color: $c-white
-
-		&.is-active
-			transform: rotate(180deg)
 
 		svg
 			width: 26px
@@ -36,15 +47,6 @@
 		transform-origin: 0 0
 		+trans
 		transition-delay: .35s
-
-		&.is-visible
-			transform: scaleY(1)
-			transition-delay: 0s
-
-			li
-				a
-					opacity: 1
-					transition-delay: .35s
 
 		li
 			+pseudo
