@@ -1,11 +1,17 @@
 import React, {forwardRef} from 'react';
 import Player from '../components/player/player';
-import local from '../../../local.json';
+import {ISiteTypes} from '../../../types/siteTypes';
 
 import './current-track-view.sass';
 
-const CurrentTrack = forwardRef<HTMLDivElement>((props, ref) => {
-  const src = local.currentTrack.src;
+interface CurrentTrackProps {
+  local: ISiteTypes;
+}
+
+const CurrentTrack = forwardRef<HTMLDivElement, CurrentTrackProps>(
+  (props, ref
+) => {
+  const src = props.local.currentTrack.src;
 
   return (
     <div className="current-track" ref={ref}>

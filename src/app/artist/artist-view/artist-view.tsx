@@ -2,13 +2,11 @@ import React, {FunctionComponent, useContext} from 'react';
 import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
 import classNames from 'classnames';
 import AppContext from '../../../AppContext';
-import useFetch from '../../../useFetch';
-import {ISiteTypes} from '../../../types/siteTypes';
-import local from '../../../local.json';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
 import Friends from '../components/friends/friends';
+import {ISiteTypes} from '../../../types/siteTypes';
 
 import '@reach/tabs/styles.css';
 import './artist-view.sass';
@@ -16,18 +14,17 @@ import './artist-view.sass';
 interface ArtistProps {
   topHeight: number;
   trackHeight: number;
+  local: ISiteTypes;
+  data?: ISiteTypes;
 }
 
 const Artist: FunctionComponent<ArtistProps> = ({
   topHeight,
-  trackHeight
+  trackHeight,
+  local,
+  data
 }): JSX.Element => {
-  // fetch data example
-  const url = `https://raw.githubusercontent.com/oksanalyakhova/spoty.t/main/src/local.json`;
-  const {data} = useFetch<ISiteTypes>(url);
   const artist = data?.artist;
-
-  // local json data
   const friends = local.friends;
   const tracks = local.tracks;
   const artists = local.artists;

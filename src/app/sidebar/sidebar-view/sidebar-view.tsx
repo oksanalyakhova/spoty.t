@@ -2,18 +2,20 @@ import React, {FunctionComponent, useContext} from 'react';
 import AppContext from '../../../AppContext';
 import BlockFriends from '../components/block-friends/block-friends';
 import ButtonTheme from '../../../ui/button-theme/button-theme';
-import local from '../../../local.json';
+import {ISiteTypes} from '../../../types/siteTypes';
 
 import './sidebar-view.sass';
 
 interface SidebarProps {
   topHeight: number;
   trackHeight: number;
+  local: ISiteTypes;
 }
 
 const Sidebar : FunctionComponent<SidebarProps> = ({
   topHeight,
-  trackHeight
+  trackHeight,
+  local
 }): JSX.Element => {
   const friends = local.findFriends;
 
