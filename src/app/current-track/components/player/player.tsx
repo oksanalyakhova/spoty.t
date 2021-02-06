@@ -12,7 +12,7 @@ import {
   IoMdMenu,
   TiArrowShuffle,
   IoIosPhonePortrait
-} from "react-icons/all";
+} from 'react-icons/all';
 
 import 'react-h5-audio-player/lib/styles.css';
 import './player.sass';

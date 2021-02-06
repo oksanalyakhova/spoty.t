@@ -4,6 +4,8 @@ import Main from './app/main/main-view/main-view';
 import CurrentTrack from './app/current-track/current-track-view/current-track-view';
 import AppContext from './AppContext';
 import local from './local.json';
+import useFetch from './useFetch';
+import {ISiteTypes} from './types/siteTypes';
 import {
   AiOutlineFile,
   FaHeadphones,
@@ -13,8 +15,6 @@ import {
   IoRadio} from 'react-icons/all';
 
 import './App.sass';
-import useFetch from "./useFetch";
-import {ISiteTypes} from "./types/siteTypes";
 
 const navMain = [
   {

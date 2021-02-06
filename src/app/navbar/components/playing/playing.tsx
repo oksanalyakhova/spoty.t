@@ -1,7 +1,7 @@
 import React, {FunctionComponent} from 'react';
 import {IoAddSharp, IoCheckmarkSharp} from 'react-icons/io5';
 import classNames from 'classnames';
-import {ISiteTypes} from "../../../../types/siteTypes";
+import {ISiteTypes} from '../../../../types/siteTypes';
 
 import './playing.sass';
 
