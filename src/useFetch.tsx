@@ -74,5 +74,4 @@ function useFetch<T = unknown>(
 }
 export default useFetch;
 
-// used
-// https://usehooks-typescript.com/react-hook/use-fetch
+// used https://usehooks-typescript.com/react-hook/use-fetch
