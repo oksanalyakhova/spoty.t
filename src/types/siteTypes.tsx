@@ -1,11 +1,11 @@
-interface IFriend {
+export interface IFriend {
   id: string | number;
   url: string;
-  src: string;
+  src?: string;
   name: string;
 }
 
-interface ITrack {
+export interface ITrack {
   id: string | number;
   src: string;
   title: string;
@@ -14,14 +14,14 @@ interface ITrack {
   plays: string;
 }
 
-interface IArtist {
+export interface IArtist {
   id: string | number;
   url: string;
   src: string;
   name: string;
 }
 
-interface IAlbumTrack {
+export interface IAlbumTrack {
   id: string | number;
   title: string;
   featured?: string;
@@ -32,16 +32,16 @@ interface IAlbumTrack {
   trend: boolean;
 }
 
-interface IMainArtist {
-  verified: boolean;
-  bg: string;
-  img: string;
-  type: string;
-  name: string;
-  listeners: string;
+export interface IMainArtist {
+  verified?: boolean;
+  bg?: string;
+  img?: string;
+  type?: string;
+  name?: string;
+  listeners?: string;
 }
 
-interface IOneRelease {
+export interface IOneRelease {
   id: string | number;
   src: string;
   url: string;
@@ -49,19 +49,19 @@ interface IOneRelease {
   name: string;
 }
 
-interface IOneAlbum {
+export interface IOneAlbum {
   id: string | number;
   src: string;
   year: string;
   name: string;
 }
 
-interface ICurrentTrackMetaNames {
+export interface ICurrentTrackMetaNames {
   name: string;
   url: string;
 }
 
-interface ICurrentTrackMeta {
+export interface ICurrentTrackMeta {
   id: string | number;
   img: string;
   title: ICurrentTrackMetaNames;
@@ -69,24 +69,24 @@ interface ICurrentTrackMeta {
   added: boolean;
 }
 
-interface ICurrentTrack {
+export interface ICurrentTrack {
   src: string;
   meta: ICurrentTrackMeta;
 }
 
-interface IFindFriends {
+export interface IFindFriends {
   id: string | number;
   url: string;
   src?: string;
   name: string;
 }
 
-interface IUser {
+export interface IUser {
   name: string;
   src: string;
 }
 
-interface IAccountMenu {
+export interface IAccountMenu {
   id: string | number;
   url: string;
   text: string;

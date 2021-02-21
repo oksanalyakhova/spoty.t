@@ -1,20 +1,14 @@
 import React, {FunctionComponent} from 'react';
+import {IFriend} from '../../../../types/siteTypes';
 
 import './friends.sass';
 
-interface FriendProps {
-  id: string | number,
-  url: string,
-  src: string,
-  name: string,
-}
-
 interface FriendsProps {
-  friends: Array<FriendProps>
+  friends: Array<IFriend>
 }
 
 const Friends: FunctionComponent<FriendsProps> = ({
-                                                    friends
+  friends
 }): JSX.Element => {
   const navFriends = friends.map((friend) =>
     <a key={friend.id} href={friend.url} className="friends__item">

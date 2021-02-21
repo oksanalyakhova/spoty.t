@@ -3,24 +3,14 @@ import Notifications from '../notifications/notifications';
 import Dropdown from '../dropdown/dropdown';
 import Inbox from '../inbox/inbox';
 import classNames from 'classnames';
+import {IUser, IAccountMenu} from '../../../../types/siteTypes';
 
 import './user.sass';
 
-interface UserHelpsProps {
-  name: string;
-  src: string;
-}
-
-interface UserMenuProps {
-  id: string | number;
-  url: string;
-  text: string;
-}
-
 interface UserProps {
   className?: string;
-  user: UserHelpsProps;
-  dropdownItems: Array<UserMenuProps>;
+  user: IUser;
+  dropdownItems: Array<IAccountMenu>;
 }
 
 const User: FunctionComponent<UserProps> = ({

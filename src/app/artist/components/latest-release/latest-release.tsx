@@ -1,17 +1,10 @@
 import React, {FunctionComponent} from 'react';
 import './latest-release.sass';
 import {IoPlaySharp} from 'react-icons/io5';
-
-interface ReleaseProps {
-  id: string | number;
-  src: string;
-  url: string;
-  year: string;
-  name: string;
-}
+import {IOneRelease} from '../../../../types/siteTypes';
 
 interface LatestReleaseProps {
-  release: ReleaseProps;
+  release: IOneRelease;
 }
 
 const LatestRelease: FunctionComponent<LatestReleaseProps> = ({

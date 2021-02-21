@@ -3,17 +3,12 @@ import {IoChevronDownSharp} from 'react-icons/all';
 import classNames from 'classnames';
 import DropdownItem from '../dropdown-item/dropdown-item';
 import useOutsideClick from '../../../../useOutsideClick';
+import {IAccountMenu} from '../../../../types/siteTypes';
 
 import './dropdown.sass';
 
-interface DropdownItemProps {
-  id: string | number;
-  url: string;
-  text: string;
-}
-
 interface DropdownProps {
-  items: Array<DropdownItemProps>;
+  items: Array<IAccountMenu>;
 }
 
 const Dropdown: FunctionComponent<DropdownProps> = ({

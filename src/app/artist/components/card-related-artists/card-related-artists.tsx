@@ -1,18 +1,12 @@
 import React, {FunctionComponent} from 'react';
 import {IoPlaySharp} from 'react-icons/io5';
 import classNames from 'classnames';
+import {IArtist} from '../../../../types/siteTypes';
 
 import './card-related-artists.sass';
 
-interface CardRelatedArtistsHelpsProps {
-  id: string | number;
-  url: string;
-  src: string;
-  name: string;
-}
-
 interface CardRelatedArtistsProps {
-  artist: CardRelatedArtistsHelpsProps;
+  artist: IArtist;
   isSmall: boolean;
 }
 

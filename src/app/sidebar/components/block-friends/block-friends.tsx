@@ -1,17 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import CardFriends from '../card-friends/card-friends';
+import {IFriend} from '../../../../types/siteTypes';
 
 import './block-friends.sass';
 
-interface CardFriendsProps {
-  id: string | number;
-  url: string;
-  src?: string;
-  name: string;
-}
-
 interface BlockFriendsProps {
-  friends: Array<CardFriendsProps>;
+  friends: Array<IFriend>;
 }
 
 const BlockFriends: FunctionComponent<BlockFriendsProps> = ({

@@ -3,25 +3,17 @@ import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import ButtonPlay from '../../../../ui/button-play/button-play';
 import ButtonMore from '../../../../ui/button-more/button-more';
 import {IoCheckmarkSharp} from 'react-icons/all';
+import {IMainArtist} from '../../../../types/siteTypes';
 
 import './artist-header.sass';
 
-interface ArtistHeaderProps {
-  isVerified?: boolean;
-  artistBg?: string;
-  artistImg?: string;
-  artistType?: string;
-  artistName?: string;
-  artistListenersCount?: string;
-}
-
-const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
-  isVerified,
-  artistBg,
-  artistImg,
-  artistType,
-  artistName,
-  artistListenersCount,
+const ArtistHeader: FunctionComponent<IMainArtist> = ({
+  verified,
+  bg,
+  img,
+  type,
+  name,
+  listeners,
 }): JSX.Element => {
   const [isPlayActive, setPlayActive] = useState(false)
   const handlePlayActive = () => {
@@ -36,19 +28,19 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
   return (
     <div className="artist__header">
       <div className="artist__bg">
-        <img src={artistBg} alt={artistName}/>
+        <img src={bg} alt={name}/>
       </div>
       <div className="artist__info info">
         <div className="info__img">
-          <img src={artistImg} alt={artistName}/>
-          {isVerified && <div className="icon-verified"><IoCheckmarkSharp/></div>}
+          <img src={img} alt={name}/>
+          {verified && <div className="icon-verified"><IoCheckmarkSharp/></div>}
         </div>
         <div className="info__meta">
           <div className="info__type">
-            {artistType}
+            {type}
           </div>
           <div className="info__name">
-            {artistName}
+            {name}
           </div>
           <div className="info__actions">
             <ButtonPlay
@@ -72,7 +64,7 @@ const ArtistHeader: FunctionComponent<ArtistHeaderProps> = ({
       </div>
       <div className="artist__listeners listeners">
         <div className="listeners__count">
-          {artistListenersCount}
+          {listeners}
         </div>
         <div className="listeners__label">
           Monthly Listeners

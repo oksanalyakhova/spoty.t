@@ -5,59 +5,18 @@ import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import BlockRelatedArtists from '../block-related-artists/block-related-artists';
 import BlockAlbums from '../block-albums/block-albums';
 import OverviewBox from '../overview-box/overview-box';
+import {ITrack, IArtist, IOneRelease, IOneAlbum, IAlbumTrack} from '../../../../types/siteTypes';
 
 import './tab-overview.sass';
 
-interface ReleaseProps {
-  id: string | number;
-  src: string;
-  url: string;
-  year: string;
-  name: string;
-}
-
-interface AlbumsProps {
-  id: string | number;
-  src: string;
-  year: string;
-  name: string;
-}
-
-interface CardPopularSongsProps {
-  id?: string | number;
-  src?: string;
-  title?: string;
-  added?: boolean;
-  explicit?: string;
-  plays?: string;
-}
-
-interface RelatedArtistProps {
-  id: string | number;
-  url: string;
-  src: string;
-  name: string;
-}
-
-interface CardSongsProps {
-  id?: string | number;
-  title?: string;
-  featured?: string;
-  featuredUrl?: string;
-  added?: boolean;
-  explicit?: string;
-  length?: string;
-  trend?: boolean;
-}
-
 interface OverviewProps {
-  release: ReleaseProps;
-  album: AlbumsProps;
-  tracks: Array<CardPopularSongsProps>;
-  artists: Array<RelatedArtistProps>;
+  release: IOneRelease;
+  album: IOneAlbum;
+  tracks: Array<ITrack>;
+  artists: Array<IArtist>;
   isCardArtistsSmall: boolean;
   forArtistsBlock: boolean;
-  albumTracks: Array<CardSongsProps>;
+  albumTracks: Array<IAlbumTrack>;
 }
 
 const TabOverview: FunctionComponent<OverviewProps> = ({

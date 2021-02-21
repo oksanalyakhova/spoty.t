@@ -1,17 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import {MdPerson} from 'react-icons/md';
+import {IFriend} from '../../../../types/siteTypes';
 
 import './card-friends.sass';
 
-interface CardFriendsHekpsProps {
-  id: string | number;
-  url: string;
-  src?: string;
-  name: string;
-}
-
 interface CardFriendsProps {
-  friend: CardFriendsHekpsProps;
+  friend: IFriend;
 }
 
 const CardFriends: FunctionComponent<CardFriendsProps> = ({

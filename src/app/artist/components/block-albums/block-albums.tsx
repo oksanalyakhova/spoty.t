@@ -4,6 +4,7 @@ import CardTrack from '../card-track/card-track';
 import {IoStopwatchOutline, IoThumbsUpSharp} from 'react-icons/io5';
 import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import ButtonMore from '../../../../ui/button-more/button-more';
+import {IOneAlbum} from '../../../../types/siteTypes';
 
 import './block-albums.sass';
 
@@ -18,15 +19,8 @@ interface CardSongsProps {
   trend?: boolean;
 }
 
-interface BlockAlbumsHelpsProps {
-  id?: string | number;
-  src?: string;
-  year?: string;
-  name?: string;
-}
-
 interface BlockAlbumsProps {
-  album: BlockAlbumsHelpsProps,
+  album: IOneAlbum,
   tracks: Array<CardSongsProps>
 }
 

@@ -1,19 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import CardTrack from '../card-track/card-track';
+import {ITrack} from '../../../../types/siteTypes';
 
 import './block-popular-songs.sass';
 
-interface CardPopularSongsProps {
-  id?: string | number;
-  src?: string;
-  title?: string;
-  added?: boolean;
-  explicit?: string;
-  plays?: string;
-}
-
 interface BlockPopularSongsProps {
-  tracks: Array<CardPopularSongsProps>;
+  tracks: Array<ITrack>;
   total?: number;
 }
 

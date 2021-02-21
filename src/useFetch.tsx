@@ -13,12 +13,12 @@ interface Cache<T> {
 
 // discriminated union type
 type Action<T> =
-  | { type: 'request' }
-  | { type: 'success'; payload: T }
-  | { type: 'failure'; payload: string }
+    | { type: 'request' }
+    | { type: 'success'; payload: T }
+    | { type: 'failure'; payload: string }
 function useFetch<T = unknown>(
-  url?: string,
-  options?: AxiosRequestConfig,
+    url?: string,
+    options?: AxiosRequestConfig,
 ): State<T> {
   const cache = useRef<Cache<T>>({})
   const cancelRequest = useRef<boolean>(false)

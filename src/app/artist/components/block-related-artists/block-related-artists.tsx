@@ -1,18 +1,12 @@
 import React, {FunctionComponent} from 'react';
 import CardRelatedArtists from '../card-related-artists/card-related-artists';
 import classNames from 'classnames';
+import {IArtist} from '../../../../types/siteTypes';
 
 import './block-related-artists.sass';
 
-interface RelatedArtistProps {
-  id: string | number;
-  url: string;
-  src: string;
-  name: string;
-}
-
 interface BlockRelatedArtistsProps {
-  artists: Array<RelatedArtistProps>;
+  artists: Array<IArtist>;
   isCardSmall: boolean;
   forBlock?: boolean;
   total?: number;

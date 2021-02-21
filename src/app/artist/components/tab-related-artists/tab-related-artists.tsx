@@ -1,17 +1,11 @@
 import React, {FunctionComponent} from 'react';
 import BlockRelatedArtists from '../block-related-artists/block-related-artists';
+import {IArtist} from '../../../../types/siteTypes';
 
 import './tab-related-artists.sass';
 
-interface RelatedArtistProps {
-  id: string | number;
-  url: string;
-  src: string;
-  name: string;
-}
-
 interface RelatedArtistsProps {
-  artists: Array<RelatedArtistProps>;
+  artists: Array<IArtist>;
   isCardArtistsSmall: boolean;
   forArtistsBlock: boolean;
 }

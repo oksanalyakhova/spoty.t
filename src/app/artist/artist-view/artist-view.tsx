@@ -46,12 +46,12 @@ const Artist: FunctionComponent<ArtistProps> = ({
          style={{height: artistHeight}}>
       <div className="artist__wrapper">
         <ArtistHeader
-          isVerified={artist?.verified}
-          artistBg={artist?.bg}
-          artistImg={artist?.img}
-          artistType={artist?.type}
-          artistName={artist?.name}
-          artistListenersCount={artist?.listeners}
+          verified={artist?.verified}
+          bg={artist?.bg}
+          img={artist?.img}
+          type={artist?.type}
+          name={artist?.name}
+          listeners={artist?.listeners}
         />
         <div className="artist__content">
           <Tabs className="artist__tabs tabs">
