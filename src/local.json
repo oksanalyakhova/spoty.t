@@ -435,24 +435,18 @@
     {
       "id": 4,
       "url": "some/page",
-      "src": "https://c.ndtvimg.com/2020-08/8uffq8ko_mumbai-police_625x300_18_August_20.jpg",
-      "name": "Joey Tribbiani"
-    },
-    {
-      "id": 5,
-      "url": "some/page",
       "name": "Ross Geller"
     },
     {
-      "id": 6,
+      "id": 5,
       "url": "some/page",
       "src": "https://i.insider.com/55df18389dd7cc0f008b64cc?width=1100&format=jpeg&auto=webp",
       "name": "Phoebe Buffay"
     }
   ],
   "user": {
-    "name": "Adam Lowenthal",
-    "src": "https://images.pexels.com/photos/846741/pexels-photo-846741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+    "name": "Joey Tribbiani",
+    "src": "https://c.ndtvimg.com/2020-08/8uffq8ko_mumbai-police_625x300_18_August_20.jpg"
   },
   "accountMenu": [
     {

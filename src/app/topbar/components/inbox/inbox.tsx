@@ -16,7 +16,7 @@ const Inbox: FunctionComponent<InboxProps> = ({
     const interval = setInterval(() => {
       setInbox(inbox => inbox + 1);
       if (inbox === 10) resetInterval();
-    }, 5000);
+    }, 50000);
     return () => clearInterval(interval);
   });
 

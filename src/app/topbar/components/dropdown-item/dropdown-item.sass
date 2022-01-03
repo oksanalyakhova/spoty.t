@@ -9,7 +9,7 @@
 	&:hover
 		&::before
 			transform: scaleY(1)
-			transform-origin: bottom center
+			transform-origin: bottom
 
 		a
 			color: $c-light-black
@@ -21,14 +21,13 @@
 		height: 100%
 		background-color: $c-grey
 		transform: scaleY(0)
-		transform-origin: top center
-		+trans
+		transform-origin: top
+		+trans(transform)
 	a
 		padding: 3px 20px
 		clear: both
 		font-weight: 500
 		white-space: nowrap
 		color: $c-grey
-		opacity: 0
-		+trans
+		+trans(color, 0s)
 		transition-delay: 0s
