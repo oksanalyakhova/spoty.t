@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 
 import './overview-box.sass';
 
@@ -13,14 +13,10 @@ const OverviewBox: FunctionComponent<OverviewBoxProps> = ({
 }): JSX.Element => {
   return (
     <div className="overview-box">
-      <div className="overview-box__title">
-        {title}
-      </div>
-      <div className="overview-box__content">
-        {children}
-      </div>
+      <div className="overview-box__title">{title}</div>
+      <div className="overview-box__content">{children}</div>
     </div>
-  )
-}
+  );
+};
 
 export default OverviewBox;

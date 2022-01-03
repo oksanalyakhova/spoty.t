@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import TopbarNavItem from '../topbar-nav-item/topbar-nav-item';
 import classNames from 'classnames';
 
@@ -17,21 +17,24 @@ const TopbarNav: FunctionComponent<TopbarNavProps> = ({
   disabledPrev,
   disabledNext,
   onClickPrev,
-  onClickNext
+  onClickNext,
 }): JSX.Element => {
   const classesFlows = classNames(className, 'page-flows');
 
   return (
     <div className={classesFlows}>
-      <TopbarNavItem direction="prev"
-                     disabled={disabledPrev}
-                     onClick={(e) => onClickPrev(e)} />
-      <TopbarNavItem direction="next"
-                     disabled={disabledNext}
-                     onClick={(e) => onClickNext(e)} />
+      <TopbarNavItem
+        direction="prev"
+        disabled={disabledPrev}
+        onClick={(e) => onClickPrev(e)}
+      />
+      <TopbarNavItem
+        direction="next"
+        disabled={disabledNext}
+        onClick={(e) => onClickNext(e)}
+      />
     </div>
-  )
-}
+  );
+};
 
 export default TopbarNav;
-

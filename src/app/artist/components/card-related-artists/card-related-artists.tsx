@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from 'react';
-import {IoPlaySharp} from 'react-icons/io5';
+import React, { FunctionComponent } from 'react';
+import { IoPlaySharp } from 'react-icons/io5';
 import classNames from 'classnames';
-import {IArtist} from '../../../../types/siteTypes';
+import { IArtist } from '../../../../types/siteTypes';
 
 import './card-related-artists.sass';
 
@@ -17,23 +17,17 @@ const CardRelatedArtists: FunctionComponent<CardRelatedArtistsProps> = ({
   const classes = classNames('related-artist', {
     'is-small': isSmall,
     'is-large': !isSmall,
-  })
+  });
 
   return (
-    <a href={artist.url}
-       className={classes}>
+    <a href={artist.url} className={classes}>
       <span className="related-artist__img">
-        <img src={artist.src} alt={artist.name}/>
-        {!isSmall &&
-          <IoPlaySharp/>
-        }
+        <img src={artist.src} alt={artist.name} />
+        {!isSmall && <IoPlaySharp />}
       </span>
-      <span className="related-artist__name">
-        {artist.name}
-      </span>
+      <span className="related-artist__name">{artist.name}</span>
     </a>
-  )
-}
+  );
+};
 
 export default CardRelatedArtists;
-

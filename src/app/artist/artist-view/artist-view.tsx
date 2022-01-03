@@ -1,12 +1,12 @@
-import React, {FunctionComponent, useContext} from 'react';
-import {Tabs, TabList, Tab, TabPanels, TabPanel} from '@reach/tabs';
+import React, { FunctionComponent, useContext } from 'react';
+import { Tabs, TabList, Tab, TabPanels, TabPanel } from '@reach/tabs';
 import classNames from 'classnames';
 import AppContext from '../../../AppContext';
 import ArtistHeader from '../components/artist-header/artist-header';
 import TabOverview from '../components/tab-overview/tab-overview';
 import TabRelatedArtists from '../components/tab-related-artists/tab-related-artists';
 import Friends from '../components/friends/friends';
-import {ISiteTypes} from '../../../types/siteTypes';
+import { ISiteTypes } from '../../../types/siteTypes';
 
 import '@reach/tabs/styles.css';
 import './artist-view.sass';
@@ -22,7 +22,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
   topHeight,
   trackHeight,
   local,
-  data
+  data,
 }): JSX.Element => {
   const artist = data?.artist;
   const friends = local.friends;
@@ -33,17 +33,19 @@ const Artist: FunctionComponent<ArtistProps> = ({
   const albumTracks = local.albumTracks;
 
   const myContext = useContext(AppContext);
-  const breakpoint = myContext.windowWidth > 768 && myContext.windowWidth > myContext.windowHeight;
+  const breakpoint =
+    myContext.windowWidth > 768 &&
+    myContext.windowWidth > myContext.windowHeight;
   let artistHeight;
-  if (breakpoint) artistHeight = myContext.windowHeight - topHeight - trackHeight;
+  if (breakpoint)
+    artistHeight = myContext.windowHeight - topHeight - trackHeight;
 
   const classes = classNames('artist', {
     'is-verified': artist?.verified,
-  })
+  });
 
   return (
-    <div className={classes}
-         style={{height: artistHeight}}>
+    <div className={classes} style={{ height: artistHeight }}>
       <div className="artist__wrapper">
         <ArtistHeader
           verified={artist?.verified}
@@ -92,7 +94,7 @@ const Artist: FunctionComponent<ArtistProps> = ({
         </div>
       </div>
     </div>
-  )
+  );
 };
 
 export default Artist;

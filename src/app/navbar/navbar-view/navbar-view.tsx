@@ -1,9 +1,9 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import AppContext from '../../../AppContext';
 import Accordions from '../components/accordions/accordions';
 import AddPlaylist from '../components/add-playlist/add-playlist';
 import Playing from '../components/playing/playing';
-import {ISiteTypes} from '../../../types/siteTypes';
+import { ISiteTypes } from '../../../types/siteTypes';
 
 import './navbar-view.sass';
 
@@ -15,9 +15,9 @@ interface NavProps {
 }
 
 interface NavbarHelpsProps {
-  id: number | string,
-  name: string,
-  items: Array<NavProps>
+  id: number | string;
+  name: string;
+  items: Array<NavProps>;
 }
 
 interface NavbarProps {
@@ -31,7 +31,7 @@ const Navbar: FunctionComponent<NavbarProps> = ({
   topHeight,
   trackHeight,
   nav,
-  local
+  local,
 }): JSX.Element => {
   const myContext = useContext(AppContext);
   const breakpoint = myContext.windowWidth > 768;
@@ -42,16 +42,12 @@ const Navbar: FunctionComponent<NavbarProps> = ({
         className="navbar__accordions"
         topHeight={topHeight}
         trackHeight={trackHeight}
-        nav={nav}/>
-      {
-        breakpoint &&
-        <AddPlaylist className="navbar__add-playlist"/>
-      }
-      <Playing
-        className="navbar__playing"
-        local={local}/>
+        nav={nav}
+      />
+      {breakpoint && <AddPlaylist className="navbar__add-playlist" />}
+      <Playing className="navbar__playing" local={local} />
     </div>
-  )
+  );
 };
 
 export default Navbar;

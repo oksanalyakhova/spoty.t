@@ -1,6 +1,6 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import BlockRelatedArtists from '../block-related-artists/block-related-artists';
-import {IArtist} from '../../../../types/siteTypes';
+import { IArtist } from '../../../../types/siteTypes';
 
 import './tab-related-artists.sass';
 
@@ -24,7 +24,7 @@ const TabRelatedArtists: FunctionComponent<RelatedArtistsProps> = ({
         total={artists.length}
       />
     </div>
-  )
+  );
 };
 
 export default TabRelatedArtists;

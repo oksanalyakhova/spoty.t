@@ -1,7 +1,7 @@
-import React, {FunctionComponent} from 'react';
-import {IoAddSharp, IoCheckmarkSharp} from 'react-icons/io5';
+import React, { FunctionComponent } from 'react';
+import { IoAddSharp, IoCheckmarkSharp } from 'react-icons/io5';
 import classNames from 'classnames';
-import {ISiteTypes} from '../../../../types/siteTypes';
+import { ISiteTypes } from '../../../../types/siteTypes';
 
 import './playing.sass';
 
@@ -12,7 +12,7 @@ interface PlayingProps {
 
 const Playing: FunctionComponent<PlayingProps> = ({
   className,
-  local
+  local,
 }): JSX.Element => {
   const img = local.currentTrack.meta.img;
   const trackTitle = local.currentTrack.meta.title?.name;
@@ -26,7 +26,7 @@ const Playing: FunctionComponent<PlayingProps> = ({
   return (
     <div className={classes}>
       <div className="playing__art">
-        <img src={img} alt={trackTitle}/>
+        <img src={img} alt={trackTitle} />
       </div>
       <div className="playing__song">
         <a href={trackUrl} className="playing__title">
@@ -37,13 +37,16 @@ const Playing: FunctionComponent<PlayingProps> = ({
         </a>
       </div>
       <div className="playing__add">
-        {!added
-          ? <button type="button" className="button button-add-song"><IoAddSharp/></button>
-          : <IoCheckmarkSharp/>
-        }
+        {!added ? (
+          <button type="button" className="button button-add-song">
+            <IoAddSharp />
+          </button>
+        ) : (
+          <IoCheckmarkSharp />
+        )}
       </div>
     </div>
-  )
+  );
 };
 
 export default Playing;

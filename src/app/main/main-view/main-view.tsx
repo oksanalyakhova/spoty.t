@@ -1,8 +1,8 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import Navbar from '../../navbar/navbar-view/navbar-view';
 import Artist from '../../artist/artist-view/artist-view';
 import Sidebar from '../../sidebar/sidebar-view/sidebar-view';
-import {ISiteTypes} from '../../../types/siteTypes';
+import { ISiteTypes } from '../../../types/siteTypes';
 
 import './main-view.sass';
 
@@ -14,9 +14,9 @@ interface NavProps {
 }
 
 interface MainHelpsProps {
-  id: number | string,
-  name: string,
-  items: Array<NavProps>
+  id: number | string;
+  name: string;
+  items: Array<NavProps>;
 }
 
 interface MainProps {
@@ -40,18 +40,17 @@ const Main: FunctionComponent<MainProps> = ({
         topHeight={topHeight}
         trackHeight={trackHeight}
         nav={nav}
-        local={local}/>
+        local={local}
+      />
       <Artist
         topHeight={topHeight}
         trackHeight={trackHeight}
         local={local}
-        data={data}/>
-      <Sidebar
-        topHeight={topHeight}
-        trackHeight={trackHeight}
-        local={local}/>
+        data={data}
+      />
+      <Sidebar topHeight={topHeight} trackHeight={trackHeight} local={local} />
     </div>
   );
-}
+};
 
 export default Main;

@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {IoAddCircleOutline} from 'react-icons/all';
+import React, { FunctionComponent } from 'react';
+import { IoAddCircleOutline } from 'react-icons/all';
 import classNames from 'classnames';
 
 import './add-playlist.sass';
@@ -9,20 +9,20 @@ interface AddPlaylistProps {
 }
 
 const AddPlaylist: FunctionComponent<AddPlaylistProps> = ({
-  className
+  className,
 }): JSX.Element => {
-  const classes = classNames(className, 'add-playlist')
+  const classes = classNames(className, 'add-playlist');
 
   return (
     <div className={classes}>
       <a href="some/page" className="add-playlist__link">
         <span className="icon">
-          <IoAddCircleOutline/>
+          <IoAddCircleOutline />
         </span>
         <span className="name">New Playlist</span>
       </a>
     </div>
-  )
+  );
 };
 
 export default AddPlaylist;

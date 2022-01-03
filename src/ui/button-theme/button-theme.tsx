@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 
 import './button-theme.sass';
@@ -16,16 +16,13 @@ const ButtonTheme: FunctionComponent<ButtonThemeProps> = ({
 }): JSX.Element => {
   const classes = classNames('button button-theme', {
     'is-disabled': isDisabled,
-  })
+  });
 
   return (
-    <button
-      type="button"
-      className={classes}
-      onClick={(e) => onClick(e)}>
-        <span>{text}</span>
+    <button type="button" className={classes} onClick={(e) => onClick(e)}>
+      <span>{text}</span>
     </button>
-  )
-}
+  );
+};
 
 export default ButtonTheme;

@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {IoNotifications} from 'react-icons/all';
+import React, { FunctionComponent } from 'react';
+import { IoNotifications } from 'react-icons/all';
 import classNames from 'classnames';
 
 import './notifications.sass';
@@ -9,15 +9,15 @@ interface NotificationsProps {
 }
 
 const Notifications: FunctionComponent<NotificationsProps> = ({
-  className
+  className,
 }): JSX.Element => {
-  const classes = classNames(className, 'notifications')
+  const classes = classNames(className, 'notifications');
 
   return (
     <a href="/notifications/page" className={classes}>
-      <IoNotifications/>
+      <IoNotifications />
     </a>
-  )
+  );
 };
 
 export default Notifications;

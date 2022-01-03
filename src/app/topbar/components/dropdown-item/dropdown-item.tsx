@@ -1,4 +1,4 @@
-import React, {FunctionComponent} from 'react';
+import React, { FunctionComponent } from 'react';
 import classNames from 'classnames';
 
 import './dropdown-item.sass';
@@ -18,11 +18,9 @@ const DropdownItem: FunctionComponent<DropdownItemProps> = ({
 
   return (
     <li className={classes}>
-      <a href={url}>
-        {text}
-      </a>
+      <a href={url}>{text}</a>
     </li>
-  )
+  );
 };
 
 export default DropdownItem;

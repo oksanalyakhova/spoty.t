@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import AudioPlayer, {RHAP_UI} from 'react-h5-audio-player';
+import React, { FunctionComponent } from 'react';
+import AudioPlayer, { RHAP_UI } from 'react-h5-audio-player';
 import classNames from 'classnames';
 import {
   BiRefresh,
@@ -11,7 +11,7 @@ import {
   IoVolumeMuteSharp,
   IoMdMenu,
   TiArrowShuffle,
-  IoIosPhonePortrait
+  IoIosPhonePortrait,
 } from 'react-icons/all';
 
 import 'react-h5-audio-player/lib/styles.css';
@@ -24,34 +24,40 @@ interface PlayerProps {
 
 const Player: FunctionComponent<PlayerProps> = ({
   className,
-  src
+  src,
 }): JSX.Element => {
-  const lyrics = <button
-    type="button"
-    className="button button-lyrics">
-    <span className="name">Lyrics</span>
-  </button>
+  const lyrics = (
+    <button type="button" className="button button-lyrics">
+      <span className="name">Lyrics</span>
+    </button>
+  );
 
-  const nav = <button
-    type="button"
-    className="button button-playlist-nav">
-    <span className="icon"><IoMdMenu/></span>
-  </button>
+  const nav = (
+    <button type="button" className="button button-playlist-nav">
+      <span className="icon">
+        <IoMdMenu />
+      </span>
+    </button>
+  );
 
-  const shuffle = <button
-    type="button"
-    className="button button-shuffle">
-    <span className="icon"><TiArrowShuffle/></span>
-  </button>
+  const shuffle = (
+    <button type="button" className="button button-shuffle">
+      <span className="icon">
+        <TiArrowShuffle />
+      </span>
+    </button>
+  );
 
-  const devices = <button
-    type="button"
-    className="button button-shuffle">
-    <span className="icon"><IoIosPhonePortrait/></span>
-    <span className="name">Devices Available</span>
-  </button>
+  const devices = (
+    <button type="button" className="button button-shuffle">
+      <span className="icon">
+        <IoIosPhonePortrait />
+      </span>
+      <span className="name">Devices Available</span>
+    </button>
+  );
 
-  const classes = classNames(className, 'player')
+  const classes = classNames(className, 'player');
 
   return (
     <div className={classes}>
@@ -60,26 +66,20 @@ const Player: FunctionComponent<PlayerProps> = ({
         showJumpControls={false}
         autoPlay={false}
         src={src}
-        onPlay={e => console.log("onPlay")}
+        onPlay={(e) => console.log('onPlay')}
         customIcons={{
-          play: <IoPlaySharp/>,
-          pause: <IoPauseSharp/>,
-          next: <BiSkipNext/>,
-          previous: <BiSkipPrevious/>,
-          loopOff: <BiRefresh/>,
-          volume: <IoVolumeHighSharp/>,
-          volumeMute: <IoVolumeMuteSharp/>
+          play: <IoPlaySharp />,
+          pause: <IoPauseSharp />,
+          next: <BiSkipNext />,
+          previous: <BiSkipPrevious />,
+          loopOff: <BiRefresh />,
+          volume: <IoVolumeHighSharp />,
+          volumeMute: <IoVolumeMuteSharp />,
         }}
-        customAdditionalControls={[
-          lyrics,
-          nav,
-          shuffle,
-          RHAP_UI.LOOP,
-          devices
-        ]}
+        customAdditionalControls={[lyrics, nav, shuffle, RHAP_UI.LOOP, devices]}
       />
     </div>
-  )
+  );
 };
 
 export default Player;

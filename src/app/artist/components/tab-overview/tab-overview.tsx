@@ -1,11 +1,17 @@
-import React, {FunctionComponent, useRef, useState} from 'react';
+import React, { FunctionComponent, useRef, useState } from 'react';
 import LatestRelease from '../latest-release/latest-release';
 import BlockPopularSongs from '../block-popular-songs/block-popular-songs';
 import ButtonTheme from '../../../../ui/button-theme/button-theme';
 import BlockRelatedArtists from '../block-related-artists/block-related-artists';
 import BlockAlbums from '../block-albums/block-albums';
 import OverviewBox from '../overview-box/overview-box';
-import {ITrack, IArtist, IOneRelease, IOneAlbum, IAlbumTrack} from '../../../../types/siteTypes';
+import {
+  ITrack,
+  IArtist,
+  IOneRelease,
+  IOneAlbum,
+  IAlbumTrack,
+} from '../../../../types/siteTypes';
 
 import './tab-overview.sass';
 
@@ -43,37 +49,37 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
   };
 
   const scroll = (ref: any) => {
-    ref.current.scrollIntoView({behavior: 'smooth'});
-  }
+    ref.current.scrollIntoView({ behavior: 'smooth' });
+  };
 
   return (
     <div className="tab-overview">
       <div className="tab-overview__artist" ref={artistRef}>
-        <OverviewBox title="Latest Release"
-          children={
-            <LatestRelease release={release} />
-          }/>
-        <OverviewBox title="Popular"
-          children={
-            <BlockPopularSongs tracks={tracks} total={total} />
-          }/>
-        {
-          showMore
-          ? <ButtonTheme
-              text="show 5 more"
-              isDisabled={false}
-              onClick={handleMore}
-            />
-          : <ButtonTheme
-              text="show less"
-              isDisabled={false}
-              onClick={handleLess}
-            />
-        }
-
+        <OverviewBox
+          title="Latest Release"
+          children={<LatestRelease release={release} />}
+        />
+        <OverviewBox
+          title="Popular"
+          children={<BlockPopularSongs tracks={tracks} total={total} />}
+        />
+        {showMore ? (
+          <ButtonTheme
+            text="show 5 more"
+            isDisabled={false}
+            onClick={handleMore}
+          />
+        ) : (
+          <ButtonTheme
+            text="show less"
+            isDisabled={false}
+            onClick={handleLess}
+          />
+        )}
       </div>
       <div className="tab-overview__related">
-        <OverviewBox title="Related Artists"
+        <OverviewBox
+          title="Related Artists"
           children={
             <BlockRelatedArtists
               artists={artists}
@@ -81,19 +87,17 @@ const TabOverview: FunctionComponent<OverviewProps> = ({
               forBlock={forArtistsBlock}
               total={7}
             />
-          }/>
+          }
+        />
       </div>
       <div className="tab-overview__albums">
-        <OverviewBox title="Albums"
-          children={
-            <BlockAlbums
-              album={album}
-              tracks={albumTracks}
-            />
-          } />
+        <OverviewBox
+          title="Albums"
+          children={<BlockAlbums album={album} tracks={albumTracks} />}
+        />
       </div>
     </div>
-  )
+  );
 };
 
 export default TabOverview;

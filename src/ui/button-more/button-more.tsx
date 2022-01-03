@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {IoEllipsisHorizontal} from 'react-icons/io5';
+import React, { FunctionComponent } from 'react';
+import { IoEllipsisHorizontal } from 'react-icons/io5';
 import classNames from 'classnames';
 
 import './button-more.sass';
@@ -15,16 +15,13 @@ const ButtonMore: FunctionComponent<ButtonMoreProps> = ({
 }): JSX.Element => {
   const classes = classNames('button button-more', {
     'is-active': isActive,
-  })
+  });
 
   return (
-    <button
-      type='button'
-      className={classes}
-      onClick={(e) => onClick(e)}>
-      <IoEllipsisHorizontal/>
+    <button type="button" className={classes} onClick={(e) => onClick(e)}>
+      <IoEllipsisHorizontal />
     </button>
-  )
-}
+  );
+};
 
 export default ButtonMore;

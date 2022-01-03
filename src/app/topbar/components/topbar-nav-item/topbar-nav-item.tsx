@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {IoChevronBackSharp, IoChevronForwardSharp} from 'react-icons/io5';
+import React, { FunctionComponent } from 'react';
+import { IoChevronBackSharp, IoChevronForwardSharp } from 'react-icons/io5';
 import classNames from 'classnames';
 
 import './topbar-nav-item.sass';
@@ -17,20 +17,18 @@ const TopbarNavItem: FunctionComponent<TopbarNavItemProps> = ({
 }): JSX.Element => {
   const classes = classNames('page-flows__item', {
     [`page-flows__item_${direction}`]: direction,
-    'is-disabled': disabled
+    'is-disabled': disabled,
   });
 
   return (
-    <div className={classes}
-         onClick={(e) => onClick(e)}>
-      {
-        direction === 'prev'
-        ? <IoChevronBackSharp/>
-        : <IoChevronForwardSharp/>
-      }
+    <div className={classes} onClick={(e) => onClick(e)}>
+      {direction === 'prev' ? (
+        <IoChevronBackSharp />
+      ) : (
+        <IoChevronForwardSharp />
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default TopbarNavItem;
-

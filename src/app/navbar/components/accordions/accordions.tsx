@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useContext} from 'react';
+import React, { FunctionComponent, useContext } from 'react';
 import AppContext from '../../../../AppContext';
 import Accordion from '../accordion/accordion';
 import classNames from 'classnames';
@@ -13,9 +13,9 @@ interface NavProps {
 }
 
 interface AccordionsHelpsProps {
-  id: number | string,
-  name: string,
-  items: Array<NavProps>
+  id: number | string;
+  name: string;
+  items: Array<NavProps>;
 }
 
 interface AccordionsProps {
@@ -29,28 +29,26 @@ const Accordions: FunctionComponent<AccordionsProps> = ({
   className,
   topHeight,
   trackHeight,
-  nav
+  nav,
 }): JSX.Element => {
   const myContext = useContext(AppContext);
-  const breakpoint = myContext.windowWidth > 768 && myContext.windowWidth > myContext.windowHeight;
+  const breakpoint =
+    myContext.windowWidth > 768 &&
+    myContext.windowWidth > myContext.windowHeight;
   let navHeight;
-  if (breakpoint) navHeight = myContext.windowHeight - topHeight - trackHeight - 117;
+  if (breakpoint)
+    navHeight = myContext.windowHeight - topHeight - trackHeight - 117;
 
-  const listsNav = nav.map((item, index) =>
-    <Accordion
-      key={item.id}
-      name={item.name}
-      nav={item.items}
-    />
-  );
+  const listsNav = nav.map((item, index) => (
+    <Accordion key={item.id} name={item.name} nav={item.items} />
+  ));
 
-  const classes = classNames(className, 'accordions')
+  const classes = classNames(className, 'accordions');
   return (
-    <div className={classes}
-         style={{height: navHeight}}>
+    <div className={classes} style={{ height: navHeight }}>
       {listsNav}
     </div>
-  )
+  );
 };
 
 export default Accordions;

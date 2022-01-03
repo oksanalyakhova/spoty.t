@@ -1,5 +1,5 @@
-import React, {FunctionComponent} from 'react';
-import {IoPlaySharp, IoPauseSharp} from 'react-icons/io5';
+import React, { FunctionComponent } from 'react';
+import { IoPlaySharp, IoPauseSharp } from 'react-icons/io5';
 import classNames from 'classnames';
 
 import './button-play.sass';
@@ -17,22 +17,16 @@ const ButtonPlay: FunctionComponent<ButtonPlayProps> = ({
 }): JSX.Element => {
   const classes = classNames('button button-play', {
     'is-active': isActive,
-  })
+  });
 
   return (
-    <button
-      type="button"
-      className={classes}
-      onClick={(e) => onClick(e)}>
+    <button type="button" className={classes} onClick={(e) => onClick(e)}>
       <span>
-      {!isActive
-        ? <IoPlaySharp/>
-        : <IoPauseSharp/>
-      }
+        {!isActive ? <IoPlaySharp /> : <IoPauseSharp />}
         {text}
       </span>
     </button>
-  )
-}
+  );
+};
 
 export default ButtonPlay;
