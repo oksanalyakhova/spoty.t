@@ -399,10 +399,10 @@
     "name": "When It\"s Dark Out"
   },
   "currentTrack": {
-    "src": "https://cdn1.boomze.cc/uploads/files/2019-11/1574543761520_1574543761.mp3",
+    "src": "./assets/audio/G-Eazy-These_Things_Happen_Too/01_These_Things_Happen_Too.mp3",
     "meta": {
       "id": "someId",
-      "img": "https://i1.sndcdn.com/artworks-000676324123-cgmk31-t500x500.jpg",
+      "img": "@images/artist.jpg",
       "title": {
         "name": "Odyssey",
         "url": "some/page"
